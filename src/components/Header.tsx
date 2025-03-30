@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <div className="flex justify-between text-black w-full h-[70px] items-center px-4 fixed">
+        <div className="flex justify-between text-black w-full h-[70px] items-center px-4 fixed z-1">
             <div className="flex gap-8">
                 <img />
                 <div>Home</div>
