@@ -65,6 +65,24 @@ export default function Home() {
           </div>
         </div>
       </div> */}
+
+       {/* <div className="w-full py-10 px-20 bg-[#3f393b]">
+        <h1 className="font-bold text-3xl mb-8">Popular things to do</h1>
+        <div className="flex gap-8">
+          <div className="w-[400px] h-[500px] bg-gray-200 rounded-lg"></div>
+          <div>
+            <div className="bg-gray-200 w-[250px] h-[234px] mb-8 rounded-lg"></div>
+            <div className="bg-gray-200 w-[250px] h-[234px] rounded-lg"></div>
+          </div>
+          <div>
+            <div className="bg-gray-200 w-[500px] h-[234px] rounded-lg mb-8"></div>
+            <div className="flex gap-8">
+              <div className="bg-gray-200 rounded-lg w-[60%] h-[234px]"></div>
+              <div className="bg-gray-200 rounded-lg w-full h-[234px]"></div>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 } 
