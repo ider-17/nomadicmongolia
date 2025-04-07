@@ -7,6 +7,13 @@ export default function Home() {
       <Header />
 
       <div className="relative">
+        <img className="w-full h-screen object-center object-cover" src="/Gobi-Desert-Mongolia-scaled.jpg" />
+        <div className="absolute top-1/2 -translate-y-1/2 w-[80%]">
+          <h1 className="text-white font-bold text-5xl">Your world of joy</h1>
+        </div>
+      </div>
+
+      {/* <div className="relative">
         <img className="h-[90vh] w-full" src="./Gobi-Desert-Mongolia-scaled.jpg" />
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2">
           <h1 className="font-bold text-6xl bg-gradient-to-r from-blue-500 to-red-500 text-transparent bg-clip-text">Life Is Adventure Make The Best Of It</h1>
@@ -39,9 +46,9 @@ export default function Home() {
             <div className="w-14 h-14 rounded-full bg-orange-500"></div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full py-10 px-20 bg-[#3f393b]">
+      {/* <div className="w-full py-10 px-20 bg-[#3f393b]">
         <h1 className="font-bold text-3xl mb-8">Popular things to do</h1>
         <div className="flex gap-8">
           <div className="w-[400px] h-[500px] bg-gray-200 rounded-lg"></div>
@@ -57,7 +64,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 } 
