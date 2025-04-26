@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="w-full h-screen">
-      <img className="w-full h-screen relative opacity-80" src="./_ZAK4316.jpg" />
+      <img className="w-full h-screen object-cover object-center relative opacity-80" src="./_ZAK4316.jpg" />
       <div className="w-full fixed top-0 flex justify-between items-center p-10">
         <div>
           <Link href="/">
@@ -15,12 +15,12 @@ export default function Home() {
             <li>HOME</li>
           </Link>
           {/* <Link href="/about"> */}
-          <li>ABOUT US</li>
+          <li>CHI SIAMO</li> {/* WHO WE ARE */}
           {/* </Link> */}
-          <li>TERMS N CONDITIONS</li>
-          <li>TOURS</li>
-          <li>GALLERY</li>
-          <li>CONTACT US</li>
+          <li>TERMINE E CONDIZIONE</li> {/* TERMS N CONDITIONS */}
+          <li>VIAGGI</li> {/* TOURS */}
+          <li>CONTATTI</li> {/* CONTACT US */}
+          <li>PRENOTA</li> {/* BOOKING */}
         </ul>
       </div>
     </div>
