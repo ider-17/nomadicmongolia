@@ -1,28 +1,26 @@
+"use client";
+
+import { Header } from "@/components/Header";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [currentBackground, setCurrentBackground] = useState(0);
+
+  const backgrounds = ["/_ZAK4316.jpg", "/_BAY5051.jpg", "/_BAY5051.jpg", "/_BAY1429.jpg", "/_BAY0058.jpg"];
+
+  const changeBackground = () => {
+    setCurrentBackground((prevIndex) => (prevIndex + 1) % backgrounds.length);
+  }
+
   return (
-    <div className="w-full h-screen">
-      <img className="w-full h-screen object-cover object-center relative opacity-80" src="./_ZAK4316.jpg" />
-      <div className="w-full fixed top-0 flex justify-between items-center p-10">
-        <div>
-          <Link href="/">
-            <img className="w-[200px] cursor-pointer" src="./nomadic_khusug_white_text.png" />
-          </Link>
-        </div>
-        <ul className="flex gap-10 [&>*]:text-white [&>*]:hover:underline [&>*]:hover:underline-offset-8 [&>*]:hover:decoration-gray-200 [&>*]:font-semibold [&>*]:cursor-pointer">
-          <Link href="/">
-            <li>HOME</li>
-          </Link>
-          {/* <Link href="/about"> */}
-          <li>CHI SIAMO</li> {/* WHO WE ARE */}
-          {/* </Link> */}
-          <li>TERMINE E CONDIZIONE</li> {/* TERMS N CONDITIONS */}
-          <li>VIAGGI</li> {/* TOURS */}
-          <li>CONTATTI</li> {/* CONTACT US */}
-          <li>PRENOTA</li> {/* BOOKING */}
-        </ul>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center transition-all duration-1000 ease-in-out" style={{ backgroundImage: `url('${backgrounds[currentBackground]}')` }}>
+
+      <Header />
+
+      <button className="absolute bottom-5 right-5 cursor-pointer" onClick={changeBackground}>Change BG</button>
+
     </div>
   )
 }
