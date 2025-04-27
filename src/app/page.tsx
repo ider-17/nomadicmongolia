@@ -14,7 +14,7 @@ export default function Home() {
     if (currentBackground === 3) {
       setCurrentBackground(0)
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center transition-all duration-1000 ease-in-out" style={{ backgroundImage: `url('${backgrounds[currentBackground]}')` }}>
@@ -25,4 +25,4 @@ export default function Home() {
 
     </div>
   )
-}
+};
