@@ -17,12 +17,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover bg-center transition-all duration-1000 ease-in-out" style={{ backgroundImage: `url('${backgrounds[currentBackground]}')` }}>
+    <div>
+      <div className="min-h-screen flex items-center justify-center bg-cover bg-center transition-all duration-1000 ease-in-out" style={{ backgroundImage: `url('${backgrounds[currentBackground]}')` }}>
 
-      <Header />
+        <Header />
 
-      <button className="absolute bottom-5 right-5 cursor-pointer" onClick={changeBackground}>Change BG</button>
+        <button className="absolute bottom-5 right-5 cursor-pointer" onClick={changeBackground}>Change BG</button>
 
+      </div>
     </div>
   )
 };
