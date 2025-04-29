@@ -5,7 +5,7 @@ export const Header = () => {
         <div className="w-full fixed top-0 flex justify-between items-center p-10">
             <div>
                 <Link href="/">
-                    <img className="w-[200px] cursor-pointer" src="./nomadic_khusug_white_text.png" />
+                    <img className="w-[200px] cursor-pointer" src="./nomadic_khusug_white_text.webp" />
                 </Link>
             </div>
             <ul className="flex gap-10 [&>*]:text-white [&>*]:hover:underline [&>*]:hover:underline-offset-8 [&>*]:hover:decoration-gray-200 [&>*]:font-semibold [&>*]:cursor-pointer">

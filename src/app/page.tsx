@@ -7,7 +7,7 @@ export default function Home() {
 
   const [currentBackground, setCurrentBackground] = useState(0);
 
-  const backgrounds = ["/_ZAK4316.jpg", "/_BAY5051.jpg", "/_BAY1429.jpg", "/_BAY0058.jpg"];
+  const backgrounds = ["/_ZAK4316.webp", "/_BAY5051.webp", "/_BAY1429.webp", "/_BAY0058.webp"];
 
   const changeBackground = () => {
     setCurrentBackground(currentBackground + 1);
