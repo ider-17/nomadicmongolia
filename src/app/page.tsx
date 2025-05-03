@@ -1,30 +1,39 @@
-"use client";
-
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
 
-  const [currentBackground, setCurrentBackground] = useState(0);
-
-  const backgrounds = ["/_ZAK4316.webp", "/_BAY5051.webp", "/_BAY1429.webp", "/_BAY0058.webp"];
-
-  const changeBackground = () => {
-    setCurrentBackground(currentBackground + 1);
-    if (currentBackground === 3) {
-      setCurrentBackground(0)
-    }
-  };
-
   return (
-    <div>
-      <div className="min-h-screen flex items-center justify-center bg-cover bg-center transition-all duration-1000 ease-in-out" style={{ backgroundImage: `url('${backgrounds[currentBackground]}')` }}>
+    <div className="bg-white">
+
+      <section className="bg-white w-full h-screen flex justify-center px-[150px]">
 
         <Header />
 
-        <button className="absolute bottom-5 right-5 cursor-pointer" onClick={changeBackground}>Change BG</button>
+        <div className="w-full h-2/3 bg-cover bg-center transition-all duration-1000 ease-in-out rounded-2xl mt-[100px]" style={{ backgroundImage: `url("./_ZAK4316 copy.webp")` }}>
 
-      </div>
-    </div>
+        </div>
+
+      </section >
+
+      <section className="w-full h-fit text-black px-[150px] mb-6">
+        <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
+
+        <p className="text-center">Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
+          di esperienza nel settore turistico. Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
+          lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
+          sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
+          team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
+          <Link href="/aboutUs">
+            <button className="ml-3 border border-black py-1 px-2 rounded-2xl hover:bg-black hover:text-white cursor-pointer">See more</button>
+          </Link>
+        </p>
+
+      </section>
+
+      <Footer />
+
+    </div >
   )
 };
