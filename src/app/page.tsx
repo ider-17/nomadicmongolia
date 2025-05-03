@@ -11,7 +11,7 @@ export default function Home() {
 
         <Header />
 
-        <div className="w-full h-2/3 bg-cover bg-center transition-all duration-1000 ease-in-out rounded-2xl mt-[100px]" style={{ backgroundImage: `url("./_ZAK4316 copy.webp")` }}>
+        <div className="w-full h-2/3 bg-cover bg-center transition-all duration-1000 ease-in-out rounded-2xl mt-[80px]" style={{ backgroundImage: `url("./_ZAK4316 copy.webp")` }}>
 
         </div>
 
