@@ -7,11 +7,19 @@ export const Footer = () => {
             <div className="w-1/3">
                 <img className="w-[150px]" src="./logo-footer.webp" />
             </div>
+
             <div className="w-1/3 flex flex-col">
-                <p>Home</p>
-                <p>About Us</p>
-                <p>Tours</p>
+                <Link href="/">
+                    <p>Home</p>
+                </Link>
+                <Link href="/about">
+                    <p>About Us</p>
+                </Link>
+                <Link href="/tours">
+                    <p>Tours</p>
+                </Link>
             </div>
+
             <div className="w-1/3 flex flex-col gap-2">
                 <h6 className="font-semibold pl-2 mb-4">Contact us</h6>
 

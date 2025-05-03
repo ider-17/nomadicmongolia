@@ -25,7 +25,7 @@ export default function Home() {
           lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
           sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
           team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
-          <Link href="/aboutUs">
+          <Link href="/about">
             <button className="ml-3 border border-black py-1 px-2 rounded-2xl hover:bg-black hover:text-white cursor-pointer">See more</button>
           </Link>
         </p>

@@ -15,12 +15,12 @@ export const Header = () => {
                 {/* <Link href="/about"> */}
                 <li>CHI SIAMO</li> {/* WHO WE ARE */}
                 {/* </Link> */}
-                <li>TERMINE E CONDIZIONE</li> {/* TERMS N CONDITIONS */}
+                <li>GALLERIA</li> {/* GALLERY */}
                 <Link href="/tours">
                     <li>VIAGGI</li>
                 </Link> {/* TOURS */}
-                <li>CONTATTI</li> {/* CONTACT US */}
                 <li>PRENOTA</li> {/* BOOKING */}
+                <li>CONTATTI</li> {/* CONTACT US */}
             </ul>
         </div>
     )
