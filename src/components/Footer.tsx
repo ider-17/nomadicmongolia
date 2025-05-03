@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <div className="flex py-[80px] px-[150px] bg-black text-white">
             <div className="w-1/3">
-                <img className="w-[100px]" src="./nomadic-logo.webp" />
+                <img className="w-[150px]" src="./logo-footer.webp" />
             </div>
             <div className="w-1/3 flex flex-col">
                 <p>Home</p>
@@ -31,13 +31,13 @@ export const Footer = () => {
                 </div>
 
                 <div className="flex gap-4">
-                    <Link href="https://www.facebook.com/nomadickhusug/">
+                    <a href="https://www.facebook.com/nomadickhusug/" target="_blank" rel="noopener noreferrer">
                         <Facebook />
-                    </Link>
+                    </a>
 
-                    <Link href="https://www.instagram.com/nomadic_khusug/?locale=zh_CN">
+                    <a href="https://www.instagram.com/nomadic_khusug/?locale=zh_CN">
                         <Instagram />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>
