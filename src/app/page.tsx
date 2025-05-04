@@ -9,38 +9,38 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     id: 1,
-    title: "Нэгдүгээр слайд",
-    description: "Энэ бол таны анхны слайд. Та энд дурын текст, зураг болон дизайн оруулах боломжтой.",
+    title: "Taiga tour",
+    description: "avventura e sciamano",
     bgImage: "/_ZAK4316.webp",
-    btnText: "Дэлгэрэнгүй",
+    btnText: "Холбогдох",
   },
   {
     id: 2,
-    title: "Хоёрдугаар слайд",
-    description: "Энэ бол хоёр дахь слайд. Танд хэрэгтэй мэдээллээ энд оруулаарай.",
+    title: "OVERLAND DELLA MONGOLIA TOUR",
+    description: "Regione: centrale, meridionale, settentrionale Durazione: 20 giorni",
     bgImage: "/_BAY5051.webp",
     btnText: "Судлах",
   },
   {
     id: 3,
-    title: "Гуравдугаар слайд",
-    description: "Гурав дахь слайд нь таны өнгө төрх, мэдээлэл агуулж болно.",
-    bgImage: "/_BAY1429.webp",
+    title: "Centro della Mongolia",
+    description: "Regione: centrale Durazione: 7 giorni",
+    bgImage: "/_BAY0058.webp",
     btnText: "Үзэх",
   },
   {
     id: 4,
-    title: "Дөрөвдүгээр слайд",
-    description: "Дөрөвдэх слайдад тусгай мэдээлэл, танилцуулга оруулах боломжтой.",
-    bgImage: "/_BAY0058.webp",
+    title: "Deserto del Gobi",
+    description: "Regione: centrale, meridionale Durazione: 12 giorni",
+    bgImage: "/_BAY1429.webp",
     btnText: "Захиалах",
   },
   {
     id: 5,
-    title: "Тавдугаар слайд",
-    description: "Тав дахь слайд. Та энд холбоо барих мэдээлэл эсвэл дуусгалын мэдээлэл оруулж болно.",
-    bgImage: "/SED_8320.jpg",
-    btnText: "Холбогдох",
+    title: "STEPPE E GOBI",
+    description: "Regione: centrale, meridionale, settentrionale Durazione: 12 giorni",
+    bgImage: "/_BAY1429.webp",
+    btnText: "Дэлгэрэнгүй",
   },
 ];
 
@@ -119,9 +119,6 @@ export default function Home() {
 
         <Header />
 
-        {/* <div className="w-full h-2/3 bg-cover bg-center transition-all duration-1000 ease-in-out rounded-2xl mt-[90px]" style={{ backgroundImage: `url("./_ZAK4316 copy.webp")` }}>
-        </div> */}
-
         <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[90px]">
           {/* Slides container with transition */}
           <div
@@ -136,9 +133,9 @@ export default function Home() {
                 className="min-w-full flex items-end justify-center text-white bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.bgImage})` }}
               >
-                <div className="max-w-2xl mx-auto px-6 py-4 text-center mb-15">
+                <div className="max-w-5xl mx-auto px-6 py-4 text-center mb-15">
                   <h2 className="text-4xl font-bold mb-4 drop-shadow-md">{slide.title}</h2>
-                  <p className="text-lg mb-6">{slide.description}</p>
+                  <p className="text-lg mb-6 drop-shadow-md">{slide.description}</p>
                   <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
                     {slide.btnText}
                   </button>
