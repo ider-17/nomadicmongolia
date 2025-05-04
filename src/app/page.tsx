@@ -11,35 +11,35 @@ const slides = [
     id: 1,
     title: "Нэгдүгээр слайд",
     description: "Энэ бол таны анхны слайд. Та энд дурын текст, зураг болон дизайн оруулах боломжтой.",
-    bgImage: "./_ZAK4316.webp",
+    bgImage: "/_ZAK4316.webp",
     btnText: "Дэлгэрэнгүй",
   },
   {
     id: 2,
     title: "Хоёрдугаар слайд",
     description: "Энэ бол хоёр дахь слайд. Танд хэрэгтэй мэдээллээ энд оруулаарай.",
-    bgImage: "./_BAY5051.webp",
+    bgImage: "/_BAY5051.webp",
     btnText: "Судлах",
   },
   {
     id: 3,
     title: "Гуравдугаар слайд",
     description: "Гурав дахь слайд нь таны өнгө төрх, мэдээлэл агуулж болно.",
-    bgImage: "./_BAY1429.webp",
+    bgImage: "/_BAY1429.webp",
     btnText: "Үзэх",
   },
   {
     id: 4,
     title: "Дөрөвдүгээр слайд",
     description: "Дөрөвдэх слайдад тусгай мэдээлэл, танилцуулга оруулах боломжтой.",
-    bgImage: "./_BAY0058.webp",
+    bgImage: "/_BAY0058.webp",
     btnText: "Захиалах",
   },
   {
     id: 5,
     title: "Тавдугаар слайд",
     description: "Сүүлийн слайд. Та энд холбоо барих мэдээлэл эсвэл дуусгалын мэдээлэл оруулж болно.",
-    bgImage: "./SED_8320.jpg",
+    bgImage: "/SED_8320.jpg",
     btnText: "Холбогдох",
   },
 ];
@@ -62,31 +62,30 @@ export default function Home() {
     setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStartX(e.touches[0].clientX);
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEndX(e.changedTouches[0].clientX);
-    handleSwipe();
   };
 
-  const handleSwipe = useCallback(() => {
-    if (touchStartX - touchEndX > 50) {
-      nextSlide();
-    }
-
-    if (touchEndX - touchStartX > 50) {
-      prevSlide();
+  useEffect(() => {
+    if (touchStartX && touchEndX) {
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+      } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+      }
     }
   }, [touchStartX, touchEndX]);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
         prevSlide();
       } else if (e.key === 'ArrowRight') {
@@ -104,11 +103,13 @@ export default function Home() {
   // Автоматаар шилжүүлэх код (хэрэгтэй бол идэвхжүүлнэ)
   useEffect(() => {
     const intervalId = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      );
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  }, []);
 
   return (
     <div className="bg-white">
@@ -163,9 +164,9 @@ export default function Home() {
 
           {/* Indicators */}
           <div className="absolute bottom-[30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((_, index) => (
+            {slides.map((slide, index) => (
               <button
-                key={index}
+                key={slide.id}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index ? 'bg-white scale-125' : 'bg-white/50'
                   }`}
