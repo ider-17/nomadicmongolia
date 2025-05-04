@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const slides = [
   {
@@ -38,7 +38,7 @@ const slides = [
   {
     id: 5,
     title: "Тавдугаар слайд",
-    description: "Сүүлийн слайд. Та энд холбоо барих мэдээлэл эсвэл дуусгалын мэдээлэл оруулж болно.",
+    description: "Тав дахь слайд. Та энд холбоо барих мэдээлэл эсвэл дуусгалын мэдээлэл оруулж болно.",
     bgImage: "/SED_8320.jpg",
     btnText: "Холбогдох",
   },
@@ -101,15 +101,16 @@ export default function Home() {
   }, [currentIndex]);
 
   // Автоматаар шилжүүлэх код (хэрэгтэй бол идэвхжүүлнэ)
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
 
-    return () => clearInterval(intervalId);
-  }, []);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentIndex((prevIndex) =>
+  //       prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+  //     );
+  //   }, 5000);
+
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
   return (
     <div className="bg-white">
@@ -121,7 +122,7 @@ export default function Home() {
         {/* <div className="w-full h-2/3 bg-cover bg-center transition-all duration-1000 ease-in-out rounded-2xl mt-[90px]" style={{ backgroundImage: `url("./_ZAK4316 copy.webp")` }}>
         </div> */}
 
-        <div className="relative max-w-6xl mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[90px]">
+        <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[90px]">
           {/* Slides container with transition */}
           <div
             className="h-full flex transition-transform duration-500 ease-in-out"

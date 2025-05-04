@@ -3,25 +3,21 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <div className="flex py-[80px] px-[150px] bg-black text-white">
+        <footer className="flex py-[80px] px-[150px] bg-black text-white">
             <div className="w-1/3">
-                <img className="w-[150px]" src="./logo-footer.webp" />
+                <Link href="/">
+                    <img className="w-[150px]" src="/logo-footer.webp" alt="Logo" />
+                </Link>
             </div>
 
-            <div className="w-1/3 flex flex-col">
-                <Link href="/">
-                    <p>Home</p>
-                </Link>
-                <Link href="/about">
-                    <p>About Us</p>
-                </Link>
-                <Link href="/tours">
-                    <p>Tours</p>
-                </Link>
+            <div className="w-1/3 flex flex-col [&>*]:hover:underline [&>*]:hover:underline-offset-4">
+                <Link href="/" className="w-fit">Home</Link>
+                <Link href="/about" className="w-fit">About us</Link>
+                <Link href="/tours" className="w-fit">Tours</Link>
             </div>
 
             <div className="w-1/3 flex flex-col gap-2">
-                <h6 className="font-semibold pl-2 mb-4">Contact us</h6>
+                <h6 className="font-semibold pl-2">Contact us</h6>
 
                 <div className="flex gap-2">
                     <p>Mobile:</p>
@@ -43,11 +39,11 @@ export const Footer = () => {
                         <Facebook />
                     </a>
 
-                    <a href="https://www.instagram.com/nomadic_khusug/?locale=zh_CN">
+                    <a href="https://www.instagram.com/nomadic_khusug/?locale=zh_CN" target="_blank" rel="noopener noreferrer">
                         <Instagram />
                     </a>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }

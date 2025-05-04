@@ -44,19 +44,24 @@ export const Header = () => {
                     <Link href="/">HOME</Link>
                 </li>
                 <li>
-                    <Link href="/whoweare">CHI SIAMO</Link> {/* WHO WE ARE */}
+                    {/* WHO WE ARE */}
+                    <Link href="/whoweare">CHI SIAMO</Link>
                 </li>
                 <li>
-                    <Link href="/gallery">GALLERIA</Link> {/* GALLERY */}
+                    {/* GALLERY */}
+                    <Link href="/gallery">GALLERIA</Link>
                 </li>
                 <li>
-                    <Link href="/tours">VIAGGI</Link> {/* TOURS */}
+                    {/* TOURS */}
+                    <Link href="/tours">VIAGGI</Link>
                 </li>
                 <li>
-                    <Link href="/booking">PRENOTA</Link> {/* BOOKING */}
+                    {/* BOOKING */}
+                    <Link href="/booking">PRENOTA</Link>
                 </li>
                 <li>
-                    <Link href="/contacts">CONTATTI</Link> {/* CONTACT US */}
+                    {/* CONTACT US */}
+                    <Link href="/contacts">CONTATTI</Link>
                 </li>
             </ul>
         </header>
