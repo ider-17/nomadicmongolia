@@ -12,7 +12,7 @@ const slides = [
     title: "Taiga tour",
     description: "avventura e sciamano",
     bgImage: "/_ZAK4316.webp",
-    btnText: "Холбогдох",
+    btnText: "view",
   },
   {
     id: 2,
