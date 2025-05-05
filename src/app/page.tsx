@@ -19,7 +19,7 @@ const slides = [
     title: "OVERLAND DELLA MONGOLIA TOUR",
     description: "Regione: centrale, meridionale, settentrionale Durazione: 20 giorni",
     bgImage: "/_BAY5051.webp",
-    btnText: "Судлах",
+    btnText: "view",
   },
   {
     id: 3,
