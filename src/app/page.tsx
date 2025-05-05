@@ -12,14 +12,14 @@ const slides = [
     title: "Taiga tour",
     description: "avventura e sciamano",
     bgImage: "/_ZAK4316.webp",
-    btnText: "view",
+    btnText: "View more",
   },
   {
     id: 2,
     title: "OVERLAND DELLA MONGOLIA TOUR",
     description: "Regione: centrale, meridionale, settentrionale Durazione: 20 giorni",
     bgImage: "/_BAY5051.webp",
-    btnText: "view",
+    btnText: "View",
   },
   {
     id: 3,
