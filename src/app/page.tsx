@@ -136,9 +136,11 @@ export default function Home() {
                 <div className="max-w-5xl mx-auto px-6 py-4 text-center mb-15">
                   <h2 className="text-4xl font-bold mb-4 drop-shadow-md">{slide.title}</h2>
                   <p className="text-lg mb-6 drop-shadow-md">{slide.description}</p>
-                  <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                    {slide.btnText}
-                  </button>
+                  <Link href="/tours">
+                    <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 hover:bg-gray-200 cursor-pointer">
+                      {slide.btnText}
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -148,13 +150,13 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end justify-center gap-30 p-4">
             <button
               onClick={prevSlide}
-              className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300"
+              className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300 cursor-pointer"
             >
               <ChevronLeft size={24} className="text-gray-800" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300"
+              className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300 cursor-pointer"
             >
               <ChevronRight size={24} className="text-gray-800" />
             </button>
@@ -184,7 +186,7 @@ export default function Home() {
           sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
           team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
           <Link href="/about">
-            <button className="ml-3 border border-black py-1 px-2 rounded-2xl hover:bg-black hover:text-white cursor-pointer">See more</button>
+            <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">See more</button>
           </Link>
         </p>
 
