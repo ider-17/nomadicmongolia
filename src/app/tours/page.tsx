@@ -5,6 +5,8 @@ export default function ToursPage() {
         <div className="bg-white h-screen">
             <Header />
 
+            {/* aylaluud hiih niit 7 aylal baigaa */}
+
         </div>
     )
-}
+};
