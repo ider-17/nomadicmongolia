@@ -119,7 +119,7 @@ export default function Home() {
 
         <Header />
 
-        <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[90px]">
+        <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[90px] hover:-translate-y-1 transition-all duration-300 hover:scale-105">
           {/* Slides container with transition */}
           <div
             className="h-full flex transition-transform duration-500 ease-in-out"
