@@ -177,10 +177,8 @@ export default function Home() {
 
       </section >
 
-      <section className="w-full h-fit text-black px-[150px] mb-6 flex items-center">
-        <div className="w-1/2 h-[400px]" style={{backgroundImage: `url("/SED_8320.jpg")`}}>
-
-        </div>
+      <section className="w-full h-fit text-black px-[150px] mb-6 flex gap-4 items-center">
+        <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl" style={{ backgroundImage: `url("/SED_8320.jpg")` }}></div>
 
         <div className="w-1/2">
           <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
