@@ -119,7 +119,7 @@ export default function Home() {
 
         <Header />
 
-        <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[90px] hover:-translate-y-1 transition-all duration-300 hover:scale-105">
+        <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[8%] hover:-translate-y-1 transition-all duration-300 hover:scale-105">
           {/* Slides container with transition */}
           <div
             className="h-full flex transition-transform duration-500 ease-in-out"
@@ -178,7 +178,7 @@ export default function Home() {
       </section >
 
       <section className="w-full h-fit text-black px-[150px] mb-6 flex gap-4 items-center">
-        <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl" style={{ backgroundImage: `url("/SED_8320.jpg")` }}></div>
+        <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/SED_8320.jpg")` }}></div>
 
         <div className="w-1/2">
           <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
@@ -201,5 +201,3 @@ export default function Home() {
     </div >
   )
 };
-
-// jksahdfkjhsadf
