@@ -137,7 +137,7 @@ export default function Home() {
                   <h2 className="text-4xl font-bold mb-4 drop-shadow-md">{slide.title}</h2>
                   <p className="text-lg mb-6 drop-shadow-md">{slide.description}</p>
                   <Link href="/tours">
-                    <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 hover:bg-gray-200 cursor-pointer">
+                    <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 hover:bg-gray-100 cursor-pointer">
                       {slide.btnText}
                     </button>
                   </Link>
@@ -177,18 +177,24 @@ export default function Home() {
 
       </section >
 
-      <section className="w-full h-fit text-black px-[150px] mb-6">
-        <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
+      <section className="w-full h-fit text-black px-[150px] mb-6 flex items-center">
+        <div className="w-1/2 h-[400px]" style={{backgroundImage: `url("/SED_8320.jpg")`}}>
 
-        <p className="text-center">Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
-          di esperienza nel settore turistico. Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
-          lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
-          sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
-          team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
-          <Link href="/about">
-            <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">See more</button>
-          </Link>
-        </p>
+        </div>
+
+        <div className="w-1/2">
+          <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
+
+          <p className="text-center">Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
+            di esperienza nel settore turistico. Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
+            lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
+            sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
+            team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
+            <Link href="/about">
+              <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">See more</button>
+            </Link>
+          </p>
+        </div>
 
       </section>
 
