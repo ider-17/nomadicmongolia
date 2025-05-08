@@ -1,11 +1,9 @@
 import { Header } from "@/components/Header";
 
-export default function AboutUsPage() {
+export default function AboutPage() {
     return (
         <div className="bg-white h-screen">
             <Header />
-
-            {/* kfaslkdjf */}
 
         </div>
     )
