@@ -45,7 +45,7 @@ export const Header = () => {
                 </li>
                 <li>
                     {/* WHO WE ARE */}
-                    <Link href="/whoweare">CHI SIAMO</Link>
+                    <Link href="/about">CHI SIAMO</Link>
                 </li>
                 <li>
                     {/* GALLERY */}
