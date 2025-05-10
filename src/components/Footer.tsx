@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <footer className="flex py-[80px] px-[150px] bg-black text-white">
+        <footer className="flex py-[50px] px-[150px] bg-black text-white">
             <div className="w-1/3">
                 <Link href="/">
                     <img className="w-[150px]" src="/logo-footer.webp" alt="Logo" />

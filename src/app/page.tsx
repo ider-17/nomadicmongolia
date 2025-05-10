@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 2,
-    title: "OVERLAND DELLA MONGOLIA TOUR",
+    title: "Overland della Mongolia tour",
     description: "Regione: centrale, meridionale, settentrionale Durazione: 20 giorni",
     bgImage: "/_BAY5051.webp",
     btnText: "View",
@@ -37,9 +37,30 @@ const slides = [
   },
   {
     id: 5,
-    title: "STEPPE E GOBI",
+    title: "Steppe e Gobi",
     description: "Regione: centrale, meridionale, settentrionale Durazione: 12 giorni",
     bgImage: "/_BAY1429.webp",
+    btnText: "Дэлгэрэнгүй",
+  },
+  {
+    id: 6,
+    title: "Il deserto del Gobi e il festival di Naadam 2025",
+    description: "Durazione: 13 giorni Dal 6 luglio al 18 luglio 2025",
+    bgImage: "/DSC_0124.JPG",
+    btnText: "Дэлгэрэнгүй",
+  },
+  {
+    id: 7,
+    title: "Trekking Tour in Mongolia",
+    description: "Durazione: 16 giorni Dal 4 agosto al 19 agosto 2025",
+    bgImage: "/pexels-julia-volk-5110958.jpg",
+    btnText: "Дэлгэрэнгүй",
+  },
+  {
+    id: 8,
+    title: "Birdwatching",
+    description: "Durazione: 12 notti e 13 giorni Dal 31 maggio al 12 giugno 2025",
+    bgImage: "/mongolianlove.webp",
     btnText: "Дэлгэрэнгүй",
   },
 ];
@@ -102,22 +123,22 @@ export default function Home() {
 
   // Автоматаар шилжүүлэх код (хэрэгтэй бол идэвхжүүлнэ)
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentIndex((prevIndex) =>
-  //       prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-  //     );
-  //   }, 5000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
 
-  //   return () => clearInterval(intervalId);
-  // }, []);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="bg-white">
 
-      <section className="bg-white w-full h-[780px] flex justify-center px-[150px]">
+      <Header />
 
-        <Header />
+      <section className="bg-white w-full h-[780px] flex justify-center px-[150px]">
 
         <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl mt-[8%] hover:-translate-y-1 transition-all duration-300 hover:scale-105">
           {/* Slides container with transition */}
@@ -147,7 +168,7 @@ export default function Home() {
           </div>
 
           {/* Navigation buttons */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end justify-center gap-30 p-4">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end justify-center gap-45 p-4">
             <button
               onClick={prevSlide}
               className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300 cursor-pointer"
@@ -177,21 +198,24 @@ export default function Home() {
 
       </section >
 
-      <section className="w-full h-fit text-black px-[150px] mb-6 flex gap-4 items-center">
-        <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/SED_8320.jpg")` }}></div>
+      <section className="w-full h-fit text-black px-[150px] mb-20">
+        <h1 className="text-center font-bold text-3xl my-5 mb-10">CHI SIAMO?</h1>
+        <div className="flex gap-4 items-center">
+          <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/SED_8320.jpg")` }}></div>
 
-        <div className="w-1/2">
-          <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
+          <div className="w-1/2">
+            <h1 className="text-2xl font-bold text-center mb-6">Grazie per aver visitato il nostro sito!</h1>
 
-          <p className="text-center">Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
-            di esperienza nel settore turistico. Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
-            lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
-            sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
-            team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
-            <Link href="/about">
-              <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">See more</button>
-            </Link>
-          </p>
+            <p className="text-center">Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
+              di esperienza nel settore turistico. Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
+              lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
+              sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
+              team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
+              <Link href="/about">
+                <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">See more</button>
+              </Link>
+            </p>
+          </div>
         </div>
 
       </section>
