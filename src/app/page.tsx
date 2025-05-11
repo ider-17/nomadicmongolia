@@ -138,6 +138,8 @@ export default function Home() {
 
       <Header />
 
+      {/* section 1 */}
+
       <section className="bg-white w-full h-[780px] flex justify-center px-[150px] pt-[90px]">
 
         <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 transition-all duration-300 hover:scale-105">
