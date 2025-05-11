@@ -82,5 +82,3 @@ export default function AboutPage() {
         </div >
     )
 };
-
-// mockdata baskdjflkasj alskjdflkajs fjalksdjflk ajfdkjsajf laksjdlfkjasdkf aksdjf lajsdfkljasdlkfj lsakdjljsdkljflkaj sdlkfjal skfljaslkd jlkasdjflkajsd ljf asld jlaksjd lkjaslkd j
