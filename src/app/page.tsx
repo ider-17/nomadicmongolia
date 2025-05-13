@@ -224,6 +224,8 @@ export default function Home() {
 
       </section>
 
+      {/* section 3 */}
+
       <section className="w-full text-black px-[150px] mb-20">
 
         <div className="flex gap-4 items-center">
