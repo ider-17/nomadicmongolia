@@ -200,6 +200,8 @@ export default function Home() {
 
       </section >
 
+      {/* section 2 */}
+
       <section className="w-full h-fit text-black px-[150px] mb-20">
         <h1 className="text-center font-bold text-4xl my-5 mb-10">Grazie per aver visitato il nostro sito!</h1>
         <div className="flex gap-4 items-center">
