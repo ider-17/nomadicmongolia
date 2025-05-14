@@ -12,13 +12,3 @@ export default function ContactPage() {
         </div>
     )
 };
-
-// jdsiofasjk asldkjf asdfklj
-// asdlkfjaklsd
-// asdkljfkals
-// alsdkjflak
-// kljdaksf
-// asldklfjaskld
-// klsdajflkas
-// adsfklajsdf
-// laksdjflkas
