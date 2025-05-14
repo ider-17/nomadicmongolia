@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 export default function ContactPage() {
     return (
         <div className="bg-white h-screen">
+
             <Header />
 
             <Footer />
@@ -11,3 +12,13 @@ export default function ContactPage() {
         </div>
     )
 };
+
+// jdsiofasjk asldkjf asdfklj
+// asdlkfjaklsd
+// asdkljfkals
+// alsdkjflak
+// kljdaksf
+// asldklfjaskld
+// klsdajflkas
+// adsfklajsdf
+// laksdjflkas
