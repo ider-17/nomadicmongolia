@@ -344,6 +344,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* sadjflkajsdlkfjalsjdf
+      asdfjlkasjdflk
+      asdklfjalskjdf
+      asdfaslkdjfals
+      askdlfjasjdf
+      asdlkfjalskdf */}
+
       <Footer />
 
     </div >
