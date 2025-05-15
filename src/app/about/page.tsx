@@ -6,7 +6,7 @@ export default function AboutPage() {
     const termsData = [
         {
             title: "YOUR HOLIDAY CONTRACT",
-            content: "When you book a tour or other travel arrangements our contract with you takes effect when we send you a written Booking Confirmation / Invoice by email.Once the contract is made we are responsible for providing you with the tour you have booked and you are responsible to pay us for it, in each case subject to terms and conditions."
+            content: "When you book a tour or other travel arrangements our contract with you takes effect when we send you a written Booking Confirmation / Invoice by email.Once the contract is made we are responsible for providing you with the tour you have booked and you are responsible to pay us for it, in each case subject to terms and conditions."
         },
         {
             title: "PLEASE NOTE",

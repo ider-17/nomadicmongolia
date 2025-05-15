@@ -1,0 +1,80 @@
+// hel soligch buhii header - chatgpt-n hiij ogson kod
+
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+import en from './locales/en.json';
+import it from './locales/it.json';
+
+i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        resources: {
+            en: { translation: en },
+            it: { translation: it },
+        },
+        fallbackLng: 'en',
+        interpolation: { escapeValue: false },
+        detection: {
+            order: ['localStorage', 'navigator'],
+            caches: ['localStorage'],
+        },
+    });
+
+export default i18n;
+
+// Header component дотор хэл солигч товч
+
+import { useTranslation } from 'react-i18next';
+
+export function Header() {
+    const { i18n } = useTranslation();
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
+
+    return (
+        <header className= "flex justify-between p-4 bg-gray-100" >
+        <h1 className="text-xl font-bold" > My Website </h1>
+
+            < div className = "space-x-2" >
+                <button onClick={ () => changeLanguage('en') } className = "px-2 py-1 border" > EN </button>
+                    < button onClick = {() => changeLanguage('it')
+} className = "px-2 py-1 border" > IT </>
+    </div>
+    </header>
+  );
+}
+
+// AboutPage дотор орчуулга ашиглах:
+
+import { useTranslation } from 'react-i18next';
+
+export default function AboutPage() {
+    const { t } = useTranslation();
+
+    return (
+        <div>
+        <h2>{ t('holiday_contract') } </h2>
+        < p > { t('holiday_contract_description') } </>
+        </div>
+    );
+}
+
+// en.json ба it.json орчуулгын файл
+
+// en.json
+{
+    "holiday_contract": "YOUR HOLIDAY CONTRACT",
+        "holiday_contract_description": "When you book a tour..."
+}
+
+//   it.json
+{
+    "holiday_contract": "IL TUO CONTRATTO DI VACANZA",
+        "holiday_contract_description": "Quando prenoti un tour..."
+}
+
