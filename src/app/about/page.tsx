@@ -8,21 +8,25 @@ export default function AboutPage() {
             <Header />
 
             <section className="bg-white w-full flex px-[150px] pt-[90px]">
-                <div className="w-[20%] bg-gray-100 rounded-2xl p-6">
-                    <p></p>
-                    <p></p>
-                    <p>Termine e condizione</p>
+                <div className="w-full lg:w-[20%] bg-gray-100 rounded-2xl p-6">
+                    <ul className="space-y-2 text-gray-800 font-medium">
+                        <li>📌 Introduction</li>
+                        <li>📜 Terms and Conditions</li>
+                        <li>💳 Payments</li>
+                        <li>📅 Cancellations</li>
+                    </ul>
                 </div>
+
                 <div className="w-full flex flex-col gap-5 p-6">
                     <div>
-                        <h6 className="text-2xl font-semibold">YOUR HOLIDAY CONTRACT</h6>
+                        <h2 className="text-2xl font-semibold">YOUR HOLIDAY CONTRACT</h2>
                         <p>When you book a tour or other travel arrangements our contract with you takes effect when we send you a written
                             Booking Confirmation / Invoice by email. Once the contract is made we are responsible for providing you with
                             the tour you have booked and you are responsible to pay us for it, in each case subject to terms and conditions.
                         </p>
                     </div>
                     <div>
-                        <h6 className="text-2xl font-semibold">PLEASE NOTE</h6>
+                        <h2 className="text-2xl font-semibold">PLEASE NOTE</h2>
                         <p>It is important to check carefully the Booking Confirmation and the Itinerary of your tour when you receive it that
                             all the details are exactly as you requested. Our responsibility is to provide you with the services you have booked
                             as described in the itinerary and as confirmed to you. If your group consists of two or more people traveling
@@ -34,13 +38,13 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div>
-                        <h6 className="text-2xl font-semibold">PRICES</h6>
+                        <h2 className="text-2xl font-semibold">PRICES</h2>
                         <p>Once the booking is confirmed, the price of your tour is guaranteed and will not be subject to any changes or
                             surcharges unless you request to add extra services at a later date.
                         </p>
                     </div>
                     <div>
-                        <h6 className="text-2xl font-semibold">PAYMENTS</h6>
+                        <h2 className="text-2xl font-semibold">PAYMENTS</h2>
                         <p>30% deposit payment is payable at the time of the booking, and the balance is payable 30 days prior to departure.
                             The balance of 70% is payable 30 days prior to tour start date. If you book last minute, i.e. within 30 days from
                             the tour start date, full payment is required at the time of the booking. Payments can be made by credit card in
@@ -49,7 +53,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div>
-                        <h6 className="text-2xl font-semibold">SPECIAL REQUESTS</h6>
+                        <h2 className="text-2xl font-semibold">SPECIAL REQUESTS</h2>
                         <p>If you have any special request that does not form part of the tour as described in the itinerary /for example,
                             dietary requirements or room location/ please let us know. We will always aim to meet any special requests, but
                             cannot guarantee to do so. In no circumstances will such requests be accepted by us to form part of our contractual
@@ -57,7 +61,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div>
-                        <h6 className="text-2xl font-semibold">CHANGES</h6>
+                        <h2 className="text-2xl font-semibold">CHANGES</h2>
                         <p>If you wish to change any of the details of your booking after we have sent you the Booking Confirmation, you
                             must let us know the required changes by email. Changes such as travel dates or adding extra services may incur
                             charges and we will inform you if it’s the case and of the charge amount. All changes are subject to availability
@@ -66,7 +70,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div>
-                        <h6 className="text-2xl font-semibold">CANCELLATIONS</h6>
+                        <h2 className="text-2xl font-semibold">CANCELLATIONS</h2>
                         <p>If you wish to cancel the trip after the booking has been confirmed, you must do so in writing by email and the
                             following charges will apply.
                             1. Cancellation within 30-60 days before the tour starts: 30% of the total tour price.
