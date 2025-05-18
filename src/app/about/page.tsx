@@ -94,7 +94,7 @@ export default function AboutPage() {
                             <div className="w-full mt-4">
                                 <div className="flex gap-2 justify-center [&>*]:text-3xl [&>*]:font-bold">
                                     <h2>Perchè Scegliere </h2>
-                                    <p className="text-[#327236]">Noi</p>
+                                    <p className="text-[#327236]">Noi ?</p>
                                 </div>
 
                                 <Hexagon />
