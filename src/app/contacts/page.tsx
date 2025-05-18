@@ -20,7 +20,15 @@ export default function ContactPage() {
                     tour@nomadicmongolia.com
                 </div>
 
-                <div className="w-2/5"></div>
+                <div className="w-2/5">
+                {/* husnegst 
+                LastName
+                Name
+                Email
+                Phone
+                Message
+                Submit */}
+                </div>
             </section>
 
             <Footer />
