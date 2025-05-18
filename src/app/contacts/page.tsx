@@ -7,58 +7,10 @@ export default function ContactPage() {
 
             <Header />
 
+            <section className="w-full min-h-screen"></section>
+
             <Footer />
 
         </div>
     )
 };
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"
-// git log --pretty=format:"%h %an %ae %ad %s"

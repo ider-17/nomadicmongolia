@@ -7,6 +7,8 @@ export default function ToursPage() {
 
             <Header />
 
+            <section className="w-full min-h-screen"></section>
+
             <Footer />
 
         </div>
