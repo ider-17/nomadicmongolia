@@ -1,7 +1,10 @@
+import { Check } from "lucide-react";
+
 const Hexagon = () => {
     return (
         <div className="relative w-full h-[500px]">
-            <div className="absolute top-[30px] left-[250px] w-[250px] h-[220px] hexagon bg-[#e4e8f0] mx-auto flex justify-center items-center">
+            <div className="absolute top-[30px] left-[250px] w-[250px] h-[220px] hexagon bg-[#e4e8f0] mx-auto flex flex-col justify-center items-center">
+                <Check size={50} color="#2c2b2b" />
                 <p>Siamo responsabili</p>
             </div>
             <div className="absolute top-[30px] right-[250px] w-[250px] h-[220px] hexagon bg-[#e4e8f0] mx-auto flex justify-center items-center">

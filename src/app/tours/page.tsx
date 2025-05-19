@@ -133,7 +133,7 @@ export default function ToursPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="border-t border-gray-300 pt-2 flex flex-col gap-2">
+                                <div className="border-t border-gray-300 pt-2 flex flex-col gap-4">
                                     <div>
                                         <h2 className="font-semibold">{tour.desTitle1}</h2>
                                         <p className="text-justify">{tour.describtion1}</p>
