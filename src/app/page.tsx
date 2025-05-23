@@ -261,7 +261,7 @@ export default function Home() {
                 fatiscenti appartamenti di epoca sovietica e moderna. Recentemente, la città ha goduto di un
                 rinnovamento, con la nascita di molti caffè, ristoranti, negozi alla moda e un monumento ai
                 Beatles, e, stranamente, uno dei migliori negozi LEGO fuori della Danimarca. Ulaanbaatar
-                è ricca di monasteri, musei, mercati e mille altre sorprese.
+                è ricca di monasteri, musei, mercati e mille altre sorprese. Tutto intorno la natura più sacra
                 {/* end oguulber dutuu */}
               </p>
             </div>

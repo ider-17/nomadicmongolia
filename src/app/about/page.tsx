@@ -35,7 +35,10 @@ export default function AboutPage() {
         },
         {
             title: "CANCELLATIONS",
-            content: "If you wish to cancel the trip after the booking has been confirmed, you must do so in writing by email and the following charges will apply. 1. Cancellation within 30-60 days before the tour starts: 30 % of the total tour price. 2. Cancellation within 29-10 days before the tour starts: 50 % of the total tour price. 3. Cancellation within 9 days or no show before the tour starts: 100 % of the total tour price."
+            content: "If you wish to cancel the trip after the booking has been confirmed, you must do so in writing by email and the following charges will apply.",
+            content2: " 1. Cancellation within 30-60 days before the tour starts: 30 % of the total tour price.",
+            content3: "2. Cancellation within 29-10 days before the tour starts: 50 % of the total tour price.",
+            content4: "3. Cancellation within 9 days or no show before the tour starts: 100 % of the total tour price."
         },
     ];
 
@@ -106,6 +109,9 @@ export default function AboutPage() {
                         <div key={index}>
                             <h2 className="text-2xl font-semibold">{item.title}</h2>
                             <p>{item.content}</p>
+                            {item.content2 && <p>{item.content2}</p>}
+                            {item.content3 && <p>{item.content3}</p>}
+                            {item.content4 && <p>{item.content4}</p>}
                         </div>
                     ))}
                 </div>
