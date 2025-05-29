@@ -11,56 +11,56 @@ const slides = [
     id: 1,
     title: "Taiga tour",
     description: "avventura e sciamano",
-    bgImage: "/_ZAK4316.webp",
+    bgImage: "/assets/_ZAK4316.webp",
     btnText: "Scopri di più",
   },
   {
     id: 2,
     title: "Overland della Mongolia tour",
     description: "Regione: centrale, meridionale, settentrionale Durazione: 20 giorni",
-    bgImage: "/_BAY5051.webp",
+    bgImage: "/assets/_BAY5051.webp",
     btnText: "Scopri di più",
   },
   {
     id: 3,
     title: "Centro della Mongolia",
     description: "Regione: centrale Durazione: 7 giorni",
-    bgImage: "/_BAY0058.webp",
+    bgImage: "/assets/_BAY0058.webp",
     btnText: "Scopri di più",
   },
   {
     id: 4,
     title: "Deserto del Gobi",
     description: "Regione: centrale, meridionale Durazione: 12 giorni",
-    bgImage: "/_BAY1429.webp",
+    bgImage: "/assets/_BAY1429.webp",
     btnText: "Scopri di più",
   },
   {
     id: 5,
     title: "Steppe e Gobi",
     description: "Regione: centrale, meridionale, settentrionale Durazione: 12 giorni",
-    bgImage: "/_BAY1429.webp",
+    bgImage: "/assets/_BAY1429.webp",
     btnText: "Scopri di più",
   },
   {
     id: 6,
     title: "Il deserto del Gobi e il festival di Naadam 2025",
     description: "Durazione: 13 giorni Dal 6 luglio al 18 luglio 2025",
-    bgImage: "/DSC_0124.JPG",
+    bgImage: "/assets/DSC_0124.JPG",
     btnText: "Scopri di più",
   },
   {
     id: 7,
     title: "Trekking Tour in Mongolia",
     description: "Durazione: 16 giorni Dal 4 agosto al 19 agosto 2025",
-    bgImage: "/pexels-julia-volk-5110958.jpg",
+    bgImage: "/assets/pexels-julia-volk-5110958.jpg",
     btnText: "Scopri di più",
   },
   {
     id: 8,
     title: "Birdwatching",
     description: "Durazione: 12 notti e 13 giorni Dal 31 maggio al 12 giugno 2025",
-    bgImage: "/mongolianlove.webp",
+    bgImage: "/assets/mongolianlove.webp",
     btnText: "Scopri di più",
   },
 ];
@@ -205,7 +205,7 @@ export default function Home() {
       <section className="w-full h-fit text-black px-[150px] mb-20">
         <h1 className="text-center font-bold text-4xl my-5 mb-10">Grazie per aver visitato il nostro sito!</h1>
         <div className="flex gap-4 items-center">
-          <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/SED_8320.jpg")` }}></div>
+          <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/SED_8320.jpg")` }}></div>
 
           <div className="w-1/2">
             <h1 className="text-3xl font-bold text-center mb-6">CHI SIAMO?</h1>
@@ -243,7 +243,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/map.webp")` }}></div>
+            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/map.webp")` }}></div>
 
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function Home() {
         <div className="w-full text-black px-[150px] mb-20">
 
           <div className="flex gap-4 items-center">
-            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/DSC_0069.JPG")` }}></div>
+            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/DSC_0069.JPG")` }}></div>
 
             <div className="w-1/2">
               <h1 className="text-3xl font-bold text-center mb-6">ULAANBAATOR</h1>
@@ -285,7 +285,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/_BAY0058.webp")` }}></div>
+            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/_BAY0058.webp")` }}></div>
 
           </div>
         </div>
@@ -293,7 +293,7 @@ export default function Home() {
         <div className="w-full text-black px-[150px] mb-20">
 
           <div className="flex gap-4 items-center">
-            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/pexels-lazarevkirill-8532283.jpg")` }}></div>
+            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/pexels-lazarevkirill-8532283.jpg")` }}></div>
 
             <div className="w-1/2">
               <h1 className="text-3xl font-bold text-center mb-6">NATURA</h1>
@@ -328,7 +328,7 @@ export default function Home() {
                 panni di feltro e
               </p>
             </div>
-            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/pexels-lazarevkirill-8532283.jpg")` }}></div>
+            <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/pexels-lazarevkirill-8532283.jpg")` }}></div>
 
           </div>
           <p className="text-lg text-justify">teli di cotone bianco incerati (è questa un’usanza moderna).Gli spazi all’interno
