@@ -31,7 +31,7 @@ export const Header = () => {
             <div>
                 <Link href="/">
                     <Image
-                        src="/Nomadic khusug 7-2.jpg"
+                        src="/assets/header-logo.webp"
                         alt="Nomadic Logo"
                         width={200}
                         height={60}
