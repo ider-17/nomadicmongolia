@@ -6,9 +6,9 @@ import { postType } from './postType'
 import { authorType } from './authorType'
 import aboutSection from './aboutSection'
 import slideCarousel from './slideCarousel'
-import aboutContentBlock from './aboutContentBlock'
-import aboutPage from './aboutPage'
+import tourSection from './tourSection'
+import tourPage from './tourPage'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType, aboutSection, slideCarousel, aboutContentBlock, aboutPage],
+  types: [blockContentType, categoryType, postType, authorType, aboutSection, slideCarousel, tourSection, tourPage]
 }

@@ -6,7 +6,7 @@ export const Footer = () => {
         <footer className="flex py-[50px] px-[150px] bg-black text-white">
             <div className="w-1/3">
                 <Link href="/">
-                    <img className="w-[150px]" src="/logo-footer.webp" alt="Logo" />
+                    <img className="w-[150px]" src="/assets/logo-footer.webp" alt="Footer Logo" />
                 </Link>
             </div>
 

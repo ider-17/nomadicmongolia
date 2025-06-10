@@ -1,5 +1,3 @@
-// sanity/schemas/aboutSection.ts
-
 export default {
     name: 'aboutSection',
     title: 'About Section',

@@ -25,19 +25,18 @@ export async function getSlides() {
   return await client.fetch(query)
 }
 
-export async function getAboutPage() {
-  return await client.fetch(`*[_type == "aboutPage"][0]{
+export async function getTourData() {
+  const query = `*[_type == "tourPage"][0]{
     title,
-    sections[]->{
+    sections[]{
       title,
-      description,
-      image {
-        asset->{
-          url
-        }
+      content,
+      image{
+        asset->{url}
       },
-      imagePosition,
-      order
+      imagePosition
     }
-  }`)
+  }`
+
+  return await client.fetch(query)
 }
