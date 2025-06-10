@@ -1,138 +1,14 @@
-"use client";
-
-import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import AboutSection from "@/components/AboutSection";
+import Carousel from "@/components/Carousel";
+import { getAboutPage, getSlides } from "@/sanity/lib/queries";
 
-const slides = [
-  {
-    id: 1,
-    title: "Taiga tour",
-    description: "avventura e sciamano",
-    bgImage: "/assets/_ZAK4316.webp",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 2,
-    title: "Overland della Mongolia tour",
-    description: "Regione: centrale, meridionale, settentrionale Durazione: 20 giorni",
-    bgImage: "/assets/_BAY5051.webp",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 3,
-    title: "Centro della Mongolia",
-    description: "Regione: centrale Durazione: 7 giorni",
-    bgImage: "/assets/_BAY0058.webp",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 4,
-    title: "Deserto del Gobi",
-    description: "Regione: centrale, meridionale Durazione: 12 giorni",
-    bgImage: "/assets/_BAY1429.webp",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 5,
-    title: "Steppe e Gobi",
-    description: "Regione: centrale, meridionale, settentrionale Durazione: 12 giorni",
-    bgImage: "/assets/_BAY1429.webp",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 6,
-    title: "Il deserto del Gobi e il festival di Naadam 2025",
-    description: "Durazione: 13 giorni Dal 6 luglio al 18 luglio 2025",
-    bgImage: "/assets/DSC_0124.JPG",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 7,
-    title: "Trekking Tour in Mongolia",
-    description: "Durazione: 16 giorni Dal 4 agosto al 19 agosto 2025",
-    bgImage: "/assets/pexels-julia-volk-5110958.jpg",
-    btnText: "Scopri di più",
-  },
-  {
-    id: 8,
-    title: "Birdwatching",
-    description: "Durazione: 12 notti e 13 giorni Dal 31 maggio al 12 giugno 2025",
-    bgImage: "/assets/mongolianlove.webp",
-    btnText: "Scopri di più",
-  },
-];
+export default async function Home() {
 
-export default function Home() {
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
-
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchEndX(e.changedTouches[0].clientX);
-  };
-
-  useEffect(() => {
-    if (touchStartX && touchEndX) {
-      if (touchStartX - touchEndX > 50) {
-        nextSlide();
-      } else if (touchEndX - touchStartX > 50) {
-        prevSlide();
-      }
-    }
-  }, [touchStartX, touchEndX]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        prevSlide();
-      } else if (e.key === 'ArrowRight') {
-        nextSlide();
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [currentIndex]);
-
-  // Автоматаар шилжүүлэх код (хэрэгтэй бол идэвхжүүлнэ)
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  const slides = await getSlides();
+  // const sections = await getAboutPage();
+  // console.log(sections, "sections")
 
   return (
     <div className="bg-white">
@@ -141,65 +17,7 @@ export default function Home() {
 
       {/* section 1 */}
 
-      <section className="bg-white w-full h-[780px] flex justify-center px-[150px] pt-[90px]">
-
-        <div className="relative mx-auto h-[600px] w-full overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 transition-all duration-300 hover:scale-105">
-          {/* Slides container with transition */}
-          <div
-            className="h-full flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-          >
-            {slides.map((slide) => (
-              <div
-                key={slide.id}
-                className="min-w-full flex items-end justify-center text-white bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.bgImage})` }}
-              >
-                <div className="max-w-5xl mx-auto px-6 py-4 text-center mb-15">
-                  <h2 className="text-4xl font-bold mb-4 drop-shadow-md">{slide.title}</h2>
-                  <p className="text-lg mb-6 drop-shadow-md">{slide.description}</p>
-                  <Link href="/tours">
-                    <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 hover:bg-gray-100 cursor-pointer">
-                      {slide.btnText}
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation buttons */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end justify-center gap-45 p-4">
-            <button
-              onClick={prevSlide}
-              className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300 cursor-pointer"
-            >
-              <ChevronLeft size={24} className="text-gray-800" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md transition-all duration-300 cursor-pointer"
-            >
-              <ChevronRight size={24} className="text-gray-800" />
-            </button>
-          </div>
-
-          {/* Indicators */}
-          <div className="absolute bottom-[30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.id}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index ? 'bg-white scale-125' : 'bg-white/50'
-                  }`}
-              ></button>
-            ))}
-          </div>
-        </div>
-
-      </section >
+      <Carousel slides={slides} />
 
       {/* section 2 */}
 
@@ -207,7 +25,7 @@ export default function Home() {
 
       {/* section 3 */}
 
-      <section>
+      {/* <section>
         <div className="w-full text-black px-[150px] mb-20">
 
           <div className="flex gap-4 items-center">
@@ -243,8 +61,7 @@ export default function Home() {
                 rinnovamento, con la nascita di molti caffè, ristoranti, negozi alla moda e un monumento ai
                 Beatles, e, stranamente, uno dei migliori negozi LEGO fuori della Danimarca. Ulaanbaatar
                 è ricca di monasteri, musei, mercati e mille altre sorprese. Tutto intorno la natura più sacra
-                {/* end oguulber dutuu */}
-              </p>
+      </p>
             </div>
           </div>
         </div>
@@ -323,7 +140,33 @@ export default function Home() {
             che lo accendono la mattina presto e lo alimentano durante il giorno per cucinare e scaldare
             l’abitazione.</p>
         </div>
-      </section>
+      </section> */}
+
+      {/* {highlights.map((item, index) => (
+        <div key={index} className="flex gap-4 items-center mb-20 flex-col md:flex-row" style={{ flexDirection: item.reverse ? 'row-reverse' : 'row' }}>
+          <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl" style={{ backgroundImage: `url(${item.imageUrl})` }} />
+          <div className="w-1/2">
+            <h1 className="text-3xl font-bold text-center mb-6">{item.title}</h1>
+            <p className="text-lg text-justify">{item.description}</p>
+          </div>
+        </div>
+      ))} */}
+
+      {/* {sections.map((block, i) => (
+        <div key={i} className="w-full text-black px-[150px] mb-20">
+          <div className={`flex gap-4 items-center ${block.imagePosition === 'left' ? 'flex-row-reverse' : ''}`}>
+            <div className="w-1/2">
+              <h1 className="text-3xl font-bold text-center mb-6">{block.title}</h1>
+              <p className="text-lg text-justify">{block.description}</p>
+            </div>
+            <div
+              className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400"
+              style={{ backgroundImage: `url(${block.image.asset.url})` }}
+            ></div>
+          </div>
+        </div>
+      ))} */}
+
 
       <Footer />
 
