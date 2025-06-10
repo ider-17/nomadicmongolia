@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import AboutSection from "@/components/AboutSection";
 
 const slides = [
   {
@@ -202,27 +203,7 @@ export default function Home() {
 
       {/* section 2 */}
 
-      <section className="w-full h-fit text-black px-[150px] mb-20">
-        <h1 className="text-center font-bold text-4xl my-5 mb-10">Grazie per aver visitato il nostro sito!</h1>
-        <div className="flex gap-4 items-center">
-          <div className="w-1/2 h-[400px] bg-cover bg-center rounded-2xl hover:scale-103 transition-all duration-400" style={{ backgroundImage: `url("/assets/SED_8320.jpg")` }}></div>
-
-          <div className="w-1/2">
-            <h1 className="text-3xl font-bold text-center mb-6">CHI SIAMO?</h1>
-
-            <p className="text-center text-lg">Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
-              di esperienza nel settore turistico. Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
-              lusso, dal viaggio privato a quello di gruppo in Mongolia. Offriamo consulenza gratuita
-              sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
-              team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
-              <Link href="/about">
-                <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">See more</button>
-              </Link>
-            </p>
-          </div>
-        </div>
-
-      </section>
+      <AboutSection />
 
       {/* section 3 */}
 
