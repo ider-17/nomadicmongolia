@@ -1,8 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MapPin } from "lucide-react";
 
 export default function ToursPage() {
+    const [showAllLocations, setShowAllLocations] = useState<{ [key: number]: boolean }>({});
+
+    const toggleLocations = (tourId: number) => {
+        setShowAllLocations((prev) => ({
+            ...prev,
+            [tourId]: !prev[tourId],
+        }));
+    };
 
     const TOURS = [
         {
@@ -44,7 +55,7 @@ export default function ToursPage() {
         {
             id: 4,
             title: "CENTRO DELLA MONGOLIA /7giorni/",
-            photo: "/assets/pexels-lazarevkirill-8532283.jpg",
+            photo: "/assets/mountain.webp",
             duration: 7,
             locations: ["Ulaanbaatar", "Khogno khaan", "Karakorum", "Parco nazionale khustai", "Terelj", "Partenza"],
             desTitle1: "Giorno 1. ULAANBAATAR",
@@ -67,47 +78,46 @@ export default function ToursPage() {
         },
         {
             id: 6,
-            title: "",
-            photo: "",
-            duration: 1,
-            locations: [],
-            desTitle1: "",
+            title: "Trekking Tour in Mongolia",
+            photo: "/assets/_BAY1429.webp",
+            duration: 16,
+            locations: ["Ulaanbaatar", "Elsen tasarkhai", "Kharakhorum", "Il monastero di Tuvkhun", " la cascata di Ulaan Tsutgalan e Uliastain gol", "il villaggio Erdenetsogt", "la valle di Mandal", "Arvaikheer", "il parco nazionale di Khustai"],
+            desTitle1: "1° giorno: Partenza dall’ Italia per Ulaanbaatar",
             describtion1: "",
-            desTitle2: "",
-            describtion2: "",
+            desTitle2: "2° giorno: Ulaanbaatar",
+            describtion2: "Arriviamo all’aeroporto di Ulaanbaatar, incontriamo con le guide e l’autista e trasferimento in hotel e sistemazione. Inizio tour della città che vi porterà in alcuni dei principali siti di questa città unica. Visita al monastero buddista Gandan dove si trova una statua dorata di Buddha alta più di 26 mt. Pranzo in un tipico ristorante mongolo. Visitiamo la famosa piazza Sukhbaatar e il nuovo museo di Genghis Khan, è stato aperto il 11 ottobre 2022. Cena e prenottamento in hotel***. LD",
             btnText: "Scopri di più"
         },
         {
             id: 7,
-            title: "",
-            photo: "",
-            duration: 1,
-            locations: [],
-            desTitle1: "",
-            describtion1: "",
-            desTitle2: "",
-            describtion2: "",
+            title: "Il deserto del Gobi e il festival di Naadam 2025",
+            photo: "/assets/DSC_0338_444535242363286.JPG",
+            duration: 13,
+            locations: ["Ulaanbaatar", "Baga Gazriin Chulu", "Tsagaan Suvraga", "Yoliin Am", "DALANZADGAD", "Khongorin ELS", "Bayanzag", "Ongiin Khiid ", "Karakorum", "Parco Nazionale Hustai"],
+            desTitle1: "1o giorno: Ulaanbaatar",
+            describtion1: "Arrivo all’aeroporto di Ulaanbaatar, incontro con la guida e l’autista e trasferimento in hotel e sistemazione. Inizio tour della città che vi porterà in alcuni dei principali siti di questa città unica. Visita al monastero buddista Gandan dove si trova una statua dorata di Buddha alta più di 26 mt. Pranzo in un tipico ristorante mongolo. Visita della famosa piazza Sukhbaatar e la stutua di Zaisan. Cena e pernottamento in hotel***. LD",
+            desTitle2: "2o giorno:  Ulaanbaatar – Baga Gazriin Chulu (240 km)",
+            describtion2: "Dopo colazione partenza verso il deserto del Gobi (Dundgobi). Arrivo a Baga Gazriin Chuluu, suggestiva formazione rocciosa dove hanno vissuto in passato due monaci molto venerati, perciò meta di pellegrinaggi da parte della gente del posto. Pranzo, cena e pernottamento in campo turistico. BLD",
             btnText: "Scopri di più"
         },
         {
             id: 8,
-            title: "",
-            photo: "",
-            duration: 1,
-            locations: [],
-            desTitle1: "",
+            title: "Tipo di viaggio: Birdwatching",
+            photo: "/assets/birds-3.webp",
+            duration: 13,
+            locations: ["Ulaanbaatar", "Gùn Galuu", "Baga Gazar", "Parco nazionale di Yolin Am", "Bayanzag", "il monastero di Onghi", "Khustai"],
+            desTitle1: "Giorno 1.Partenza dall’Italia",
             describtion1: "",
-            desTitle2: "",
-            describtion2: "",
+            desTitle2: "Giorno 2. Ulaanbaatar",
+            describtion2: "Arriviamo all’aeroporto di Ulaanbaatar, incontriamo con le guide e l’autista e trasferimento in hotel e sistemazione. Inizio tour della città che vi porterà in alcuni dei principali siti di questa città unica. Visita al monastero buddista Gandan dove si trova una statua dorata di Buddha alta più di 26 mt. Pranzo in un tipico ristorante mongolo. Visitiamo la famosa piazza Sukhbaatar e il nuovo museo di Genghis Khan, è stato aperto il 11 ottobre 2022. Cena e prenottamento in hotel***. LD",
             btnText: "Scopri di più"
         }
-    ]
+    ];
+
     return (
         <div className="bg-white min-h-screen">
-
             <Header />
-
-            <section className="w-full h-fit pt-[90px] px-[150px] space-y-8">
+            <section className="w-full h-fit pt-[90px] px-[150px] space-y-8 mb-6">
                 {TOURS.map((tour) => {
                     return (
                         <div key={tour.id} className="w-full flex gap-5 text-black items-center">
@@ -121,18 +131,28 @@ export default function ToursPage() {
                                     </div>
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2">{tour.title}</h2>
-                                        <div className="flex gap-4 flex-wrap">
-                                            {tour.locations.map((location, index) => {
-                                                return (
+                                        <div className="flex gap-4 flex-wrap items-start">
+                                            {tour.locations
+                                                .slice(0, showAllLocations[tour.id] ? tour.locations.length : 3)
+                                                .map((location, index) => (
                                                     <div key={index} className="flex gap-1 items-center">
                                                         <MapPin size={15} />
                                                         <p>{location}</p>
                                                     </div>
-                                                )
-                                            })}
+                                                ))}
+                                            <p className={`${showAllLocations[tour.id] ? "hidden" : "block"}`}>...</p>
+                                            {tour.locations.length > 3 && (
+                                                <button
+                                                    onClick={() => toggleLocations(tour.id)}
+                                                    className="text-sm text-black border border-black hover:bg-black hover:text-white rounded-2xl py-1 px-2 ml-1"
+                                                >
+                                                    {showAllLocations[tour.id] ? "See less" : "See more"}
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="border-t border-gray-300 pt-2 flex flex-col gap-4">
                                     <div>
                                         <h2 className="font-semibold">{tour.desTitle1}</h2>
@@ -143,18 +163,17 @@ export default function ToursPage() {
                                         <p className="text-justify">{tour.describtion2} ...</p>
                                     </div>
                                     <div className="w-full flex justify-end">
-                                        <button className="text-black py-1 px-2 border rounded-2xl hover:bg-black hover:text-white">Scopri di più</button>
+                                        <button className="text-black py-1 px-2 border rounded-2xl hover:bg-black hover:text-white">
+                                            {tour.btnText}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    )
+                    );
                 })}
             </section>
-
             <Footer />
-
         </div>
-    )
-};
+    );
+}
