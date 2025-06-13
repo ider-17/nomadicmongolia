@@ -1,8 +1,8 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { getSlides, getTourData } from "@/sanity/lib/queries";
 import AboutSection from "@/components/AboutSection";
 import Carousel from "@/components/Carousel";
-import { getSlides, getTourData } from "@/sanity/lib/queries";
 import SectionThree from "@/components/SectionThree";
 
 interface Section {

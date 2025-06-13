@@ -1,4 +1,4 @@
-import { Check, Clock3, Handshake, MapPinned, ShieldCheck, Star } from "lucide-react";
+import { Clock3, Handshake, MapPinned, ShieldCheck, Star } from "lucide-react";
 
 const Hexagon = () => {
     return (
