@@ -44,6 +44,7 @@ export default function AboutPage() {
 
     return (
         <div className="bg-white text-black min-h-screen">
+
             <Header />
 
             <section className="bg-white w-full px-[150px] pt-[90px] mb-2">
@@ -51,22 +52,75 @@ export default function AboutPage() {
                     <ul className="text-gray-800 font-medium flex gap-5 items-center">
                         <li
                             onClick={() => setSelectedTab("about")}
-                            className={`border py-1 px-2 rounded-2xl cursor-pointer ${selectedTab === "about" ? "bg-black text-white" : ""}`}
+                            className={`font-semibold cursor-pointer text-black ${selectedTab === "about" ? "border-b-2 pb-1" : ""}`}
                         >
-                            Chi siamo
+                            CHI SIAMO
                         </li>
                         <li
                             onClick={() => setSelectedTab("terms")}
-                            className={`border py-1 px-2 rounded-2xl cursor-pointer ${selectedTab === "terms" ? "bg-black text-white" : ""}`}
+                            className={`font-semibold cursor-pointer text-black ${selectedTab === "terms" ? "border-b-2 pb-1" : ""}`}
                         >
-                            Terms and Conditions
+                            TERMS AND CONDITIONS
                         </li>
                     </ul>
                 </div>
 
                 <div className="w-full flex flex-col gap-5 p-6">
                     {selectedTab === "about" && (
-                        <section>
+                        <section className="space-y-6">
+                            <div className="space-y-4">
+                                <div>
+                                    <h2 className="text-center text-2xl font-bold">I nostri vantaggi</h2>
+                                    <div className="flex justify-center">
+                                        <p className="w-1/2">
+                                            • Rispettiamo abitudine e cultura della popolazione locale <br />
+                                            • acquistiamo e supportiamo i prodotti di provenienza locale <br />
+                                            • Sosteniamo le industrie lattiero-casearie <br />
+                                            • Supportiamo le partner locale <br />
+                                            • Diciamo NO plastic <br />
+                                            • Ci prendiamo cura dei luoghi del patrimonio <br />
+                                            • VERDI <br />
+                                            • Diffondiamo la consapevolezza del turismo sostenibile
+                                        </p>
+                                        <p className="w-1/2">• Sosteniamo i bar e i ristoranti locali <br />
+                                            • Compriamo souvenir dai negozi e dalla gente locali <br />
+                                            • Sosteniamo la lotta al commercio illegale <br />
+                                            • Camminiamo dove possibile <br />
+                                            • Promuoviamo il turismo sostenibile con i nostri circoli interni ed esterni <br />
+                                            • Viaggiamo più alla natura <br />
+                                            • Sosteniamo il principio LEAVE NO TRACE <br />
+                                            • Condividiamo le nostre esperienze di turismo sostenibile
+                                        </p>
+                                    </div>
+                                    <p className="text-center mt-4">Facciamo turismo sostenibile nella “New Normal”</p>
+                                </div>
+
+                                <div className="flex flex-col items-center">
+                                    <h2 className="text-center text-2xl font-bold">Our benefits</h2>
+                                    <p>
+                                        We respect the practices of local people <br />
+                                        We employ local people and buy locally-sourced products <br />
+                                        We support dairy industries <br />
+                                        We advance fair employment practices <br />
+                                        We avoid the plane <br />
+                                        We say NO to the plastic <br />
+                                        We take care of heritage places <br />
+                                        We go GREEN <br />
+                                        We support LEAVE NO TRACE principle <br />
+                                        We spread awareness of sustainable tourism <br />
+                                        We support local restaurants and dining places <br />
+                                        We buy souvenirs from local stores <br />
+                                        We support the fight against illegal trade <br />
+                                        We walk wherever possible <br />
+                                        We promote sustainable tourism with our inner and outer circles <br />
+                                        We travel more locally <br />
+                                        We share our sustainable tourism experiences <br />
+                                        <br />
+                                        We make sustainable tourism in the “new normal”
+                                    </p>
+                                </div>
+                            </div>
+
                             <div className="space-y-4">
                                 <h2 className="text-3xl font-semibold text-center">Grazie per aver visitato il nostro sito!</h2>
                                 <p className="text-center">
@@ -101,6 +155,7 @@ export default function AboutPage() {
                                 </div>
 
                                 <Hexagon />
+
                             </div>
                         </section>
                     )}
@@ -151,3 +206,43 @@ export default function AboutPage() {
 // Lavoriamo nel campo del turismo da più di 10 anni con turisti italiani.
 // Proponiamo viaggi private e di Gruppo in Mongolia.
 // Offriamo consulenza gratuita sull’organizzazione del viaggio e personalizzazione degli itinerari
+
+
+// I nostri vantaggi:
+//                                      Rispettiamo abitudine e cultura della popolazione locale
+//                                      acquistiamo e supportiamo i prodotti di provenienza locale
+//                                      Sosteniamo le industrie lattiero-casearie
+//                                      Supportiamo le partner locale
+//                                      Diciamo NO plastic
+//                                      Ci prendiamo cura dei luoghi del patrimonio
+//                                      VERDI
+//                                      Sosteniamo il principio LEAVE NO TRACE
+//                                      Diffondiamo la consapevolezza del turismo sostenibile
+//                                      Sosteniamo i bar e i ristoranti locali
+//                                      Compriamo souvenir dai negozi e dalla gente locali
+//                                      Sosteniamo la lotta al commercio illegale
+//                                      Camminiamo dove possibile
+//                                      Promuoviamo il turismo sostenibile con i nostri circoli interni ed esterni
+//                                      Viaggiamo più alla natura
+//                                      Condividiamo le nostre esperienze di turismo sostenibile
+//                                     Facciamo turismo sostenibile nella “New Normal”
+//                                     Our benefits:
+//                                     We respect the practices of local people
+//                                     We employ local people and buy locally-sourced products
+//                                     We support dairy industries
+//                                     We advance fair employment practices
+//                                     We avoid the plane
+//                                     We say NO to the plastic
+//                                     We take care of heritage places
+//                                     We go GREEN
+//                                     We support LEAVE NO TRACE principle
+//                                     We spread awareness of sustainable tourism
+//                                     We support local restaurants and dining places
+//                                     We buy souvenirs from local stores
+//                                     We support the fight against illegal trade
+//                                     We walk wherever possible
+//                                     We promote sustainable tourism with our inner and outer circles
+//                                     We travel more locally
+//                                     We share our sustainable tourism experiences
+
+//                                     We make sustainable tourism in the “new normal”

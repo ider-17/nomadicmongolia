@@ -23,7 +23,7 @@ export default async function AboutSection() {
                     <p className="text-center text-lg">
                         {data.description}
                         <Link href={data.buttonLink}>
-                            <button className="ml-3 border border-gray-400 py-1 px-2 rounded-2xl hover:bg-gray-100 cursor-pointer">
+                            <button className="ml-3 border border-black py-0 px-1 rounded-2xl hover:bg-black hover:text-white cursor-pointer">
                                 {data.buttonText}
                             </button>
                         </Link>

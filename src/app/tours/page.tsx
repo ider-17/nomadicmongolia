@@ -131,7 +131,7 @@ export default function ToursPage() {
                                     </div>
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2">{tour.title}</h2>
-                                        <div className="flex gap-4 flex-wrap items-start">
+                                        <div className="flex gap-4 flex-wrap items-center">
                                             {tour.locations
                                                 .slice(0, showAllLocations[tour.id] ? tour.locations.length : 3)
                                                 .map((location, index) => (
@@ -140,13 +140,13 @@ export default function ToursPage() {
                                                         <p>{location}</p>
                                                     </div>
                                                 ))}
-                                            <p className={`${showAllLocations[tour.id] ? "hidden" : "block"}`}>...</p>
+                                            {/* <p className={`${showAllLocations[tour.id] ? "hidden" : "block"}`}>...</p> */}
                                             {tour.locations.length > 3 && (
                                                 <button
                                                     onClick={() => toggleLocations(tour.id)}
-                                                    className="text-sm text-black border border-black hover:bg-black hover:text-white rounded-2xl py-1 px-2 ml-1"
+                                                    className="text-sm text-blue-600 cursor-pointer"
                                                 >
-                                                    {showAllLocations[tour.id] ? "See less" : "See more"}
+                                                    {showAllLocations[tour.id] ? "less" : "... more"}
                                                 </button>
                                             )}
                                         </div>
@@ -173,6 +173,7 @@ export default function ToursPage() {
                     );
                 })}
             </section>
+
             <Footer />
         </div>
     );

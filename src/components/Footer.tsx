@@ -21,7 +21,9 @@ export const Footer = () => {
 
                 <div className="flex gap-2">
                     <p>Mobile:</p>
-                    <span>+976 99020908, +976 89810908</span>
+                    <span>+976 99020908, <br />
+                        +976 89810908
+                    </span>
                 </div>
 
                 <div className="flex gap-2">
