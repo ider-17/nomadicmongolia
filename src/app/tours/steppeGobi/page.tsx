@@ -186,6 +186,9 @@ export default function SteppeGobiPage() {
             <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
                 <h1 className="text-center font-bold text-3xl">Taiga tour - avventura e sciamano</h1>
 
+                <p>Regione: centrale, meridionale, settentrionale <br />
+                    Durazione: 12 giorni</p>
+
                 {/* Breve itinerario */}
                 <div>
                     <h2 className="font-semibold text-xl mb-2">Breve itinerario</h2>
