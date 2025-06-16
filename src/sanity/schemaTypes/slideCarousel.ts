@@ -26,5 +26,10 @@ export default {
             title: 'Button Text',
             type: 'string',
         },
+        {
+            name: 'linkUrl',
+            title: 'Link URL',
+            type: 'string',
+        },
     ],
 }

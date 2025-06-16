@@ -19,7 +19,8 @@ export async function getSlides() {
     title,
     description,
     btnText,
-    "bgImageUrl": bgImage.asset->url
+    "bgImageUrl": bgImage.asset->url,
+    linkUrl
   }`
 
   return await client.fetch(query)

@@ -10,6 +10,7 @@ interface Slide {
     description: string
     btnText: string
     bgImageUrl: string
+    linkUrl: string
 }
 
 interface CarouselProps {
@@ -101,7 +102,7 @@ export default function Carousel({ slides }: CarouselProps) {
                             <div className="max-w-5xl mx-auto px-6 py-4 text-center mb-15">
                                 <h2 className="text-4xl font-bold mb-4 drop-shadow-md">{slide.title}</h2>
                                 <p className="text-lg mb-6 drop-shadow-md">{slide.description}</p>
-                                <Link href="/tours">
+                                <Link href={slide.linkUrl}>
                                     <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 hover:bg-gray-100 cursor-pointer">
                                         {slide.btnText}
                                     </button>
