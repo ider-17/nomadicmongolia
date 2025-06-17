@@ -19,7 +19,7 @@ const shortItinerary = [
 const images = [
     {
         id: 1,
-        image: "",
+        image: "/assets/_BAY1429.webp",
     }
 ];
 
@@ -41,6 +41,7 @@ const itineraryData = [
 export default function OverlandDellaMongoliaPage() {
     return (
         <div className="bg-white h-screen">
+
             <Header />
 
             <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
