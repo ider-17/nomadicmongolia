@@ -136,10 +136,8 @@ export default function TrekkingTourPage() {
                 <h1 className="text-center font-bold text-3xl">Trekking Tour in Mongolia
                 </h1>
 
-                <p>Durazione: 16 giorni
-                    <br />
-                    Dal 4 agosto al 19 agosto 2025
-                </p>
+                <p className="font-semibold">Durazione: 16 giorni</p>
+                <p>Dal 4 agosto al 19 agosto 2025</p>
 
                 {/* Breve itinerario */}
                 <div>
@@ -168,6 +166,11 @@ export default function TrekkingTourPage() {
                         <p className="mt-2">{item.subDescription}</p>
                     </div>
                 ))}
+
+                <h2 className="font-semibold">Quota individuale a partire da:</h2>
+                <p>10-15pax 2780 <br />
+                    Tour leader 1450
+                </p>
 
                 {/* laQuotaComprende */}
                 <h1 className="text-center text-3xl font-bold">La quota comprende</h1>
