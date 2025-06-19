@@ -232,7 +232,7 @@ export default function OverlandDellaMongoliaPage() {
             <Header />
 
             <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
-                <h1 className="text-center font-bold text-3xl">Taiga tour - avventura e sciamano</h1>
+                <h1 className="text-center font-bold text-3xl">OVERLAND DELLA MONGOLIA TOUR</h1>
 
                 <p>Regione: centrale, meridionale, settentrionale <br />
                     Durazione: 20 giorni</p>
