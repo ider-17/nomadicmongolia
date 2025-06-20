@@ -173,7 +173,7 @@ export default function ToursPage() {
                                     </div>
                                     <div className="w-full flex justify-end">
                                         <Link href={tour.linkURL} >
-                                            <button className="text-black py-1 px-2 border rounded-2xl hover:bg-black hover:text-white">
+                                            <button className="text-black py-1 px-2 border rounded-2xl hover:bg-black hover:text-white cursor-pointer">
                                                 {tour.btnText}
                                             </button></Link>
                                     </div>

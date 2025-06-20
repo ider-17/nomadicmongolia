@@ -186,8 +186,11 @@ export default function SteppeGobiPage() {
             <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
                 <h1 className="text-center font-bold text-3xl">Steppe e Gobi</h1>
 
-                <p>Regione: centrale, meridionale, settentrionale <br />
-                    Durazione: 12 giorni</p>
+                <div>
+                    <p className="font-semibold">Regione: centrale, meridionale, settentrionale
+                    </p>
+                    <p>Durazione: 12 giorni</p>
+                </div>
 
                 {/* Breve itinerario */}
                 <div>
@@ -216,21 +219,25 @@ export default function SteppeGobiPage() {
 
                 {/* nemelt heseg */}
                 <h1 className="text-center text-3xl font-bold">La quota comprende</h1>
-                {laQuotaComprende.map((des) => (
-                    <div key={des.id} className="flex gap-4">
-                        <p>✓</p>
-                        <p>{des.description}</p>
-                    </div>
-                ))}
+                <div>
+                    {laQuotaComprende.map((des) => (
+                        <div key={des.id} className="flex gap-4">
+                            <p>✓</p>
+                            <p>{des.description}</p>
+                        </div>
+                    ))}
+                </div>
 
                 {/* nemelt heseg */}
                 <h1 className="text-center text-3xl font-bold">La quota non comprende</h1>
-                {laQuotaNonComprende.map((des) => (
-                    <div key={des.id} className="flex gap-4">
-                        <p>✓</p>
-                        <p>{des.description}</p>
-                    </div>
-                ))}
+                <div>
+                    {laQuotaNonComprende.map((des) => (
+                        <div key={des.id} className="flex gap-4">
+                            <p>✓</p>
+                            <p>{des.description}</p>
+                        </div>
+                    ))}
+                </div>
 
             </section>
 

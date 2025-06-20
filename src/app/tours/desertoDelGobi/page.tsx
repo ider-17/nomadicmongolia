@@ -47,9 +47,11 @@ export default function OverlandDellaMongoliaPage() {
             <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
                 <h1 className="text-center font-bold text-3xl">Deserto del Gobi</h1>
 
-                <p>Regione: centrale, meridionale <br />
-                    Durazione: 12 giorni
-                </p>
+                <div>
+                    <p className="font-semibold">Regione: centrale, meridionale</p>
+                    <p>Durazione: 12 giorni
+                    </p>
+                </div>
 
                 {/* Breve itinerario */}
                 <div>
