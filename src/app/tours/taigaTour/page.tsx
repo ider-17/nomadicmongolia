@@ -1,5 +1,18 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
 
 const shortItinerary = [
     { day: 1, title: "ULAANBAATAR" },
@@ -89,7 +102,7 @@ export default function TaigaTourPage() {
         <div className="bg-white h-screen">
             <Header />
 
-            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
+            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6 relative">
                 <h1 className="text-center font-bold text-3xl">Taiga tour - avventura e sciamano</h1>
 
                 {/* Breve itinerario */}
@@ -104,7 +117,7 @@ export default function TaigaTourPage() {
                 </div>
 
                 {images.map((image) => (
-                    <img key={image.id} src={image.image} alt="Steppe del Gobi" className="rounded-xl" />
+                    <img loading="lazy" key={image.id} src={image.image} alt="Steppe del Gobi" className="rounded-xl" />
                 ))}
 
 
@@ -116,6 +129,39 @@ export default function TaigaTourPage() {
                         <p>{item.description}</p>
                     </div>
                 ))}
+
+                <Dialog>
+                    <form>
+                        <DialogTrigger asChild>
+                            <button className="absolute bottom-10 right-40 text-black bg-white border border-black rounded-full py-2 px-4 hover:bg-gray-200 active:text-white active:bg-black cursor-pointer">Buy it</button>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px]">
+                            <DialogHeader>
+                                <DialogTitle>Edit profile</DialogTitle>
+                                <DialogDescription>
+                                    Make changes to your profile here. Click save when you&apos;re
+                                    done.
+                                </DialogDescription>
+                            </DialogHeader>
+                            <div className="grid gap-4">
+                                <div className="grid gap-3">
+                                    <Label htmlFor="name-1">Name</Label>
+                                    <Input id="name-1" name="name" />
+                                </div>
+                                <div className="grid gap-3">
+                                    <Label htmlFor="username-1">Username</Label>
+                                    <Input id="username-1" name="username" />
+                                </div>
+                            </div>
+                            <DialogFooter>
+                                <DialogClose asChild>
+                                    <Button variant="outline">Cancel</Button>
+                                </DialogClose>
+                                <Button type="submit">Save changes</Button>
+                            </DialogFooter>
+                        </DialogContent>
+                    </form>
+                </Dialog>
             </section>
 
             <Footer />
