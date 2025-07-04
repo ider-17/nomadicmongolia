@@ -130,7 +130,7 @@ export default function ToursPage() {
                 {TOURS.map((tour) => {
                     return (
                         <div key={tour.id} className="w-full flex gap-5 text-black items-center">
-                            <img className="w-1/2 h-[500px] object-center object-cover rounded-2xl" src={tour.photo} />
+                            <img loading="lazy" className="w-1/2 h-[500px] object-center object-cover rounded-2xl" src={tour.photo} />
 
                             <div className="w-1/2 pt-4">
                                 <div className="flex gap-4 items-center mb-4">

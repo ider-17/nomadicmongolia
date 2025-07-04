@@ -175,7 +175,7 @@ export default function TrekkingTourPage() {
                 {/* laQuotaComprende */}
                 <h1 className="text-center text-3xl font-bold">La quota comprende</h1>
                 {laQuotaComprende.map((des) => (
-                    <div key={des.id} className="flex gap-4">
+                    <div key={des.id} className="flex gap-4 mb-1">
                         <p>✓</p>
                         <p>{des.description}</p>
                     </div>
@@ -184,7 +184,7 @@ export default function TrekkingTourPage() {
                 {/* laQuotaNonComprende */}
                 <h1 className="text-center text-3xl font-bold">La quota non comprende</h1>
                 {laQuotaNonComprende.map((des) => (
-                    <div key={des.id} className="flex gap-4">
+                    <div key={des.id} className="flex gap-4 mb-1">
                         <p>✓</p>
                         <p>{des.description}</p>
                     </div>
@@ -193,7 +193,7 @@ export default function TrekkingTourPage() {
                 {/* travelSuggestions */}
                 <h1 className="text-center text-3xl font-bold">Suggerimenti per il viaggio</h1>
                 {travelSuggestions.map((des) => (
-                    <div key={des.id} className="flex gap-4">
+                    <div key={des.id} className="flex gap-4 mb-1">
                         <p>✓</p>
                         <p>{des.description}</p>
                     </div>
@@ -202,7 +202,7 @@ export default function TrekkingTourPage() {
                 {/* ourAdvantages */}
                 <h1 className="text-center text-3xl font-bold">I nostri vantaggi</h1>
                 {ourAdvantages.map((des) => (
-                    <div key={des.id} className="flex gap-4">
+                    <div key={des.id} className="flex gap-4 mb-1">
                         <p>✓</p>
                         <p>{des.description}</p>
                     </div>

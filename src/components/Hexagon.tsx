@@ -2,7 +2,7 @@ import { Clock3, Handshake, MapPinned, ShieldCheck, Star } from "lucide-react";
 
 const Hexagon = () => {
     return (
-        <div className="relative w-full h-[500px]">
+        <div className="relative w-[300px] mx-auto h-[500px]">
             <div className="absolute top-[30px] left-[250px] w-[250px] h-[220px] hexagon bg-[#e4e8f0] mx-auto flex flex-col justify-center items-center">
                 <ShieldCheck size={50} color="#2c2b2b" />
                 <p className="text-[#2c2b2b]">Siamo responsabili</p>

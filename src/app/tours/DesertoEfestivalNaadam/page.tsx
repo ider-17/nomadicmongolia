@@ -118,7 +118,7 @@ export default function IlDesertoDelEIlFestivalDiNaadamPage() {
                 {/* laQuotaComprende */}
                 <h1 className="text-center text-3xl font-bold">Suggerimenti per il viaggio</h1>
                 {laQuotaComprende.map((des) => (
-                    <div key={des.id} className="flex gap-4">
+                    <div key={des.id} className="flex gap-4 mb-1">
                         <p>✓</p>
                         <p>{des.description}</p>
                     </div>
@@ -127,7 +127,7 @@ export default function IlDesertoDelEIlFestivalDiNaadamPage() {
                 {/* laQuotaNonComprende */}
                 <h1 className="text-center text-3xl font-bold">I nostri vantaggi</h1>
                 {laQuotaNonComprende.map((des) => (
-                    <div key={des.id} className="flex gap-4">
+                    <div key={des.id} className="flex gap-4 mb-1">
                         <p>✓</p>
                         <p>{des.description}</p>
                     </div>

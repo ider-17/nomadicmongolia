@@ -70,8 +70,8 @@ export default function AboutPage() {
                         <section className="space-y-6">
                             <div className="space-y-4">
                                 <div>
-                                    <h2 className="text-center text-2xl font-bold">I nostri vantaggi</h2>
-                                    <div className="flex justify-center">
+                                    <h2 className="text-center text-2xl font-bold mb-3">I nostri vantaggi</h2>
+                                    <div className="flex justify-center px-10">
                                         <p className="w-1/2">
                                             • Rispettiamo abitudine e cultura della popolazione locale <br />
                                             • acquistiamo e supportiamo i prodotti di provenienza locale <br />

@@ -268,7 +268,7 @@ export default function OverlandDellaMongoliaPage() {
                 <h1 className="text-center text-3xl font-bold">La quota comprende</h1>
                 <div>
                     {laQuotaComprende.map((des) => (
-                        <div key={des.id} className="flex gap-4">
+                        <div key={des.id} className="flex gap-4 mb-1">
                             <p>✓</p>
                             <p>{des.description}</p>
                         </div>
@@ -279,7 +279,7 @@ export default function OverlandDellaMongoliaPage() {
                 <h1 className="text-center text-3xl font-bold">La quota non comprende</h1>
                 <div>
                     {laQuotaNonComprende.map((des) => (
-                        <div key={des.id} className="flex gap-4">
+                        <div key={des.id} className="flex gap-4 mb-1">
                             <p>✓</p>
                             <p>{des.description}</p>
                         </div>
