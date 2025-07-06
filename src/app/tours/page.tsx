@@ -7,15 +7,6 @@ import { MapPin } from "lucide-react";
 import Link from "next/link";
 
 export default function ToursPage() {
-    const [showAllLocations, setShowAllLocations] = useState<{ [key: number]: boolean }>({});
-
-    const toggleLocations = (tourId: number) => {
-        setShowAllLocations((prev) => ({
-            ...prev,
-            [tourId]: !prev[tourId],
-        }));
-    };
-
     const TOURS = [
         {
             id: 1,
@@ -122,6 +113,16 @@ export default function ToursPage() {
             linkURL: "/tours/birdWatching",
         }
     ];
+
+    const [showAllLocations, setShowAllLocations] = useState<{ [key: number]: boolean }>({});
+
+    const toggleLocations = (tourId: number) => {
+        setShowAllLocations((prev) => ({
+            ...prev,
+            [tourId]: !prev[tourId],
+        }));
+    };
+
 
     return (
         <div className="bg-white min-h-screen">
