@@ -1,3 +1,4 @@
+import BuyTravel from "@/components/BuyTravel";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
@@ -44,7 +45,8 @@ export default function OverlandDellaMongoliaPage() {
 
             <Header />
 
-            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6">
+            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6 relative">
+                <BuyTravel />
                 <h1 className="text-center font-bold text-3xl">Deserto del Gobi</h1>
 
                 <div>

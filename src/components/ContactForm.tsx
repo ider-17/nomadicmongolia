@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
 import { toast } from "sonner"
 
-interface FormData {
+export interface FormData {
     firstName: string
     lastName: string
     email: string
@@ -140,7 +140,7 @@ export default function ContactForm() {
             <button
                 type="submit"
                 disabled={isSending}
-                className={`w-full text-sm font-medium border border-black py-2 px-4 rounded-md transition
+                className={`w-full text-sm font-medium border border-black py-2 px-4 rounded-md transition cursor-pointer
                     ${isSending
                         ? "bg-gray-400 text-white cursor-not-allowed"
                         : "bg-black text-white hover:bg-neutral-800 active:text-black active:bg-white"
