@@ -55,10 +55,10 @@ export const Header = () => {
                     {/* TOURS */}
                     <Link href="/tours">VIAGGI</Link>
                 </li>
-                <li>
-                    {/* BOOKING */}
+                {/* <li>
+                    // BOOKING
                     <Link href="/booking">PRENOTA</Link>
-                </li>
+                </li> */}
                 <li>
                     {/* CONTACT US */}
                     <Link href="/contacts">CONTATTI</Link>

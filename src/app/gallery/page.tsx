@@ -29,7 +29,7 @@ export default function GalleryPage() {
                 {imageGroups.map((group, groupIndex) => (
                     <div
                         key={groupIndex}
-                        className="w-full h-180 grid gap-2 grid-cols-2 grid-rows-3 [&>*]:bg-cover [&>*]:bg-center [&>*]:rounded"
+                        className="w-full h-180 grid grid-cols-2 grid-rows-3 gap-2 [&>*]:bg-cover [&>*]:bg-center [&>*]:rounded mb-2"
                     >
                         {group.map((item, index) => {
                             if (Array.isArray(item)) {
@@ -41,7 +41,7 @@ export default function GalleryPage() {
                                         {item.map((img, i) => (
                                             <div
                                                 key={i}
-                                                className="h-60"
+                                                className="h-59"
                                                 style={{ backgroundImage: `url(${img})` }}
                                             ></div>
                                         ))}
@@ -51,7 +51,7 @@ export default function GalleryPage() {
                                 return (
                                     <div
                                         key={index}
-                                        className="bg-black h-60"
+                                        className="bg-black h-59"
                                         style={{ backgroundImage: `url(${item})` }}
                                     ></div>
                                 );
