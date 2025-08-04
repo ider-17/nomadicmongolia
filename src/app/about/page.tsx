@@ -135,14 +135,14 @@ export default function AboutPage() {
                                         {/* <img className="mx-auto rounded-2xl w-[300px] h-[350px]" src="" /> */}
                                         <div className="w-[300px] h-[350px] bg-blue-200 mx-auto rounded-2xl"></div>
                                         <p className="font-semibold text-center text-lg">Burenchimeg Sergelen</p>
-                                        <p className="text-center w-[400px] mx-auto">cofondatrice, con la esperienza più di 10 anni nel campo del settore del
+                                        <p className="text-center w-[400px] mx-auto">Direttrice, con la esperienza più di 10 anni nel campo del settore del
                                             turistico e parla in italiano e <br /> inglese.</p>
                                     </div>
                                     <div className="w-1/2 space-y-1">
                                         {/* <img className="mx-auto rounded-2xl w-[300px] h-[350px]" src="" /> */}
                                         <div className="w-[300px] h-[350px] bg-blue-200 mx-auto rounded-2xl"></div>
-                                        <p className="font-semibold text-center text-lg">Yesulen Bolbaatar</p>
-                                        <p className="text-center w-[400px] mx-auto">sales manager, con la esperienza più di 10 anni nel campo del settore del
+                                        <p className="font-semibold text-center text-lg">Bat-Uchral Ganzorigt</p>
+                                        <p className="text-center w-[400px] mx-auto">Sales manager, con la esperienza più di 10 anni nel campo del settore del
                                             turistico e parla in italiano e inglese.</p>
                                     </div>
                                 </div>

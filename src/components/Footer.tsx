@@ -28,7 +28,7 @@ export const Footer = () => {
 
                 <div className="flex gap-2">
                     <p>Email1:</p>
-                    <span>info@tournomadic.com</span>
+                    <span>info@nomadicmongolia.com</span>
                 </div>
 
                 <div className="flex gap-2">
