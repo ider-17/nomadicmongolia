@@ -12,13 +12,13 @@ export default function ContactPage() {
                 <div className="text-black">
                     Building 49/2-16 , ikh toiruu gudamj, 5 khoroo, Chingeltei distrect, Ulaanbaatar, Mongolia <br />
 
-                    In italiano <br />
+                    {/* In italiano <br /> */}
                     What’s up +976 99020908 <br />
-                    viaggi@.nomadicmongolia.com <br />
-                    In inglese <br />
+                    {/* viaggi@.nomadicmongolia.com <br /> */}
+                    {/* In inglese <br /> */}
                     <br />
-                    +976 <br />
-                    tour@nomadicmongolia.com
+                    {/* +976 <br /> */}
+                    {/* tour@nomadicmongolia.com */}
                 </div>
 
                 <div className="">
