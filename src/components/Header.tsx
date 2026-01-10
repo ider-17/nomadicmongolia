@@ -27,7 +27,7 @@ export const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     return (
-        <header className={`w-full fixed top-0 flex justify-between items-center py-2 px-[150px] bg-white z-50 transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}>
+        <header className={`w-full fixed top-0 flex justify-between items-center py-2 px-[150px] bg-[#288a3d] z-50 transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}>
             <div>
                 <Link href="/">
                     <Image
