@@ -8,7 +8,8 @@ import aboutSection from './aboutSection'
 import slideCarousel from './slideCarousel'
 import tourSection from './tourSection'
 import tourPage from './tourPage'
+import galleryGroup from './galleryGroup'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType, aboutSection, slideCarousel, tourSection, tourPage]
+  types: [blockContentType, categoryType, postType, authorType, aboutSection, slideCarousel, tourSection, tourPage, galleryGroup]
 }

@@ -7,19 +7,19 @@ const Hexagon = () => {
         <ShieldCheck size={50} />
         <p className="text-[#2c2b2b]">Siamo responsabili</p>
       </div>
-      <div className="absolute top-[30px] right-[250px] w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center ">
+      <div className="absolute top-[30px] right-[250px] w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center [&>*]:text-white">
         <Star size={50} />
         <p>Siamo esperti</p>
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-1/2 w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center">
+      <div className="absolute top-1/2 left-1/2 -translate-1/2 w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center [&>*]:text-white">
         <MapPinned size={50} />
         <p>Siamo locali</p>
       </div>
-      <div className="absolute bottom-[30px] left-[250px] w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center">
+      <div className="absolute bottom-[30px] left-[250px] w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center [&>*]:text-white">
         <Handshake size={50} />
         <p>Siamo ospitali</p>
       </div>
-      <div className="absolute bottom-[30px] right-[250px] w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center">
+      <div className="absolute bottom-[30px] right-[250px] w-[250px] h-[220px] hexagon mx-auto flex flex-col justify-center items-center [&>*]:text-white">
         <Clock3 size={50} />
         <p className="text-center">
           Siamo sempre a <br /> disposizione

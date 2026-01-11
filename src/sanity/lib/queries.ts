@@ -41,3 +41,25 @@ export async function getTourData() {
 
   return await client.fetch(query)
 }
+
+export async function getGalleryGroups() {
+  const query = `*[_type == "galleryGroup"] | order(_createdAt asc){
+    _id,
+    title,
+    items[]{
+      _type,
+      _type == "singleImage" => {
+        "imageUrl": image.asset->url,
+        alt
+      },
+      _type == "doubleImage" => {
+        images[]{
+          "imageUrl": asset->url,
+          alt
+        }
+      }
+    }
+  }`
+
+  return await client.fetch(query)
+}
