@@ -1,3 +1,5 @@
+export const runtime = 'nodejs'
+
 export { metadata, viewport } from 'next-sanity/studio'
 
 import StudioClient from './StudioClient'
