@@ -1,9 +1,7 @@
-export const runtime = "nodejs";
-
 export { metadata, viewport } from "next-sanity/studio";
 
 import StudioClient from "./StudioClient";
 
-export default function StudioPage() {
+export default function Page() {
   return <StudioClient />;
 }
