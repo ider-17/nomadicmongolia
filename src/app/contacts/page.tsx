@@ -10,7 +10,8 @@ export default function ContactPage() {
 
             <section className="w-full h-screen space-y-4 pt-[90px] px-[150px]">
                 <div className="text-black">
-                    Building 49/2-16 , ikh toiruu gudamj, 5 khoroo, Chingeltei distrect, Ulaanbaatar, Mongolia <br />
+                    Building 49/2-16 ,
+                    <br /> ikh toiruu gudamj, 5 khoroo, Chingeltei distrect, Ulaanbaatar, Mongolia <br />
 
                     {/* In italiano <br /> */}
                     What’s up +976 99020908 <br />
