@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { MenuBar } from "./Menu";
 
 export const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
@@ -28,20 +29,20 @@ export const Header = () => {
   }, []);
   return (
     <header
-      className={`w-full fixed top-0 flex justify-between items-center py-2 px-[150px] bg-[#2fa147] z-50 transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
+      className={`w-full fixed top-0 flex justify-between items-center py-2 bg-[#2fa147] z-50 transition-transform duration-300 h-16 px-2 sm:h-fit sm:px-37.5 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div>
         <Link href="/">
           <Image
             src="/assets/logo-footer.webp"
             alt="Nomadic Logo"
-            width={200}
-            height={60}
-            className="object-cover object-center cursor-pointer"
+            width={120}
+            height={24}
+            className="object-cover object-center cursor-pointer sm:w-50 sm:h-15 w-30 h-8"
           />
         </Link>
       </div>
-      <ul className="flex gap-4 [&>*]:text-white [&>*]:hover:underline [&>*]:hover:underline-offset-8 [&>*]:font-semibold [&>*]:cursor-pointer">
+      <ul className="sm:flex gap-4 *:text-white *:hover:underline *:hover:underline-offset-8 *:font-semibold *:cursor-pointer hidden">
         <li>
           <Link href="/">HOME</Link>
         </li>
@@ -66,6 +67,12 @@ export const Header = () => {
           <Link href="/contacts">CONTATTI</Link>
         </li>
       </ul>
+
+      {/* mobile */}
+
+      <div className="block sm:hidden">
+        <MenuBar />
+      </div>
     </header>
   );
 };

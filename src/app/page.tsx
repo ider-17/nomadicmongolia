@@ -8,7 +8,7 @@ import SectionThree from "@/components/SectionThree";
 interface Section {
   title: string;
   content: string;
-  imagePosition: 'left' | 'right';
+  imagePosition: "left" | "right";
   image: {
     asset: {
       url: string;
@@ -17,7 +17,6 @@ interface Section {
 }
 
 export default async function Home() {
-
   const slides = await getSlides();
 
   const data = await getTourData();
@@ -25,8 +24,7 @@ export default async function Home() {
   if (!data || !data.sections) return null;
 
   return (
-    <div className="bg-white">
-
+    <div className="bg-white w-full overflow-hidden">
       <Header />
 
       {/* section 1 */}
@@ -44,7 +42,6 @@ export default async function Home() {
       ))}
 
       <Footer />
-
-    </div >
-  )
-};
+    </div>
+  );
+}
