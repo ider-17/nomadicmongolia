@@ -60,7 +60,7 @@ export default function OverlandDellaMongoliaPage() {
         <div className="bg-white h-screen">
             <Header />
 
-            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6 relative">
+            <section className="w-full min-h-screen text-black sm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
                 <BuyTravel />
                 <h1 className="text-center font-bold text-3xl">Centro della Mongolia /7giorni/</h1>
 

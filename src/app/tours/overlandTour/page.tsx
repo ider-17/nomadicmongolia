@@ -67,7 +67,7 @@ const itineraryData = [
         day: 6,
         title: "BUGANCHULUU (PIETRA CERVI). 115 km",
         description:
-            "Dopo colazione, partenza verso il centro della Mongolia con una sosta al riva della fiume Delgermurun. Dopo pranzo visita i pietra cervi antica al regione di Altai, Russia. Pietre Deer (noto anche come le pietre di renna) sono antichi megaliti scolpiti con simboli che possono essere trovati in Siberia e in Mongolia. Si chiamano anche le stele di cervo. Queste stele sono state probabilmente erette in origine dai popoli nomadi dell&#39; età del bronzo  intorno al 1.000 a.C. anche se ulteriori ricerche sembrano supportare l&#39;ipotesi dell&#39;origine cimmerica. Pranzo, cena e pernottamento in campo. BLD",
+            "Dopo colazione, partenza verso il centro della Mongolia con una sosta al riva della fiume Delgermurun. Dopo pranzo visita i pietra cervi antica al regione di Altai, Russia. Pietre Deer (noto anche come le pietre di renna) sono antichi megaliti scolpiti con simboli che possono essere trovati in Siberia e in Mongolia. Si chiamano anche le stele di cervo. Queste stele sono state probabilmente erette in origine dai popoli nomadi dell' età del bronzo  intorno al 1.000 a.C. anche se ulteriori ricerche sembrano supportare l'ipotesi dell'origine cimmerica. Pranzo, cena e pernottamento in campo. BLD",
     },
     {
         day: 7,
@@ -101,12 +101,12 @@ const itineraryData = [
     {
         day: 12,
         title: "KHARKHORIN/KARAKORUM. 110km",
-        description: "Partenza verso Karakorum che l’antica capitale imperiale fondata da Genghis Khan, poi distrutta dagli invasori Manciù. Alla periferia dell&#39;odierno villaggio di Kharkhorin, visita al singolare scultura della boovon khad &quot;pietra fallica&quot;. visita al grande monastero buddista di Erdene-Zuu, circondato da un centinaio di stupa. Il monastero fu costruito alla fine del XVI° secolo sui ruderi di Karakorum. Passeggiata fuori le mura fino alla grande tartaruga di pietra, una delle quattro che delimitavano un tempo il perimetro della capitale gengiskhanide. Visita al nuovissimo Museo degli scavi, dove si possono ammirare i reperti archeologici portati alla luce dalla missione tedesca. Pranzo, cena e pernottamento in campo turistico. BLD",
+        description: "Partenza verso Karakorum che l’antica capitale imperiale fondata da Genghis Khan, poi distrutta dagli invasori Manciù. Alla periferia dell'odierno villaggio di Kharkhorin, visita al singolare scultura della boovon khad &quot;pietra fallica&quot;. visita al grande monastero buddista di Erdene-Zuu, circondato da un centinaio di stupa. Il monastero fu costruito alla fine del XVI° secolo sui ruderi di Karakorum. Passeggiata fuori le mura fino alla grande tartaruga di pietra, una delle quattro che delimitavano un tempo il perimetro della capitale gengiskhanide. Visita al nuovissimo Museo degli scavi, dove si possono ammirare i reperti archeologici portati alla luce dalla missione tedesca. Pranzo, cena e pernottamento in campo turistico. BLD",
     },
     {
         day: 13,
         title: "ONGII KHIID. 250 km",
-        description: "Partenza verso nord, fino al monastero distrutto di Ongiin Khiid e la catena montuosa del Gobi- Altai. Arrivo e visita delle rovine del Monastero. Dall&#39;alto del pendio dove è stato ricostruito un nuovo monastero, si osserva la vastità dell&#39;insediamento monastico dato alle fiamme in epoca comunista. Pranzo in lungo strada e visita una famiglia nomade. Cena e pernottamento in campo turistico. BLD",
+        description: "Partenza verso nord, fino al monastero distrutto di Ongiin Khiid e la catena montuosa del Gobi- Altai. Arrivo e visita delle rovine del Monastero. Dall'alto del pendio dove è stato ricostruito un nuovo monastero, si osserva la vastità dell'insediamento monastico dato alle fiamme in epoca comunista. Pranzo in lungo strada e visita una famiglia nomade. Cena e pernottamento in campo turistico. BLD",
     },
     {
         day: 14,
@@ -121,7 +121,7 @@ const itineraryData = [
     {
         day: 16,
         title: "VALLE DEL YOL. 210 km",
-        description: "Dopo colazione, partenza verso il Valle del Yol e sistemazione in campo turistico. Dopo pranzo ingresso nell’area del parco nazionale dei monti Gurvan Saikhan (Tre bellezze). Escursione nella valle di Yoliin Am, la “valle delle aquile”, habitat di numerose specie selvatiche. Fino a stagione avanzata si può passeggiare nel canyon al fresco di un&#39;incredibile nevaio. Possibilità di fare l&#39;escursione a cavallo. Pranzo e cena e pernottamento in campo turistico. BLD",
+        description: "Dopo colazione, partenza verso il Valle del Yol e sistemazione in campo turistico. Dopo pranzo ingresso nell’area del parco nazionale dei monti Gurvan Saikhan (Tre bellezze). Escursione nella valle di Yoliin Am, la “valle delle aquile”, habitat di numerose specie selvatiche. Fino a stagione avanzata si può passeggiare nel canyon al fresco di un'incredibile nevaio. Possibilità di fare l'escursione a cavallo. Pranzo e cena e pernottamento in campo turistico. BLD",
     },
     {
         day: 17,
@@ -136,7 +136,7 @@ const itineraryData = [
     {
         day: 19,
         title: "ULAANBAATAR. 100 km",
-        description: "Dopo colazione, partenza per Ulaanbaatar, arrivo e sistemazione in un hotel del centro. Pranzo in ristorante. Proseguimento con la visita al Palazzo Invernale dell’ultimo re mongolo, l’VIII Bodg Khaan Javzandamba Agvaanluvsan e shopping. Nel tardo pomeriggio, spettacolo folkloristico (ore 18-19), con musiche, danze e canti melodici, canto di gola Hoomii, contorsionismo e danza Tsam, simbolizzante le diverse divinità protettrici del buddismo lamaista. Alla sera cena dell&#39;arrivederci in un tipico ristorante cittadino. BLD",
+        description: "Dopo colazione, partenza per Ulaanbaatar, arrivo e sistemazione in un hotel del centro. Pranzo in ristorante. Proseguimento con la visita al Palazzo Invernale dell’ultimo re mongolo, l’VIII Bodg Khaan Javzandamba Agvaanluvsan e shopping. Nel tardo pomeriggio, spettacolo folkloristico (ore 18-19), con musiche, danze e canti melodici, canto di gola Hoomii, contorsionismo e danza Tsam, simbolizzante le diverse divinità protettrici del buddismo lamaista. Alla sera cena dell'arrivederci in un tipico ristorante cittadino. BLD",
     },
     {
         day: 20,
@@ -232,7 +232,7 @@ export default function OverlandDellaMongoliaPage() {
         <div className="bg-white h-screen">
             <Header />
 
-            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6 relative">
+            <section className="w-full min-h-screen text-black sm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
                 <BuyTravel />
                 <h1 className="text-center font-bold text-3xl">OVERLAND DELLA MONGOLIA TOUR</h1>
 
@@ -246,7 +246,7 @@ export default function OverlandDellaMongoliaPage() {
                     <h2 className="font-semibold text-xl mb-2">Breve itinerario</h2>
                     {shortItinerary.map((item) => (
                         <div key={item.day} className="flex gap-1">
-                            <h3 className="font-semibold">Giorno {item.day}.</h3>
+                            <h3 className="font-semibold whitespace-nowrap">Giorno {item.day}.</h3>
                             <p>{item.title}</p>
                         </div>
                     ))}

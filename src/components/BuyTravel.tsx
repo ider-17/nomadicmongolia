@@ -111,11 +111,11 @@ const BuyTravel = () => {
     return (
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-                <button className="absolute bottom-3 right-40 text-black bg-white border border-black rounded-full py-2 px-4 hover:bg-gray-200 active:text-white active:bg-black cursor-pointer">
+                <button className="absolute sm:bottom-3 bottom-[-15] sm:right-40 right-3 text-black bg-white border border-black rounded-full py-2 px-4 hover:bg-gray-200 active:text-white active:bg-black cursor-pointer">
                     Book Travel
                 </button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-106.25">
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <DialogHeader>
                         <DialogTitle>Book Your Travel</DialogTitle>

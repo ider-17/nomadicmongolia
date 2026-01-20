@@ -4,10 +4,10 @@ import { Header } from "@/components/Header";
 
 export default function ContactPage() {
   return (
-    <div className="bg-white h-screen">
+    <div className="bg-white min-h-screen">
       <Header />
 
-      <section className="w-full h-screen space-y-4 pt-[90px] px-[150px]">
+      <section className="w-full min-h-screen space-y-4 pt-22.5 sm:px-37.5 px-[5%]">
         <div className="text-black">
           Building 49/2-16 ,
           <br /> ikh toiruu gudamj,
@@ -21,7 +21,7 @@ export default function ContactPage() {
           {/* tour@nomadicmongolia.com */}
         </div>
 
-        <div className="">
+        <div>
           {/* husnegst 
                 LastName
                 Name

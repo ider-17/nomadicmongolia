@@ -41,7 +41,7 @@ const itineraryData = [
     day: 3,
     title: "KHOVSGOL",
     description:
-      "Prima colazione al campo. Si visiteranno delle famiglie Tsaatan (Popolo delle Renne) per conoscere i loro usi e costumi. Possibilita di fare delle passeggiate ed un&#39;escursione in motonave sul lago Khovsgol per ammirare lo splendido paesaggio. Cena e pernottamento al campo. BLD",
+      "Prima colazione al campo. Si visiteranno delle famiglie Tsaatan (Popolo delle Renne) per conoscere i loro usi e costumi. Possibilita di fare delle passeggiate ed un'escursione in motonave sul lago Khovsgol per ammirare lo splendido paesaggio. Cena e pernottamento al campo. BLD",
   },
   {
     day: 4,
@@ -183,7 +183,7 @@ export default function SteppeGobiPage() {
     <div className="bg-white h-screen">
       <Header />
 
-      <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6 relative">
+      <section className="w-full min-h-screen text-black psm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
         <BuyTravel />
         <h1 className="text-center font-bold text-3xl">Steppe e Gobi</h1>
 

@@ -29,7 +29,7 @@ export const Header = () => {
   }, []);
   return (
     <header
-      className={`w-full fixed top-0 flex justify-between items-center py-2 bg-[#2fa147] z-50 transition-transform duration-300 h-16 px-2 sm:h-fit sm:px-37.5 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
+      className={`w-full fixed top-0 flex justify-between items-center py-2 bg-[#2fa147] z-50 transition-transform duration-300 h-16 px-[5%] sm:h-fit sm:px-37.5 ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div>
         <Link href="/">

@@ -133,7 +133,7 @@ export default function TrekkingTourPage() {
         <div className="bg-white h-screen">
             <Header />
 
-            <section className="w-full min-h-screen text-black px-[150px] pt-25 space-y-6 bg-white pb-6 relative">
+            <section className="w-full min-h-screen text-black sm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
                 <BuyTravel />
                 <h1 className="text-center font-bold text-3xl">Trekking Tour in Mongolia
                 </h1>
@@ -146,7 +146,7 @@ export default function TrekkingTourPage() {
                     <h2 className="font-semibold text-xl mb-2">Breve itinerario</h2>
                     {shortItinerary.map((item) => (
                         <div key={item.day} className="flex gap-1">
-                            <h3 className="font-semibold">Giorno {item.day}.</h3>
+                            <h3 className="font-semibold whitespace-nowrap">Giorno {item.day}.</h3>
                             <p>{item.title}</p>
                         </div>
                     ))}
