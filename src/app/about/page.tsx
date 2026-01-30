@@ -1,231 +1,133 @@
 "use client";
 
-import { useState } from "react";
-import { Footer } from "@/components/Footer";
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import Hexagon from "@/components/Hexagon";
+import { urlFor } from "@/sanity/lib/image";
 
 export default function AboutPage() {
-  const [selectedTab, setSelectedTab] = useState("about");
+  const [selectedTab, setSelectedTab] = useState<"about" | "terms">("about");
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  const termsData = [
-    {
-      title: "YOUR HOLIDAY CONTRACT",
-      content:
-        "When you book a tour or other travel arrangements our contract with you takes effect when we send you a written Booking Confirmation / Invoice by email.Once the contract is made we are responsible for providing you with the tour you have booked and you are responsible to pay us for it, in each case subject to terms and conditions.",
-    },
-    {
-      title: "PLEASE NOTE",
-      content:
-        "It is important to check carefully the Booking Confirmation and the Itinerary of your tour when you receive it that all the details are exactly as you requested. Our responsibility is to provide you with the services you have booked as described in the itinerary and as confirmed to you. If your group consists of two or more people traveling together, the person who makes the tour booking by signing our booking form or otherwise contracting with us accepts the responsibility for making all payments to us for all members of the party. We will send all the documents and other relevant information to the lead guest, and the lead guest is responsible for ensuring that the other members of the party are kept fully informed. If you are aged under 18 /on the departure date/ and your parents or guardians are not traveling with you, we must have their written consent to proceed with the booking.",
-    },
-    {
-      title: "PRICES",
-      content:
-        "Once the booking is confirmed, the price of your tour is guaranteed and will not be subject to any changes or surcharges unless you request to add extra services at a later date.",
-    },
-    {
-      title: "PAYMENTS",
-      content:
-        "30% deposit payment is payable at the time of the booking, and the balance is payable 30 days prior to departure. The balance of 70% is payable 30 days prior to tour start date. If you book last minute, i.e. within 30 days from the tour start date, full payment is required at the time of the booking. Payments can be made by credit card in USD online using our website, or by bank wire transfer in USD or EUR. Bank details will be send to you with the invoice.",
-    },
-    {
-      title: "SPECIAL REQUESTS",
-      content:
-        "If you have any special request that does not form part of the tour as described in the itinerary /for example, dietary requirements or room location/ please let us know.We will always aim to meet any special requests, but cannot guarantee to do so.In no circumstances will such requests be accepted by us to form part of our contractual obligations and we will not have any liability if they are not met.",
-    },
-    {
-      title: "CHANGES",
-      content:
-        "If you wish to change any of the details of your booking after we have sent you the Booking Confirmation, you must let us know the required changes by email.Changes such as travel dates or adding extra services may incur charges and we will inform you if it’s the case and of the charge amount.All changes are subject to availability and cannot be guaranteed, for example, upgrading your accommodation or staying alone in a ger in a tourist camp would normally cost extra and may not be available in the high season.",
-    },
-    {
-      title: "CANCELLATIONS",
-      content:
-        "If you wish to cancel the trip after the booking has been confirmed, you must do so in writing by email and the following charges will apply.",
-      content2:
-        " 1. Cancellation within 30-60 days before the tour starts: 30 % of the total tour price.",
-      content3:
-        "2. Cancellation within 29-10 days before the tour starts: 50 % of the total tour price.",
-      content4:
-        "3. Cancellation within 9 days or no show before the tour starts: 100 % of the total tour price.",
-    },
-  ];
+  useEffect(() => {
+    client.fetch(`*[_type=="aboutPage"][0]`).then((res) => {
+      setData(res);
+      setLoading(false);
+    });
+  }, []);
 
-  const iNostriVantaggi = [
-    {
-      id: "1",
-      title: "Rispettiamo abitudine e cultura della popolazione locale",
-    },
-    {
-      id: "2",
-      title: "Acquistiamo e supportiamo i prodotti di provenienza locale",
-    },
-    { id: "3", title: "Sosteniamo le industrie lattiero-casearie" },
-    { id: "4", title: "Supportiamo i partner locali" },
-    { id: "5", title: "Diciamo NO alla plastica" },
-    { id: "6", title: "Ci prendiamo cura dei luoghi del patrimonio" },
-    { id: "7", title: "Siamo VERDI" },
-    { id: "8", title: "Diffondiamo la consapevolezza del turismo sostenibile" },
-    { id: "9", title: "Sosteniamo i bar e i ristoranti locali" },
-    { id: "10", title: "Compriamo souvenir dai negozi e dalla gente locale" },
-    { id: "11", title: "Sosteniamo la lotta al commercio illegale" },
-    { id: "12", title: "Camminiamo dove possibile" },
-    {
-      id: "13",
-      title:
-        "Promuoviamo il turismo sostenibile con i nostri circoli interni ed esterni",
-    },
-    { id: "14", title: "Viaggiamo più a contatto con la natura" },
-    { id: "15", title: "Sosteniamo il principio LEAVE NO TRACE" },
-    {
-      id: "16",
-      title: "Condividiamo le nostre esperienze di turismo sostenibile",
-    },
-    {
-      id: "17",
-      title: "Facciamo turismo sostenibile nella “New Normal”",
-    },
-  ];
-
-  const ourBenefits = [
-    { id: "1", title: "We respect the practices of local people" },
-    {
-      id: "2",
-      title: "We employ local people and buy locally-sourced products",
-    },
-    { id: "3", title: "We support dairy industries" },
-    { id: "4", title: "We advance fair employment practices" },
-    { id: "5", title: "We avoid the plane" },
-    { id: "6", title: "We say NO to the plastic" },
-    { id: "7", title: "We take care of heritage places" },
-    { id: "8", title: "We go GREEN" },
-    { id: "9", title: "We support LEAVE NO TRACE principle" },
-    { id: "10", title: "We spread awareness of sustainable tourism" },
-    { id: "11", title: "We support local restaurants and dining places" },
-    { id: "12", title: "We buy souvenirs from local stores" },
-    { id: "13", title: "We support the fight against illegal trade" },
-    { id: "14", title: "We walk wherever possible" },
-    {
-      id: "15",
-      title: "We promote sustainable tourism with our inner and outer circles",
-    },
-    { id: "16", title: "We travel more locally" },
-    { id: "17", title: "We share our sustainable tourism experiences" },
-    { id: "18", title: "We make sustainable tourism the new normal" },
-  ];
+  if (loading || !data) {
+    return <div className="p-10 text-center">Loading...</div>;
+  }
 
   return (
     <div className="bg-white text-black min-h-screen overflow-hidden">
       <Header />
 
-      <section className="bg-white w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2">
+      <section className="bg-white w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2 min-h-screen">
+        {/* Tabs */}
         <div className="w-full rounded-2xl sm:p-6 py-6">
           <ul className="text-gray-800 font-medium flex gap-5 items-center">
             <li
               onClick={() => setSelectedTab("about")}
-              className={`font-semibold cursor-pointer text-black ${selectedTab === "about" ? "border-b-2 pb-1" : ""}`}
+              className={`font-semibold cursor-pointer ${
+                selectedTab === "about" ? "border-b-2 pb-1" : ""
+              }`}
             >
               CHI SIAMO
             </li>
             <li
               onClick={() => setSelectedTab("terms")}
-              className={`font-semibold cursor-pointer text-black ${selectedTab === "terms" ? "border-b-2 pb-1" : ""}`}
+              className={`font-semibold cursor-pointer ${
+                selectedTab === "terms" ? "border-b-2 pb-1" : ""
+              }`}
             >
               TERMS AND CONDITIONS
             </li>
           </ul>
         </div>
 
-        <div className="w-full flex flex-col gap-5 pt-0 sm:pt-6">
+        {/* CONTENT */}
+        <div className="w-full flex flex-col gap-5 sm:pt-6">
+          {/* ABOUT TAB */}
           {selectedTab === "about" && (
             <section className="space-y-6">
-              <div className="space-y-4">
-                <div>
-                  <h2 className="text-center text-2xl font-bold mb-3">
-                    I nostri vantaggi
-                  </h2>
-                  <div className="sm:grid sm:grid-cols-2 sm:grid-rows-8">
-                    {iNostriVantaggi.map((item) => (
-                      <p key={item.id} className="flex items-start gap-2">
-                        <span>•</span>
-                        <span>{item.title}</span>
-                      </p>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center">
-                  <h2 className="text-center text-2xl font-bold">
-                    Our benefits
-                  </h2>
-
-                  <div className="flex flex-col items-start">
-                    {ourBenefits.map((item, id) => (
-                      <p key={item.id} className="">
-                        {item.title}
-                      </p>
-                    ))}
-                  </div>
+              {/* I nostri vantaggi */}
+              <div>
+                <h2 className="text-center text-2xl font-bold mb-3">
+                  I nostri vantaggi
+                </h2>
+                <div className="sm:grid sm:grid-cols-2 sm:grid-rows-8 gap-1">
+                  {data.iNostriVantaggi?.map((item: string, index: number) => (
+                    <p key={index} className="flex gap-2">
+                      <span>•</span>
+                      <span>{item}</span>
+                    </p>
+                  ))}
                 </div>
               </div>
 
+              {/* Our benefits */}
+              <div className="flex flex-col items-center">
+                <h2 className="text-center text-2xl font-bold">Our benefits</h2>
+                <div className="flex flex-col items-start">
+                  {data.ourBenefits?.map((item: string, index: number) => (
+                    <p key={index}>{item}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* About text */}
               <div className="space-y-4">
                 <h2 className="text-3xl font-semibold text-center">
                   Grazie per aver visitato il nostro sito!
                 </h2>
-                <p className="text-justify">
-                  Siamo un tour operatore locale con staff nazionali, fondata
-                  dai staff mongoli con più di 10 anni di esperienza nel settore
-                  turistico.Proponiamo viaggi di tutti tipi dal costa meno al
-                  viaggio di lusso, dal viaggio privato a quello di gruppo in
-                  Mongolia.Offriamo consulenza gratuita sull’organizzazione del
-                  viaggio e personalizzazione degli itinerari, il nostro esperto
-                  e qualificato team è in grado di supportare tutte le vostre
-                  necessità prima e dopo la partenza.
-                </p>
+                <p className="text-justify">{data.aboutParagraph}</p>
 
+                {/* Team */}
                 <div className="w-full sm:flex block gap-6 space-y-2">
-                  <div className="sm:w-1/2 w-full space-y-1">
-                    {/* <img className="mx-auto rounded-2xl w-[300px] h-[350px]" src="" /> */}
-                    <div className="sm:w-75 sm:h-87.5 w-[80%] h-80 bg-blue-200 mx-auto rounded-2xl"></div>
-                    <p className="font-semibold text-center text-lg">
-                      Burenchimeg Sergelen
-                    </p>
-                    <p className="text-center sm:w-1/2 w-full mx-auto">
-                      Direttrice, con la esperienza più di 10 anni nel campo del
-                      settore del turistico e parla in italiano e <br />{" "}
-                      inglese.
-                    </p>
-                  </div>
-                  <div className="sm:w-1/2 w-full space-y-1">
-                    {/* <img className="mx-auto rounded-2xl w-[300px] h-[350px]" src="" /> */}
-                    <div className="sm:w-75 sm:h-87.5 w-[80%] h-80 bg-blue-200 mx-auto rounded-2xl"></div>
-                    <p className="font-semibold text-center text-lg">
-                      Bat-Uchral Ganzorigt
-                    </p>
-                    <p className="text-center sm:w-1/2 w-full mx-auto">
-                      Sales manager, con la esperienza più di 10 anni nel campo
-                      del settore del turistico e parla in italiano e inglese.
-                    </p>
-                  </div>
+                  {data.team?.map((member: any, index: number) => (
+                    <div key={index} className="sm:w-1/2 w-full space-y-1">
+                      {member.image?.asset && (
+                        <img
+                          src={urlFor(member.image)
+                            .width(400)
+                            .height(500)
+                            .url()}
+                          alt={member.name}
+                          className="sm:w-75 sm:h-87.5 w-[80%] h-80 mx-auto rounded-2xl object-cover"
+                        />
+                      )}
+
+                      <p className="font-semibold text-center text-lg">
+                        {member.name}
+                      </p>
+                      <p className="text-center sm:w-1/2 w-full mx-auto">
+                        {member.role}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
+              {/* Why choose us */}
               <div className="w-full mt-4">
                 <div className="flex gap-2 justify-center *:text-3xl *:font-bold">
-                  <h2>Perchè Scegliere </h2>
+                  <h2>Perchè Scegliere</h2>
                   <p className="text-[#327236]">Noi ?</p>
                 </div>
-
                 <Hexagon />
               </div>
             </section>
           )}
 
+          {/* TERMS TAB */}
           {selectedTab === "terms" &&
-            termsData.map((item, index) => (
-              <div key={index}>
+            data.terms?.map((item: any, index: number) => (
+              <div key={index} className="space-y-2">
                 <h2 className="text-2xl font-semibold">{item.title}</h2>
                 <p>{item.content}</p>
                 {item.content2 && <p>{item.content2}</p>}
@@ -240,71 +142,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-// Chi siamo-giin text
-
-// Grazie per aver visitato il nostro sito!
-// Siamo un tour operatore locale con staff nazionali, fondata dai staff mongoli con più di 10 anni
-// di esperienza nel settore turistico.Proponiamo viaggi di tutti tipi dal costa meno al viaggio di
-// lusso, dal viaggio privato a quello di gruppo in Mongolia.Offriamo consulenza gratuita
-// sull’organizzazione del viaggio e personalizzazione degli itinerari, il nostro esperto e qualificato
-// team è in grado di supportare tutte le vostre necessità prima e dopo la partenza.
-
-// Burenchimeg Sergelen, cofondatrice, con la esperienza più di 10 anni nel campo del settore del
-// turistico e parla in italiano e inglese.Зураг оруулах
-// Yesulen Bolbaatar, sales manager, con la esperienza più di 10 anni nel campo del settore del
-// turistico e parla in italiano e inglese.Зураг оруулах
-
-// Perchè scegliere noi ?
-//     Siamo responsabili
-// Siamo esperti
-// Siamo locali
-// Siamo ospitali
-// Siamo sempre a disposizione
-
-// Se cerchi la vera Mongolia, la vita dei nomadi, la bellezza di natura, il selenzio di rilasso, la vita
-// alla natura te lo proponiamo, se sogni un viaggio nella nostra terra meravigliosa, ti aspettiamo!
-
-//  Viaggi private e viaggi di gruppo con la guida in italiano o inglese tutto il viaggio
-// Lavoriamo nel campo del turismo da più di 10 anni con turisti italiani.
-// Proponiamo viaggi private e di Gruppo in Mongolia.
-// Offriamo consulenza gratuita sull’organizzazione del viaggio e personalizzazione degli itinerari
-
-// I nostri vantaggi:
-//                                      Rispettiamo abitudine e cultura della popolazione locale
-//                                      acquistiamo e supportiamo i prodotti di provenienza locale
-//                                      Sosteniamo le industrie lattiero-casearie
-//                                      Supportiamo le partner locale
-//                                      Diciamo NO plastic
-//                                      Ci prendiamo cura dei luoghi del patrimonio
-//                                      VERDI
-//                                      Sosteniamo il principio LEAVE NO TRACE
-//                                      Diffondiamo la consapevolezza del turismo sostenibile
-//                                      Sosteniamo i bar e i ristoranti locali
-//                                      Compriamo souvenir dai negozi e dalla gente locali
-//                                      Sosteniamo la lotta al commercio illegale
-//                                      Camminiamo dove possibile
-//                                      Promuoviamo il turismo sostenibile con i nostri circoli interni ed esterni
-//                                      Viaggiamo più alla natura
-//                                      Condividiamo le nostre esperienze di turismo sostenibile
-//                                     Facciamo turismo sostenibile nella “New Normal”
-//                                     Our benefits:
-//                                     We respect the practices of local people
-//                                     We employ local people and buy locally-sourced products
-//                                     We support dairy industries
-//                                     We advance fair employment practices
-//                                     We avoid the plane
-//                                     We say NO to the plastic
-//                                     We take care of heritage places
-//                                     We go GREEN
-//                                     We support LEAVE NO TRACE principle
-//                                     We spread awareness of sustainable tourism
-//                                     We support local restaurants and dining places
-//                                     We buy souvenirs from local stores
-//                                     We support the fight against illegal trade
-//                                     We walk wherever possible
-//                                     We promote sustainable tourism with our inner and outer circles
-//                                     We travel more locally
-//                                     We share our sustainable tourism experiences
-
-//                                     We make sustainable tourism in the “new normal”

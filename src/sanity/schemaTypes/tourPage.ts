@@ -1,7 +1,7 @@
 export default {
     name: 'tourPage',
     type: 'document',
-    title: 'Tour Page',
+    title: 'Home Page',
     fields: [
         {
             name: 'title',

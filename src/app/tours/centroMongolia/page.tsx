@@ -29,7 +29,7 @@ const itineraryData = [
     { day: 7, title: "ULAANBAATAR – ITALIA", description: "Prima colazione e trasferimento in aeroporto per il volo di rientro in Italia." },
 ];
 
-const laQuotaComprende = [
+export const laQuotaComprende = [
     { id: 1, description: "Sistemazione: 2 notti in Hotel*** a Ulaanbaatar e 5 notti in Campi turistici nelle Gher durante il viaggio, sistemazione in camera doppia (singola a richiesta con supplemento) con bagni privati in hotel e con bagni condivisi nelle gher" },
     { id: 2, description: "6 prime colazioni, 6 pranzi, 6 cene" },
     { id: 3, description: "Guida locale parlante italiano o inglese per 6 giorni" },
@@ -44,7 +44,7 @@ const laQuotaComprende = [
     { id: 12, description: "Lettera di invito per ingresso al paese" },
 ];
 
-const laQuotaNonComprende = [
+export const laQuotaNonComprende = [
     { id: 1, description: "voli intercontinentali Milano/Roma - Ulaanbaatar" },
     { id: 2, description: "Visto ingresso Mongolia (se richiesto)" },
     { id: 3, description: "Supplemento sistemazione in singola Euro 130" },
