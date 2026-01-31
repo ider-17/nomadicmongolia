@@ -150,3 +150,21 @@ export async function getTaigaTour() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getTrekkingTour() {
+  const query = `*[_type == "trekkingTourPage"][0]{
+    title,
+    duration,
+    dateRange,
+    shortItinerary,
+    images,
+    itineraryData,
+    quataIndividuale,
+    laQuotaComprende,
+    laQuotaNonComprende,
+    travelSuggestions,
+    ourAdvantages
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}
