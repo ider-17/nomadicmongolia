@@ -91,3 +91,19 @@ export async function getDesertoDelGobiPage() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getDesertoNaadamPage() {
+  const query = `*[_type == "desertoNaadamPage"][0]{
+    title,
+    duration,
+    dates,
+    shortItinerary,
+    images,
+    itineraryData,
+    quataIndividuale,
+    laQuotaComprende,
+    laQuotaNonComprende
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}

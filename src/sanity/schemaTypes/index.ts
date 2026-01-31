@@ -13,6 +13,7 @@ import { aboutPage } from "./aboutPage";
 import { birdWatching } from "./birdWatching";
 import { centroMongoliaPage } from "./centroMongolia";
 import { desertoDelGobiPage } from "./desertoDelGobi";
+import { desertoNaadamPage } from "./desertoNaadam";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -24,6 +25,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     birdWatching,
     centroMongoliaPage,
     desertoDelGobiPage,
+    desertoNaadamPage,
     aboutSection,
     slideCarousel,
     tourSection,
