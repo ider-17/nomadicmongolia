@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Hexagon from "@/components/Hexagon";
 import { urlFor } from "@/sanity/lib/image";
+import { useLanguage } from "../context/LanguageContext"; // context-аа ашиглаж байна
 
 export default function AboutClient({ data }: { data: any }) {
   const [selectedTab, setSelectedTab] = useState("about");
+  const { language } = useLanguage();
 
   return (
-    <section className="w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2">
+    <section className="bg-white w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2">
       {/* Tabs */}
       <ul className="flex gap-5 font-semibold">
         <li
@@ -17,7 +19,7 @@ export default function AboutClient({ data }: { data: any }) {
             selectedTab === "about" ? "border-b-2" : ""
           }`}
         >
-          CHI SIAMO
+          {language === "it" ? "CHI SIAMO" : "ABOUT US"}
         </li>
         <li
           onClick={() => setSelectedTab("terms")}
@@ -25,7 +27,7 @@ export default function AboutClient({ data }: { data: any }) {
             selectedTab === "terms" ? "border-b-2" : ""
           }`}
         >
-          TERMS AND CONDITIONS
+          {language === "it" ? "TERMINI E CONDIZIONI" : "TERMS AND CONDITIONS"}
         </li>
       </ul>
 
@@ -33,37 +35,47 @@ export default function AboutClient({ data }: { data: any }) {
         {/* ABOUT TAB */}
         {selectedTab === "about" && (
           <section className="space-y-6">
-            {/* I nostri vantaggi */}
+            {/* I nostri vantaggi / Our advantages */}
             <div>
               <h2 className="text-center text-2xl font-bold mb-3">
-                I nostri vantaggi
+                {language === "it" ? "I nostri vantaggi" : "Our advantages"}
               </h2>
-              <div className="sm:grid sm:grid-cols-2 sm:grid-rows-8 gap-1">
-                {data.vantaggiIt?.map((item: string, index: number) => (
-                  <p key={index} className="flex gap-2">
-                    <span>•</span>
-                    <span>{item}</span>
-                  </p>
-                ))}
+              <div className="sm:grid sm:grid-cols-2 h-fit gap-1">
+                {(language === "it" ? data.vantaggiIt : data.vantaggiEn)?.map(
+                  (item: string, index: number) => (
+                    <p key={index} className="flex gap-2">
+                      <span>•</span>
+                      <span>{item}</span>
+                    </p>
+                  )
+                )}
               </div>
             </div>
 
             {/* Our benefits */}
-            <div className="flex flex-col items-center">
-              <h2 className="text-center text-2xl font-bold">Our benefits</h2>
+            {/* <div className="flex flex-col items-center">
+              <h2 className="text-center text-2xl font-bold">
+                {language === "it" ? "I nostri benefici" : "Our benefits"}
+              </h2>
               <div className="flex flex-col items-start">
-                {data.benefitsEn?.map((item: string, index: number) => (
-                  <p key={index}>{item}</p>
-                ))}
+                {(language === "it" ? data.benefitsIt : data.benefitsEn)?.map(
+                  (item: string, index: number) => (
+                    <p key={index}>{item}</p>
+                  )
+                )}
               </div>
-            </div>
+            </div> */}
 
             {/* About text */}
             <div className="space-y-4">
               <h2 className="text-3xl font-semibold text-center">
-                Grazie per aver visitato il nostro sito!
+                {language === "it"
+                  ? "Grazie per aver visitato il nostro sito!"
+                  : "Thank you for visiting our website!"}
               </h2>
-              <p className="text-justify">{data.aboutText}</p>
+              <p className="text-justify">
+                {language === "it" ? data.aboutTextIt : data.aboutTextEn}
+              </p>
 
               {/* Team */}
               <div className="w-full sm:flex block gap-6 space-y-2">
@@ -80,8 +92,8 @@ export default function AboutClient({ data }: { data: any }) {
                     <p className="font-semibold text-center text-lg">
                       {member.name}
                     </p>
-                    <p className="text-center sm:w-1/2 w-full mx-auto">
-                      {member.role}
+                    <p className="sm:w-1/2 w-full mx-auto text-justify">
+                      {language === "it" ? member.roleIt : member.roleEn}
                     </p>
                   </div>
                 ))}
@@ -91,8 +103,10 @@ export default function AboutClient({ data }: { data: any }) {
             {/* Why choose us */}
             <div className="w-full mt-4">
               <div className="flex gap-2 justify-center *:text-3xl *:font-bold">
-                <h2>Perchè Scegliere</h2>
-                <p className="text-[#327236]">Noi ?</p>
+                <h2>{language === "it" ? "Perchè Scegliere" : "Why choose"}</h2>
+                <p className="text-[#327236]">
+                  {language === "it" ? "Noi ?" : "Us?"}
+                </p>
               </div>
               <Hexagon />
             </div>
@@ -103,11 +117,19 @@ export default function AboutClient({ data }: { data: any }) {
         {selectedTab === "terms" &&
           data.terms?.map((item: any, index: number) => (
             <div key={index} className="space-y-2">
-              <h2 className="text-2xl font-semibold">{item.title}</h2>
-              <p>{item.content}</p>
-              {item.content2 && <p>{item.content2}</p>}
-              {item.content3 && <p>{item.content3}</p>}
-              {item.content4 && <p>{item.content4}</p>}
+              <h2 className="text-2xl font-semibold">
+                {language === "it" ? item.titleIt : item.titleEn}
+              </h2>
+              <p>{language === "it" ? item.contentIt : item.contentEn}</p>
+              {item.content2It && (
+                <p>{language === "it" ? item.content2It : item.content2En}</p>
+              )}
+              {item.content3It && (
+                <p>{language === "it" ? item.content3It : item.content3En}</p>
+              )}
+              {item.content4It && (
+                <p>{language === "it" ? item.content4It : item.content4En}</p>
+              )}
             </div>
           ))}
       </div>

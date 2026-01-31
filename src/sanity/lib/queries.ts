@@ -190,15 +190,24 @@ export async function getTours() {
 export async function getAboutPage() {
   const query = `*[_type == "aboutPage"][0]{
     vantaggiIt,
-    benefitsEn,
-    aboutText,
+    vantaggiEn,
+    // benefitsIt,
+    // benefitsEn,
+    aboutTextIt,
+    aboutTextEn,
     team[]{
       name,
-      role,
+      roleIt,
+      roleEn,
       description,
       photo
     },
-    terms
+    terms[]{
+      titleIt,
+      titleEn,
+      contentIt,
+      contentEn,
+    }
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });

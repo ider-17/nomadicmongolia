@@ -11,20 +11,34 @@ export const aboutPage = defineType({
       type: "array",
       of: [{ type: "string" }],
     }),
-
     defineField({
-      name: "benefitsEn",
-      title: "Our benefits (EN)",
+      name: "vantaggiEn",
+      title: "Our advantages (EN)",
       type: "array",
       of: [{ type: "string" }],
     }),
-
+    // defineField({
+    //   name: "benefitsIt",
+    //   title: "Our benefits (IT)",
+    //   type: "array",
+    //   of: [{ type: "string" }],
+    // }),
+    // defineField({
+    //   name: "benefitsEn",
+    //   title: "Our benefits (EN)",
+    //   type: "array",
+    //   of: [{ type: "string" }],
+    // }),
     defineField({
-      name: "aboutText",
-      title: "About description",
+      name: "aboutTextIt",
+      title: "About description (IT)",
       type: "text",
     }),
-
+    defineField({
+      name: "aboutTextEn",
+      title: "About description (EN)",
+      type: "text",
+    }),
     defineField({
       name: "team",
       title: "Team members",
@@ -34,14 +48,13 @@ export const aboutPage = defineType({
           type: "object",
           fields: [
             { name: "name", type: "string" },
-            { name: "role", type: "string" },
-            // { name: "description", type: "text" },
+            { name: "roleIt", type: "string" },
+            { name: "roleEn", type: "string" },
             { name: "photo", type: "image" },
           ],
         },
       ],
     }),
-
     defineField({
       name: "terms",
       title: "Terms & Conditions",
@@ -50,11 +63,10 @@ export const aboutPage = defineType({
         {
           type: "object",
           fields: [
-            { name: "title", type: "string" },
-            { name: "content", type: "text" },
-            { name: "content2", type: "string" },
-            { name: "content3", type: "string" },
-            { name: "content4", type: "string" },
+            { name: "titleIt", type: "string" },
+            { name: "titleEn", type: "string" },
+            { name: "contentIt", type: "text" },
+            { name: "contentEn", type: "text" },
           ],
         },
       ],

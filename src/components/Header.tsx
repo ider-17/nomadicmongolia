@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { MenuBar } from "./Menu";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export const Header = () => {
+  const { language, setLanguage } = useLanguage();
   const [showHeader, setShowHeader] = useState(true);
   const lastScrollY = useRef(0);
 
@@ -42,21 +44,37 @@ export const Header = () => {
           />
         </Link>
       </div>
+
+      <div className="flex gap-2 text-white">
+        <button
+          onClick={() => setLanguage("it")}
+          className={`cursor-pointer ${language === "it" ? "font-semibold underline underline-offset-8" : ""}`}
+        >
+          IT
+        </button>
+        <button
+          onClick={() => setLanguage("en")}
+          className={`cursor-pointer ${language === "en" ? "font-semibold underline underline-offset-8" : ""}`}
+        >
+          EN
+        </button>
+      </div>
+
       <ul className="sm:flex gap-4 *:text-white *:hover:underline *:hover:underline-offset-8 *:font-semibold *:cursor-pointer hidden">
         <li>
-          <Link href="/">HOME</Link>
+          <Link href="/">{language === "it" ? "HOME" : "HOME"}</Link>
         </li>
         <li>
           {/* WHO WE ARE */}
-          <Link href="/about">CHI SIAMO</Link>
+          <Link href="/about">{language === "it" ? "CHI SIAMO" : "ABOUT US"}</Link>
         </li>
         <li>
           {/* GALLERY */}
-          <Link href="/gallery">GALLERIA</Link>
+          <Link href="/gallery">{ language === "it" ? "GALLERIA" : "GALLERY"}</Link>
         </li>
         <li>
           {/* TOURS */}
-          <Link href="/tours">VIAGGI</Link>
+          <Link href="/tours">{ language === "it" ? "VIAGGI" : "TRIPS"}</Link>
         </li>
         {/* <li>
                     // BOOKING
@@ -64,7 +82,7 @@ export const Header = () => {
                 </li> */}
         <li>
           {/* CONTACT US */}
-          <Link href="/contacts">CONTATTI</Link>
+          <Link href="/contacts">{ language === "it" ? "CONTATTI" : "CONTACTS"}</Link>
         </li>
       </ul>
 

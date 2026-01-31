@@ -6,7 +6,7 @@ import { getAboutPage } from "@/sanity/lib/queries";
 export default async function AboutPage() {
   const data = await getAboutPage();
 
-  if (!data) return null;
+  if (!data) return <p>Data not found!</p>;
 
   return (
     <div className="bg-white text-black min-h-screen overflow-hidden">

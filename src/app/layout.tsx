@@ -1,7 +1,9 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner"; // ✅ Toast оруулж ирж байна
+import { LanguageProvider } from "./context/LanguageContext"; // ✅ Language context оруулж ирэв
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Toaster */}
         <Toaster position="top-right" richColors />
-        {children}
+
+        {/* LanguageProvider бүх site-д тархсан */}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );
