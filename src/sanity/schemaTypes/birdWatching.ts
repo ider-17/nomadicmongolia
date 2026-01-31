@@ -5,20 +5,50 @@ export const birdWatching = defineType({
   title: "Birdwatching Tour",
   type: "document",
   fields: [
-    defineField({ name: "title", type: "string", title: "Page Title" }),
-    defineField({ name: "duration", type: "string", title: "Durata" }),
-    defineField({ name: "date", type: "string", title: "Date" }),
+    defineField({
+      name: "titleIt",
+      type: "string",
+      title: "Page Title (IT)",
+    }),
+    defineField({
+      name: "titleEn",
+      type: "string",
+      title: "Page Title (EN)",
+    }),
+
+    defineField({
+      name: "durationIt",
+      type: "string",
+      title: "Durata (IT)",
+    }),
+    defineField({
+      name: "durationEn",
+      type: "string",
+      title: "Duration (EN)",
+    }),
+
+    defineField({
+      name: "dateIt",
+      type: "string",
+      title: "Date (IT)",
+    }),
+    defineField({
+      name: "dateEn",
+      type: "string",
+      title: "Date (EN)",
+    }),
 
     defineField({
       name: "shortItinerary",
       type: "array",
-      title: "Breve Itinerario",
+      title: "Breve itinerario / Short itinerary",
       of: [
         {
           type: "object",
           fields: [
             { name: "day", type: "number" },
-            { name: "title", type: "string" },
+            { name: "titleIt", type: "string", title: "Title (IT)" },
+            { name: "titleEn", type: "string", title: "Title (EN)" },
           ],
         },
       ],
@@ -40,53 +70,100 @@ export const birdWatching = defineType({
           type: "object",
           fields: [
             { name: "day", type: "number" },
-            { name: "title", type: "string" },
-            { name: "description", type: "text" },
-            { name: "giugno", type: "string" },
+            { name: "titleIt", type: "string", title: "Title (IT)" },
+            { name: "titleEn", type: "string", title: "Title (EN)" },
+            {
+              name: "descriptionIt",
+              type: "text",
+              title: "Description (IT)",
+            },
+            {
+              name: "descriptionEn",
+              type: "text",
+              title: "Description (EN)",
+            },
+            { name: "giugnoIt", type: "string", title: "Month (IT)" },
+            { name: "giugnoEn", type: "string", title: "Month (EN)" },
           ],
         },
       ],
     }),
 
     defineField({
-      name: "keyBirdSpeciesList",
+      name: "keyBirdSpeciesListIt",
       type: "array",
-      title: "Key bird species list",
+      title: "Key bird species (IT)",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "keyBirdSpeciesListEn",
+      type: "array",
+      title: "Key bird species (EN)",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "mammalList",
+      name: "mammalListIt",
       type: "array",
-      title: "Mammal list",
+      title: "Mammal list (IT)",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "mammalListEn",
+      type: "array",
+      title: "Mammal list (EN)",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "travelOptions",
+      name: "travelOptionsIt",
       type: "array",
-      title: "Travel Options",
+      title: "Travel options (IT)",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "travelOptionsEn",
+      type: "array",
+      title: "Travel options (EN)",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "inclusions",
+      name: "inclusionsIt",
       type: "array",
-      title: "La quota comprende",
+      title: "La quota comprende (IT)",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "inclusionsEn",
+      type: "array",
+      title: "Inclusions (EN)",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "exclusions",
+      name: "exclusionsIt",
       type: "array",
-      title: "La quota non comprende",
+      title: "La quota non comprende (IT)",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "exclusionsEn",
+      type: "array",
+      title: "Exclusions (EN)",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "equipmentList",
+      name: "equipmentListIt",
       type: "array",
-      title: "Suggerimenti per il viaggio",
+      title: "Suggerimenti per il viaggio (IT)",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "equipmentListEn",
+      type: "array",
+      title: "Travel tips (EN)",
       of: [{ type: "string" }],
     }),
   ],

@@ -64,6 +64,59 @@ export async function getGalleryGroups() {
   return await client.fetch(query, {}, { cache: "no-store" });
 }
 
+export async function getBirdWatchingPage() {
+  const query = `*[_type == "birdWatchingPage"][0]{
+    titleIt,
+    titleEn,
+
+    durationIt,
+    durationEn,
+
+    dateIt,
+    dateEn,
+
+    shortItinerary[]{
+      day,
+      titleIt,
+      titleEn
+    },
+
+    images[]{
+      asset
+    },
+
+    itineraryData[]{
+      day,
+      titleIt,
+      titleEn,
+      descriptionIt,
+      descriptionEn,
+      giugnoIt,
+      giugnoEn
+    },
+
+    keyBirdSpeciesListIt,
+    keyBirdSpeciesListEn,
+
+    mammalListIt,
+    mammalListEn,
+
+    travelOptionsIt,
+    travelOptionsEn,
+
+    inclusionsIt,
+    inclusionsEn,
+
+    exclusionsIt,
+    exclusionsEn,
+
+    equipmentListIt,
+    equipmentListEn
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}
+
 export async function getCentroMongoliaPage() {
   const query = `*[_type == "centroMongoliaPage"][0]{
     title,
