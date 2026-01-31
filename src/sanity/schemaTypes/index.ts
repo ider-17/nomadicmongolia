@@ -1,17 +1,18 @@
 import { type SchemaTypeDefinition } from "sanity";
 
+import aboutSection from "./aboutSection";
+import slideCarousel from "./slideCarousel";
+import tourSection from "./tourSection";
+import tourPage from "./tourPage";
+import galleryGroup from "./galleryGroup";
 import { blockContentType } from "./blockContentType";
 import { categoryType } from "./categoryType";
 import { postType } from "./postType";
 import { authorType } from "./authorType";
 import { aboutPage } from "./aboutPage";
 import { birdWatching } from "./birdWatching";
-import aboutSection from "./aboutSection";
-import slideCarousel from "./slideCarousel";
-import tourSection from "./tourSection";
-import tourPage from "./tourPage";
-import galleryGroup from "./galleryGroup";
 import { centroMongoliaPage } from "./centroMongolia";
+import { desertoDelGobiPage } from "./desertoDelGobi";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,6 +23,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutPage,
     birdWatching,
     centroMongoliaPage,
+    desertoDelGobiPage,
     aboutSection,
     slideCarousel,
     tourSection,
