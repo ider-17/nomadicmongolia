@@ -107,3 +107,18 @@ export async function getDesertoNaadamPage() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getOverlandMongolia() {
+  const query = `*[_type == "overlandMongolia"][0]{
+    title,
+    region,
+    duration,
+    shortItinerary,
+    images,
+    itineraryData,
+    laQuotaComprende,
+    laQuotaNonComprende
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}
