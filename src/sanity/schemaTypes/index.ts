@@ -18,6 +18,7 @@ import { overlandMongolia } from "./overlandMongolia";
 import { steppeGobiPage } from "./steppeGobi";
 import { taigaTour } from "./taigaTour";
 import { trekkingTourPage } from "./trekkingTour";
+import { tour } from "./toursPage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -34,6 +35,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     steppeGobiPage,
     taigaTour,
     trekkingTourPage,
+    tour,
     aboutSection,
     slideCarousel,
     tourSection,

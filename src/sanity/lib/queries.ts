@@ -168,3 +168,21 @@ export async function getTrekkingTour() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getTours() {
+  const query = `*[_type == "tour"] | order(_createdAt asc){
+    _id,
+    title,
+    slug,
+    photo,
+    duration,
+    locations,
+    desTitle1,
+    describtion1,
+    desTitle2,
+    describtion2,
+    btnText
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}
