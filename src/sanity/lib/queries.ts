@@ -137,3 +137,16 @@ export async function getSteppeGobiPage() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getTaigaTour() {
+  const query = `*[_type == "taigaTour"][0]{
+    title,
+    region,
+    duration,
+    shortItinerary,
+    images,
+    itineraryData
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}

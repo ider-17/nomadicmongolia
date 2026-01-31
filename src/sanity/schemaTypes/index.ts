@@ -16,6 +16,7 @@ import { desertoDelGobiPage } from "./desertoDelGobi";
 import { desertoNaadamPage } from "./desertoNaadam";
 import { overlandMongolia } from "./overlandMongolia";
 import { steppeGobiPage } from "./steppeGobi";
+import { taigaTour } from "./taigaTour";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -30,6 +31,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     desertoNaadamPage,
     overlandMongolia,
     steppeGobiPage,
+    taigaTour,
     aboutSection,
     slideCarousel,
     tourSection,
