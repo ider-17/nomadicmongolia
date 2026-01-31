@@ -5,9 +5,13 @@ export const desertoDelGobiPage = defineType({
   title: "Deserto Del Gobi Tour",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string" }),
-    defineField({ name: "region", title: "Region", type: "string" }),
-    defineField({ name: "duration", title: "Duration", type: "string" }),
+    defineField({ name: "titleIt", title: "Title (IT)", type: "string" }),
+    defineField({ name: "titleEn", title: "Title (EN)", type: "string" }),
+    defineField({ name: "regionIt", title: "Region (IT)", type: "string" }),
+    defineField({ name: "regionEn", title: "Region (EN)", type: "string" }),
+    defineField({ name: "durationIt", title: "Duration (IT)", type: "string" }),
+    defineField({ name: "durationEn", title: "Duration (EN)", type: "string" }),
+
     defineField({
       name: "shortItinerary",
       title: "Short Itinerary",
@@ -17,17 +21,20 @@ export const desertoDelGobiPage = defineType({
           type: "object",
           fields: [
             { name: "day", type: "number" },
-            { name: "title", type: "string" },
+            { name: "titleIt", type: "string" },
+            { name: "titleEn", type: "string" },
           ],
         },
       ],
     }),
+
     defineField({
       name: "images",
       title: "Images",
       type: "array",
       of: [{ type: "image" }],
     }),
+
     defineField({
       name: "itineraryData",
       title: "Itinerary Data",
@@ -37,8 +44,10 @@ export const desertoDelGobiPage = defineType({
           type: "object",
           fields: [
             { name: "day", type: "number" },
-            { name: "title", type: "string" },
-            { name: "description", type: "text" },
+            { name: "titleIt", type: "string" },
+            { name: "titleEn", type: "string" },
+            { name: "descriptionIt", type: "text" },
+            { name: "descriptionEn", type: "text" },
           ],
         },
       ],

@@ -149,12 +149,25 @@ export async function getCentroMongoliaPage() {
 
 export async function getDesertoDelGobiPage() {
   const query = `*[_type == "desertoDelGobiPage"][0]{
-    title,
-    region,
-    duration,
-    shortItinerary,
-    images,
-    itineraryData
+    titleIt,
+    titleEn,
+    regionIt,
+    regionEn,
+    durationIt,
+    durationEn,
+    shortItinerary[]{
+      day,
+      titleIt,
+      titleEn
+    },
+    images[]{asset},
+    itineraryData[]{
+      day,
+      titleIt,
+      titleEn,
+      descriptionIt,
+      descriptionEn
+    }
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
