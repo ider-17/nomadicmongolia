@@ -5,10 +5,17 @@ export const centroMongoliaPage = defineType({
   title: "Centro Della Mongolia Tour",
   type: "document",
   fields: [
-    defineField({ name: "title", title: "Title", type: "string" }),
-    defineField({ name: "region", title: "Region", type: "string" }),
-    defineField({ name: "duration", title: "Duration", type: "string" }),
+    // Page Title
+    defineField({ name: "titleIt", title: "Title (IT)", type: "string" }),
+    defineField({ name: "titleEn", title: "Title (EN)", type: "string" }),
 
+    // Region / Duration
+    defineField({ name: "regionIt", title: "Region (IT)", type: "string" }),
+    defineField({ name: "regionEn", title: "Region (EN)", type: "string" }),
+    defineField({ name: "durationIt", title: "Duration (IT)", type: "string" }),
+    defineField({ name: "durationEn", title: "Duration (EN)", type: "string" }),
+
+    // Short Itinerary
     defineField({
       name: "shortItinerary",
       title: "Short Itinerary",
@@ -18,12 +25,14 @@ export const centroMongoliaPage = defineType({
           type: "object",
           fields: [
             { name: "day", type: "number" },
-            { name: "title", type: "string" },
+            { name: "titleIt", type: "string", title: "Title (IT)" },
+            { name: "titleEn", type: "string", title: "Title (EN)" },
           ],
         },
       ],
     }),
 
+    // Images
     defineField({
       name: "images",
       title: "Images",
@@ -31,6 +40,7 @@ export const centroMongoliaPage = defineType({
       of: [{ type: "image" }],
     }),
 
+    // Detailed Itinerary
     defineField({
       name: "itineraryData",
       title: "Itinerary Data",
@@ -40,23 +50,38 @@ export const centroMongoliaPage = defineType({
           type: "object",
           fields: [
             { name: "day", type: "number" },
-            { name: "title", type: "string" },
-            { name: "description", type: "text" },
+            { name: "titleIt", type: "string", title: "Title (IT)" },
+            { name: "titleEn", type: "string", title: "Title (EN)" },
+            { name: "descriptionIt", type: "text", title: "Description (IT)" },
+            { name: "descriptionEn", type: "text", title: "Description (EN)" },
           ],
         },
       ],
     }),
 
+    // Inclusions / Exclusions
     defineField({
-      name: "laQuotaComprende",
-      title: "La quota comprende",
+      name: "laQuotaComprendeIt",
+      title: "La quota comprende (IT)",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "laQuotaComprendeEn",
+      title: "La quota comprende (EN)",
       type: "array",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "laQuotaNonComprende",
-      title: "La quota non comprende",
+      name: "laQuotaNonComprendeIt",
+      title: "La quota non comprende (IT)",
+      type: "array",
+      of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "laQuotaNonComprendeEn",
+      title: "La quota non comprende (EN)",
       type: "array",
       of: [{ type: "string" }],
     }),

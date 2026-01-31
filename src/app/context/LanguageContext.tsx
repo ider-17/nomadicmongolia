@@ -2,18 +2,22 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "it" | "en";
+// Language type
+export type Language = "it" | "en";
 
-interface LanguageContextType {
+// Context type
+export interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void;
+  setLanguage: (lang: Language | ((prev: Language) => Language)) => void;
 }
 
+// Create context with default
 const LanguageContext = createContext<LanguageContextType>({
   language: "it",
   setLanguage: () => {},
 });
 
+// Provider component
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>("it");
 
@@ -24,4 +28,5 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// Custom hook
 export const useLanguage = () => useContext(LanguageContext);

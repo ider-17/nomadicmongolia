@@ -119,14 +119,29 @@ export async function getBirdWatchingPage() {
 
 export async function getCentroMongoliaPage() {
   const query = `*[_type == "centroMongoliaPage"][0]{
-    title,
-    region,
-    duration,
-    shortItinerary,
-    images,
-    itineraryData,
-    laQuotaComprende,
-    laQuotaNonComprende
+    titleIt,
+    titleEn,
+    regionIt,
+    regionEn,
+    durationIt,
+    durationEn,
+    shortItinerary[]{
+      day,
+      titleIt,
+      titleEn
+    },
+    images[]{asset},
+    itineraryData[]{
+      day,
+      titleIt,
+      titleEn,
+      descriptionIt,
+      descriptionEn
+    },
+    laQuotaComprendeIt,
+    laQuotaComprendeEn,
+    laQuotaNonComprendeIt,
+    laQuotaNonComprendeEn
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
