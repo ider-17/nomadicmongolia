@@ -11,6 +11,7 @@ import slideCarousel from "./slideCarousel";
 import tourSection from "./tourSection";
 import tourPage from "./tourPage";
 import galleryGroup from "./galleryGroup";
+import { centroMongoliaPage } from "./centroMongolia";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,6 +21,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     authorType,
     aboutPage,
     birdWatching,
+    centroMongoliaPage,
     aboutSection,
     slideCarousel,
     tourSection,

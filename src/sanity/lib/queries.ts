@@ -63,3 +63,18 @@ export async function getGalleryGroups() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getCentroMongoliaPage() {
+  const query = `*[_type == "centroMongoliaPage"][0]{
+    title,
+    region,
+    duration,
+    shortItinerary,
+    images,
+    itineraryData,
+    laQuotaComprende,
+    laQuotaNonComprende
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}
