@@ -122,3 +122,18 @@ export async function getOverlandMongolia() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getSteppeGobiPage() {
+  const query = `*[_type == "steppeGobiPage"][0]{
+    title,
+    region,
+    duration,
+    shortItinerary,
+    images,
+    itineraryData,
+    laQuotaComprende,
+    laQuotaNonComprende
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}

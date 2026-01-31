@@ -15,6 +15,7 @@ import { centroMongoliaPage } from "./centroMongolia";
 import { desertoDelGobiPage } from "./desertoDelGobi";
 import { desertoNaadamPage } from "./desertoNaadam";
 import { overlandMongolia } from "./overlandMongolia";
+import { steppeGobiPage } from "./steppeGobi";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -28,6 +29,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     desertoDelGobiPage,
     desertoNaadamPage,
     overlandMongolia,
+    steppeGobiPage,
     aboutSection,
     slideCarousel,
     tourSection,
