@@ -6,51 +6,37 @@ export const aboutPage = defineType({
   type: "document",
   fields: [
     defineField({
-      name: "iNostriVantaggi",
-      title: "I nostri vantaggi",
+      name: "vantaggiIt",
+      title: "I nostri vantaggi (IT)",
       type: "array",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "ourBenefits",
-      title: "Our benefits",
+      name: "benefitsEn",
+      title: "Our benefits (EN)",
       type: "array",
       of: [{ type: "string" }],
     }),
 
     defineField({
-      name: "aboutParagraph",
-      title: "About text",
+      name: "aboutText",
+      title: "About description",
       type: "text",
     }),
 
     defineField({
       name: "team",
-      title: "Team",
+      title: "Team members",
       type: "array",
       of: [
         {
           type: "object",
           fields: [
-            defineField({
-              name: "name",
-              title: "Name",
-              type: "string",
-            }),
-            defineField({
-              name: "role",
-              title: "Role / Description",
-              type: "string",
-            }),
-            defineField({
-              name: "image",
-              title: "Photo",
-              type: "image",
-              options: {
-                hotspot: true,
-              },
-            }),
+            { name: "name", type: "string" },
+            { name: "role", type: "string" },
+            // { name: "description", type: "text" },
+            { name: "photo", type: "image" },
           ],
         },
       ],
@@ -58,7 +44,7 @@ export const aboutPage = defineType({
 
     defineField({
       name: "terms",
-      title: "Terms and Conditions",
+      title: "Terms & Conditions",
       type: "array",
       of: [
         {
@@ -66,6 +52,9 @@ export const aboutPage = defineType({
           fields: [
             { name: "title", type: "string" },
             { name: "content", type: "text" },
+            { name: "content2", type: "string" },
+            { name: "content3", type: "string" },
+            { name: "content4", type: "string" },
           ],
         },
       ],

@@ -186,3 +186,20 @@ export async function getTours() {
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
+export async function getAboutPage() {
+  const query = `*[_type == "aboutPage"][0]{
+    vantaggiIt,
+    benefitsEn,
+    aboutText,
+    team[]{
+      name,
+      role,
+      description,
+      photo
+    },
+    terms
+  }`;
+
+  return await client.fetch(query, {}, { cache: "no-store" });
+}

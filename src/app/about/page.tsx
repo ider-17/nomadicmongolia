@@ -1,58 +1,45 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { client } from "@/sanity/lib/client";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import Hexagon from "@/components/Hexagon";
+import { getAboutPage } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
 export default function AboutPage() {
-  const [selectedTab, setSelectedTab] = useState<"about" | "terms">("about");
+  const [selectedTab, setSelectedTab] = useState("about");
   const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    client.fetch(`*[_type=="aboutPage"][0]`).then((res) => {
-      setData(res);
-      setLoading(false);
-    });
+    getAboutPage().then(setData);
   }, []);
 
-  if (loading || !data) {
-    return <div className="p-10 text-center">Loading...</div>;
-  }
+  if (!data) return null;
 
   return (
     <div className="bg-white text-black min-h-screen overflow-hidden">
       <Header />
 
-      <section className="bg-white w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2 min-h-screen">
+      <section className="w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2">
         {/* Tabs */}
-        <div className="w-full rounded-2xl sm:p-6 py-6">
-          <ul className="text-gray-800 font-medium flex gap-5 items-center">
-            <li
-              onClick={() => setSelectedTab("about")}
-              className={`font-semibold cursor-pointer ${
-                selectedTab === "about" ? "border-b-2 pb-1" : ""
-              }`}
-            >
-              CHI SIAMO
-            </li>
-            <li
-              onClick={() => setSelectedTab("terms")}
-              className={`font-semibold cursor-pointer ${
-                selectedTab === "terms" ? "border-b-2 pb-1" : ""
-              }`}
-            >
-              TERMS AND CONDITIONS
-            </li>
-          </ul>
-        </div>
+        <ul className="flex gap-5 font-semibold">
+          <li
+            onClick={() => setSelectedTab("about")}
+            className={`cursor-pointer ${selectedTab === "about" && "border-b-2"}`}
+          >
+            CHI SIAMO
+          </li>
+          <li
+            onClick={() => setSelectedTab("terms")}
+            className={`cursor-pointer ${selectedTab === "terms" && "border-b-2"}`}
+          >
+            TERMS AND CONDITIONS
+          </li>
+        </ul>
 
-        {/* CONTENT */}
+        {/* ABOUT */}
         <div className="w-full flex flex-col gap-5 sm:pt-6">
-          {/* ABOUT TAB */}
           {selectedTab === "about" && (
             <section className="space-y-6">
               {/* I nostri vantaggi */}
@@ -61,7 +48,7 @@ export default function AboutPage() {
                   I nostri vantaggi
                 </h2>
                 <div className="sm:grid sm:grid-cols-2 sm:grid-rows-8 gap-1">
-                  {data.iNostriVantaggi?.map((item: string, index: number) => (
+                  {data.vantaggiIt?.map((item: string, index: number) => (
                     <p key={index} className="flex gap-2">
                       <span>•</span>
                       <span>{item}</span>
@@ -74,7 +61,7 @@ export default function AboutPage() {
               <div className="flex flex-col items-center">
                 <h2 className="text-center text-2xl font-bold">Our benefits</h2>
                 <div className="flex flex-col items-start">
-                  {data.ourBenefits?.map((item: string, index: number) => (
+                  {data.benefitsEn?.map((item: string, index: number) => (
                     <p key={index}>{item}</p>
                   ))}
                 </div>
@@ -85,18 +72,15 @@ export default function AboutPage() {
                 <h2 className="text-3xl font-semibold text-center">
                   Grazie per aver visitato il nostro sito!
                 </h2>
-                <p className="text-justify">{data.aboutParagraph}</p>
+                <p className="text-justify">{data.aboutText}</p>
 
                 {/* Team */}
                 <div className="w-full sm:flex block gap-6 space-y-2">
                   {data.team?.map((member: any, index: number) => (
                     <div key={index} className="sm:w-1/2 w-full space-y-1">
-                      {member.image?.asset && (
+                      {member.photo?.asset && (
                         <img
-                          src={urlFor(member.image)
-                            .width(400)
-                            .height(500)
-                            .url()}
+                          src={urlFor(member.photo).url()}
                           alt={member.name}
                           className="sm:w-75 sm:h-87.5 w-[80%] h-80 mx-auto rounded-2xl object-cover"
                         />
@@ -124,7 +108,7 @@ export default function AboutPage() {
             </section>
           )}
 
-          {/* TERMS TAB */}
+          {/* TERMS */}
           {selectedTab === "terms" &&
             data.terms?.map((item: any, index: number) => (
               <div key={index} className="space-y-2">
