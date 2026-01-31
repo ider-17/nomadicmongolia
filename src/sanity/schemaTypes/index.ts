@@ -5,6 +5,7 @@ import { categoryType } from "./categoryType";
 import { postType } from "./postType";
 import { authorType } from "./authorType";
 import { aboutPage } from "./aboutPage";
+import { birdWatching } from "./birdWatching";
 import aboutSection from "./aboutSection";
 import slideCarousel from "./slideCarousel";
 import tourSection from "./tourSection";
@@ -18,6 +19,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     postType,
     authorType,
     aboutPage,
+    birdWatching,
     aboutSection,
     slideCarousel,
     tourSection,

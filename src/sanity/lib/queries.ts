@@ -1,4 +1,4 @@
-import { client } from "./client"
+import { client } from "./client";
 
 export async function getAboutSection() {
   const query = `*[_type == "aboutSection"][0]{
@@ -8,9 +8,9 @@ export async function getAboutSection() {
     buttonText,
     buttonLink,
     "imageUrl": image.asset->url
-  }`
+  }`;
 
-  return await client.fetch(query)
+  return await client.fetch(query, {}, { cache: "no-store" });
 }
 
 export async function getSlides() {
@@ -21,9 +21,9 @@ export async function getSlides() {
     btnText,
     "bgImageUrl": bgImage.asset->url,
     linkUrl
-  }`
+  }`;
 
-  return await client.fetch(query)
+  return await client.fetch(query, {}, { cache: "no-store" });
 }
 
 export async function getTourData() {
@@ -37,9 +37,9 @@ export async function getTourData() {
       },
       imagePosition
     }
-  }`
+  }`;
 
-  return await client.fetch(query)
+  return await client.fetch(query, {}, { cache: "no-store" });
 }
 
 export async function getGalleryGroups() {
@@ -59,7 +59,7 @@ export async function getGalleryGroups() {
         }
       }
     }
-  }`
+  }`;
 
-  return await client.fetch(query)
+  return await client.fetch(query, {}, { cache: "no-store" });
 }
