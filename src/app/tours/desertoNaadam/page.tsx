@@ -1,12 +1,9 @@
-import { notFound } from "next/navigation";
 import DesertoNaadamClient from "./DesertoNaadamClient";
 import { getDesertoNaadamPage } from "@/sanity/lib/queries";
 
 export default async function DesertoEFestivalNaadamPageServer() {
   const data = await getDesertoNaadamPage();
-  if (!data) {
-    notFound(); // ← маш чухал
-  }
+  if (!data) return <p>Loading ...</p>;
 
   return <DesertoNaadamClient data={data} />;
 }

@@ -309,21 +309,22 @@ export async function getTaigaTour() {
 
 export async function getTrekkingTour() {
   const query = `*[_type == "trekkingTourPage"][0]{
-    title,
-    duration,
-    dateRange,
-    shortItinerary,
+    titleIt, titleEn,
+    durationIt, durationEn,
+    dateRangeIt, dateRangeEn,
+    shortItinerary[]{day, titleIt, titleEn},
     images,
-    itineraryData,
-    quataIndividuale,
-    laQuotaComprende,
-    laQuotaNonComprende,
-    travelSuggestions,
-    ourAdvantages
+    itineraryData[]{day, titleIt, titleEn, descriptionIt, descriptionEn, subDescriptionIt, subDescriptionEn, dateIt, dateEn},
+    quataIndividualeIt, quataIndividualeEn,
+    laQuotaComprendeIt, laQuotaComprendeEn,
+    laQuotaNonComprendeIt, laQuotaNonComprendeEn,
+    travelSuggestionsIt, travelSuggestionsEn,
+    ourAdvantagesIt, ourAdvantagesEn
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
 }
+
 
 export async function getTours() {
   const query = `*[_type == "tour"] | order(_createdAt asc){

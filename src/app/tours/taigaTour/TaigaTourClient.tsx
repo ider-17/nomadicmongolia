@@ -14,7 +14,7 @@ export default function TaigaTourPageClient({ data }: any) {
     <div className="bg-white">
       <Header />
 
-      <section className="w-full min-h-screen text-black px-[5%] pt-25 space-y-6 pb-6">
+      <section className="w-full min-h-screen text-black px-[5%] pt-25 space-y-6 pb-6 sm:px-37.5">
         {/* Title */}
         <h1 className="text-center font-bold text-3xl">
           {language === "it" ? data.titleIt : data.titleEn}
