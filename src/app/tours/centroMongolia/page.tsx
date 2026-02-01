@@ -3,7 +3,7 @@ import { getCentroMongoliaPage } from "@/sanity/lib/queries";
 
 export default async function CentroMongoliaPageServer() {
   const data = await getCentroMongoliaPage();
-  if (!data) return <p>Data not found!</p>;
+  if (!data) return <p>Loading ...</p>;
 
   return <CentroMongoliaPageClient data={data} />;
 }

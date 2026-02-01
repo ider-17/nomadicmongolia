@@ -5,50 +5,16 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { urlFor } from "@/sanity/lib/image";
 import { useLanguage } from "@/app/context/LanguageContext";
-import type { SanityImageSource } from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url";
 
-// 🔹 Type definitions
-type ShortItineraryItem = {
-  day: number;
-  titleIt: string;
-  titleEn: string;
-};
-
-type ItineraryItem = {
-  day: number;
-  titleIt: string;
-  titleEn: string;
-  descriptionIt: string;
-  descriptionEn: string;
-};
-
-export type CentroMongoliaPageData = {
-  titleIt: string;
-  titleEn: string;
-  regionIt: string;
-  regionEn: string;
-  durationIt: string;
-  durationEn: string;
-  shortItinerary: ShortItineraryItem[];
-  images: SanityImageSource[];
-  itineraryData: ItineraryItem[];
-  laQuotaComprendeIt: string[];
-  laQuotaComprendeEn: string[];
-  laQuotaNonComprendeIt: string[];
-  laQuotaNonComprendeEn: string[];
-};
-
-type Props = { data: CentroMongoliaPageData };
-
-// 🔹 Client Component
-export default function CentroMongoliaPageClient({ data }: Props) {
+export default function SteppeGobiClient({ data }: any) {
   const { language } = useLanguage();
 
   return (
-    <div className="bg-white h-screen">
+    <div className="bg-white">
       <Header />
 
-      <section className="w-full min-h-screen text-black sm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
+      <section className="w-full min-h-screen text-black px-[5%] pt-25 space-y-6 pb-6">
         <BuyTravel />
 
         {/* Title */}
@@ -69,7 +35,7 @@ export default function CentroMongoliaPageClient({ data }: Props) {
           <h2 className="font-semibold text-xl mb-2">
             {language === "it" ? "Breve itinerario" : "Short Itinerary"}
           </h2>
-          {data.shortItinerary.map((item: ShortItineraryItem) => (
+          {data.shortItinerary.map((item: any) => (
             <div key={item.day} className="flex gap-1">
               <h3 className="font-semibold">
                 {language === "it" ? "Giorno" : "Day"} {item.day}.
@@ -98,31 +64,17 @@ export default function CentroMongoliaPageClient({ data }: Props) {
           {language === "it" ? "Itinerario dettagliato" : "Detailed Itinerary"}
         </h1>
 
-        {/* {data.itineraryData.map((item: ItineraryItem, i: number) => (
+        {data.itineraryData.map((item: any, i: number) => (
           <div key={i}>
             <h2 className="font-semibold">
-              {language === "it" ? `GIORNO ${i + 1}.` : `DAY ${i + 1}.`}{" "}
-              {language === "it" ? item.titleIt : item.titleEn}
-            </h2>
-            <p>{language === "it" ? item.descriptionIt : item.descriptionEn}</p>
-          </div>
-        ))} */}
-        
-        {data.itineraryData.map((item: ItineraryItem, i: number) => (
-          <div key={i}>
-            <h2 className="font-semibold">
-              {i === 0
-                ? ""
-                : language
-                  ? `GIORNO ${item.day}. `
-                  : `DAY ${item.day}. `}
+              {language === "it" ? `GIORNO ${item.day}. ` : `DAY ${item.day}. `}
               {language === "it" ? item.titleIt : item.titleEn}
             </h2>
             <p>{language === "it" ? item.descriptionIt : item.descriptionEn}</p>
           </div>
         ))}
 
-        {/* La quota comprende */}
+        {/* Quota */}
         <h1 className="text-center text-3xl font-bold">
           {language === "it" ? "La quota comprende" : "Included"}
         </h1>
@@ -138,7 +90,6 @@ export default function CentroMongoliaPageClient({ data }: Props) {
           ))}
         </div>
 
-        {/* La quota non comprende */}
         <h1 className="text-center text-3xl font-bold">
           {language === "it" ? "La quota non comprende" : "Not Included"}
         </h1>

@@ -245,14 +245,33 @@ export async function getOverlandMongolia() {
 
 export async function getSteppeGobiPage() {
   const query = `*[_type == "steppeGobiPage"][0]{
-    title,
-    region,
-    duration,
-    shortItinerary,
+    titleIt,
+    titleEn,
+    regionIt,
+    regionEn,
+    durationIt,
+    durationEn,
+
+    shortItinerary[]{
+      day,
+      titleIt,
+      titleEn
+    },
+
     images,
-    itineraryData,
-    laQuotaComprende,
-    laQuotaNonComprende
+
+    itineraryData[]{
+      day,
+      titleIt,
+      titleEn,
+      descriptionIt,
+      descriptionEn
+    },
+
+    laQuotaComprendeIt,
+    laQuotaComprendeEn,
+    laQuotaNonComprendeIt,
+    laQuotaNonComprendeEn
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
