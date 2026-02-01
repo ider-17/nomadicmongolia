@@ -16,7 +16,6 @@ export default function DesertoNaadamClient({ data }: Props) {
       <Header />
 
       <section className="w-full min-h-screen text-black sm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
-        <BuyTravel />
 
         <h1 className="text-center font-bold text-3xl">
           {language === "it" ? data.titleIt : data.titleEn}
@@ -110,6 +109,7 @@ export default function DesertoNaadamClient({ data }: Props) {
             <p>{desc}</p>
           </div>
         ))}
+        <BuyTravel />
       </section>
 
       <Footer />

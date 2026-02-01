@@ -1,34 +1,52 @@
 export default {
-    name: 'tourSection',
-    type: 'object',
-    title: 'Tour Section',
+    name: "tourSection",
+    type: "object",
+    title: "Tour Section",
     fields: [
-        {
-            name: 'title',
-            type: 'string',
-            title: 'Section Title'
+      // Title
+      {
+        name: "titleIt",
+        type: "string",
+        title: "Section Title IT",
+      },
+      {
+        name: "titleEn",
+        type: "string",
+        title: "Section Title EN",
+      },
+  
+      // Content
+      {
+        name: "contentIt",
+        type: "text",
+        title: "Content IT",
+      },
+      {
+        name: "contentEn",
+        type: "text",
+        title: "Content EN",
+      },
+  
+      // Image (language independent)
+      {
+        name: "image",
+        type: "image",
+        title: "Image",
+      },
+  
+      // Image position (language independent)
+      {
+        name: "imagePosition",
+        type: "string",
+        title: "Image Position",
+        options: {
+          list: [
+            { title: "Left", value: "left" },
+            { title: "Right", value: "right" },
+          ],
+          layout: "radio",
         },
-        {
-            name: 'content',
-            type: 'text',
-            title: 'Content'
-        },
-        {
-            name: 'image',
-            type: 'image',
-            title: 'Image'
-        },
-        {
-            name: 'imagePosition',
-            type: 'string',
-            title: 'Image Position',
-            options: {
-                list: [
-                    { title: 'Left', value: 'left' },
-                    { title: 'Right', value: 'right' },
-                ],
-                layout: 'radio'
-            }
-        }
-    ]
-}
+      },
+    ],
+  };
+  

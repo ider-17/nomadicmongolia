@@ -102,7 +102,7 @@ export default function ToursPageClient({ data }: any) {
                       ? tour.locationsIt.length > 3 && (
                           <button
                             onClick={() => toggleLocations(tour._id)}
-                            className="text-sm text-blue-600"
+                            className="text-sm text-blue-600 cursor-pointer"
                           >
                             {showAllLocations[tour._id] ? "less" : "... more"}
                           </button>
@@ -110,7 +110,7 @@ export default function ToursPageClient({ data }: any) {
                       : tour.locationsEn.length > 3 && (
                           <button
                             onClick={() => toggleLocations(tour._id)}
-                            className="text-sm text-blue-600"
+                            className="text-sm text-blue-600 cursor-pointer"
                           >
                             {showAllLocations[tour._id] ? "less" : "... more"}
                           </button>
@@ -150,7 +150,7 @@ export default function ToursPageClient({ data }: any) {
 
                 <div className="flex justify-end">
                   <Link href={`/tours/${tour.slug.current}`}>
-                    <button className="py-1 px-2 border rounded-2xl hover:bg-black hover:text-white">
+                    <button className="py-1 px-2 border rounded-2xl hover:bg-white bg-[#2fa147] hover:text-black text-white active:bg-white active:text-black cursor-pointer">
                       {language === "it" ? tour.btnTextIt : tour.btnTextEn}
                     </button>
                   </Link>

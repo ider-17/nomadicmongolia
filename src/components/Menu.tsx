@@ -4,6 +4,8 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Switch } from "./ui/switch";
+import { Label } from "./ui/label";
 
 export function MenuBar() {
   const { language, setLanguage } = useLanguage();
@@ -32,6 +34,20 @@ export function MenuBar() {
       <button onClick={() => setOpen((prev) => !prev)}>
         <Menu color="white" />
       </button>
+
+      {/* Toggle switch */}
+      <div className="flex items-center space-x-2">
+        <Switch
+          id="airplane-mode"
+          checked={language === "it"} // controlled
+          onCheckedChange={() =>
+            setLanguage((prev) => (prev === "it" ? "en" : "it"))
+          }
+        />
+        <Label htmlFor="airplane-mode" className="text-white">
+          {language === "it" ? "English" : "Italian"}
+        </Label>
+      </div>
 
       {open && (
         <div

@@ -15,8 +15,6 @@ export default function SteppeGobiClient({ data }: any) {
       <Header />
 
       <section className="w-full min-h-screen text-black px-[5%] pt-25 space-y-6 pb-6 sm:px-37.5">
-        <BuyTravel />
-
         {/* Title */}
         <h1 className="text-center font-bold text-3xl">
           {language === "it" ? data.titleIt : data.titleEn}
@@ -104,6 +102,7 @@ export default function SteppeGobiClient({ data }: any) {
             </div>
           ))}
         </div>
+        <BuyTravel />
       </section>
 
       <Footer />

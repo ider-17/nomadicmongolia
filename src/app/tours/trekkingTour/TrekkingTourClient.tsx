@@ -15,8 +15,6 @@ export default function TrekkingTourPageClient({ data }: any) {
       <Header />
 
       <section className="w-full min-h-screen text-black px-[5%] pt-25 space-y-6 pb-6 sm:px-37.5">
-        <BuyTravel />
-
         {/* Title */}
         <h1 className="text-center font-bold text-3xl">
           {language === "it" ? data.titleIt : data.titleEn}
@@ -73,7 +71,11 @@ export default function TrekkingTourPageClient({ data }: any) {
               {language === "it" ? item.titleIt : item.titleEn}
             </h2>
             <p>{language === "it" ? item.descriptionIt : item.descriptionEn}</p>
-            <p className="mt-2">{language === "it" ? item.subDescriptionIt : item.subDescriptionEn}</p>
+            <p className="mt-2">
+              {language === "it"
+                ? item.subDescriptionIt
+                : item.subDescriptionEn}
+            </p>
           </div>
         ))}
 
@@ -156,6 +158,7 @@ export default function TrekkingTourPageClient({ data }: any) {
             </div>
           ))}
         </div>
+        <BuyTravel />
       </section>
 
       <Footer />

@@ -20,7 +20,6 @@ export default function OverlandMongoliaClient({ data }: Props) {
       <Header />
 
       <section className="w-full min-h-screen text-black sm:px-37.5 px-[5%] pt-25 space-y-6 bg-white pb-6 relative">
-        <BuyTravel />
         <h1 className="text-center font-bold text-3xl">{title}</h1>
 
         <div>
@@ -99,6 +98,7 @@ export default function OverlandMongoliaClient({ data }: Props) {
                 <p>{item}</p>
               </div>
             ))}
+        <BuyTravel />
       </section>
 
       <Footer />

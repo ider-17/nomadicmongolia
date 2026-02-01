@@ -2,12 +2,16 @@ import { client } from "./client";
 
 export async function getAboutSection() {
   const query = `*[_type == "aboutSection"][0]{
-    mainTitle,
-    sectionTitle,
-    description,
-    buttonText,
-    buttonLink,
-    "imageUrl": image.asset->url
+    mainTitleIt,
+    mainTitleEn,
+    image,
+    sectionTitleIt,
+    sectionTitleEn,
+    descriptionIt,
+    descriptionEn,
+    buttonTextIt,
+    buttonTextEn,
+    buttonLink
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
@@ -32,8 +36,10 @@ export async function getTourData() {
   const query = `*[_type == "tourPage"][0]{
     title,
     sections[]{
-      title,
-      content,
+      titleIt,
+      titleEn,
+      contentIt,
+      contentEn,
       image{
         asset->{url}
       },

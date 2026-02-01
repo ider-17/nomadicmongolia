@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { urlFor } from "@/sanity/lib/image";
 
 interface Slide {
   _id: string;
@@ -13,7 +14,7 @@ interface Slide {
   descriptionEn: string;
   btnTextIt: string;
   btnTextEn: string;
-  bgImageUrl: string;
+  bgImage: string;
   linkUrl: string;
 }
 
@@ -100,7 +101,6 @@ export default function Carousel({ slides }: CarouselProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  console.log(slides, "slides");
   // ---------- JSX ----------
   return (
     <section className="bg-white w-full sm:h-195 h-180 flex justify-center sm:px-37.5 sm:pt-22.5 pt-20 px-[5%]">
@@ -125,7 +125,7 @@ export default function Carousel({ slides }: CarouselProps) {
             <div
               key={i}
               className="min-w-full flex items-end justify-center text-white bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.bgImageUrl})` }}
+              style={{ backgroundImage: `url(${urlFor(slide.bgImage)})` }}
             >
               <div className="max-w-5xl mx-auto px-6 py-4 text-center mb-15">
                 <h2 className="text-4xl font-bold mb-4 drop-shadow-md">
@@ -137,10 +137,25 @@ export default function Carousel({ slides }: CarouselProps) {
                     : slide.descriptionEn}
                 </p>
                 <Link href={slide.linkUrl}>
-                  <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
-                    {language === "it"
-                      ? slide.descriptionIt
-                      : slide.descriptionEn}
+                  <button
+                    className="
+    bg-white/20     
+    backdrop-blur-md  
+    border border-white/30
+    text-white
+    font-semibold
+    px-6 py-3
+    rounded-full
+    shadow-lg
+    hover:bg-white/30
+    hover:text-gray-800
+    active:bg-white/30
+    active:text-gray-800
+    transition-all duration-300
+    cursor-pointer
+  "
+                  >
+                    {language === "it" ? slide.btnTextIt : slide.btnTextEn}
                   </button>
                 </Link>
               </div>
@@ -156,7 +171,7 @@ export default function Carousel({ slides }: CarouselProps) {
               prevSlide();
               startAutoSlide();
             }}
-            className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md"
+            className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md cursor-pointer"
           >
             <ChevronLeft size={24} />
           </button>
@@ -166,7 +181,7 @@ export default function Carousel({ slides }: CarouselProps) {
               nextSlide();
               startAutoSlide();
             }}
-            className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md"
+            className="p-2 rounded-full bg-white/70 hover:bg-white/90 shadow-md cursor-pointer"
           >
             <ChevronRight size={24} />
           </button>
@@ -182,7 +197,7 @@ export default function Carousel({ slides }: CarouselProps) {
                 goToSlide(index);
                 startAutoSlide();
               }}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-3 h-3 rounded-full cursor-pointer ${
                 currentIndex === index ? "bg-white scale-125" : "bg-white/50"
               }`}
             />

@@ -75,12 +75,13 @@ export const Header = () => {
       <div className="flex items-center space-x-2">
         <Switch
           id="airplane-mode"
+          className="cursor-pointer"
           checked={language === "it"} // controlled
           onCheckedChange={() =>
             setLanguage((prev) => (prev === "it" ? "en" : "it"))
           }
         />
-        <Label htmlFor="airplane-mode" className="text-white">
+        <Label htmlFor="airplane-mode" className="text-white cursor-pointer">
           {language === "it" ? "English" : "Italian"}
         </Label>
       </div>
