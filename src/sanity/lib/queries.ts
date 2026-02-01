@@ -175,15 +175,39 @@ export async function getDesertoDelGobiPage() {
 
 export async function getDesertoNaadamPage() {
   const query = `*[_type == "desertoNaadamPage"][0]{
-    title,
-    duration,
-    dates,
-    shortItinerary,
-    images,
-    itineraryData,
-    quataIndividuale,
-    laQuotaComprende,
-    laQuotaNonComprende
+    titleIt,
+    titleEn,
+    durationIt,
+    durationEn,
+    datesIt,
+    datesEn,
+
+    shortItinerary[]{
+      day,
+      titleIt,
+      titleEn
+    },
+
+    images[]{ asset },
+
+    itineraryData[]{
+      day,
+      dateIt,
+      dateEn,
+      titleIt,
+      titleEn,
+      descriptionIt,
+      descriptionEn
+    },
+
+    quotaIndividualeIt,
+    quotaIndividualeEn,
+
+    laQuotaComprendeIt,
+    laQuotaComprendeEn,
+
+    laQuotaNonComprendeIt,
+    laQuotaNonComprendeEn
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
