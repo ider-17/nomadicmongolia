@@ -1,9 +1,9 @@
-import CentroNaadamPageClient from "./desertoNaamam";
+import DesertoNaadamClient from "./DesertoNaadamClient";
 import { getDesertoNaadamPage } from "@/sanity/lib/queries";
 
-export default async function desertoEFestivalNaadamPage() {
+export default async function Page() {
   const data = await getDesertoNaadamPage();
   if (!data) return null;
 
-  return <CentroNaadamPageClient data={data} />;
+  return <DesertoNaadamClient data={data} />;
 }

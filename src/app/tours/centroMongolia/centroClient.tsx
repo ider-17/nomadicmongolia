@@ -59,13 +59,9 @@ export default function CentroMongoliaPageClient({ data }: Props) {
         {/* Region & Duration */}
         <div>
           <p className="font-semibold">
-            {language === "it" ? "Regione" : "Region"}:{" "}
             {language === "it" ? data.regionIt : data.regionEn}
           </p>
-          <p>
-            {language === "it" ? "Durata" : "Duration"}:{" "}
-            {language === "it" ? data.durationIt : data.durationEn}
-          </p>
+          <p>{language === "it" ? data.durationIt : data.durationEn}</p>
         </div>
 
         {/* Short Itinerary */}
@@ -102,10 +98,10 @@ export default function CentroMongoliaPageClient({ data }: Props) {
           {language === "it" ? "Itinerario dettagliato" : "Detailed Itinerary"}
         </h1>
 
-        {data.itineraryData.map((item: ItineraryItem) => (
-          <div key={item.day}>
+        {data.itineraryData.map((item: ItineraryItem, i: number) => (
+          <div key={i}>
             <h2 className="font-semibold">
-              {language === "it" ? `GIORNO ${item.day}.` : `DAY ${item.day}.`}{" "}
+              {language === "it" ? `GIORNO ${i + 1}.` : `DAY ${i + 1}.`}{" "}
               {language === "it" ? item.titleIt : item.titleEn}
             </h2>
             <p>{language === "it" ? item.descriptionIt : item.descriptionEn}</p>

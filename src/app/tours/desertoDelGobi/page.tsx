@@ -43,7 +43,7 @@ export default function DesertoDelGobiPage() {
     getDesertoDelGobiPage().then(setData);
   }, []);
 
-  if (!data) return null;
+  if (!data) return <p>loading...</p>;
 
   const isIt = language === "it";
 
@@ -60,13 +60,9 @@ export default function DesertoDelGobiPage() {
 
         <div>
           <p className="font-semibold">
-            {isIt ? "Regione" : "Region"}:{" "}
             {isIt ? data.regionIt : data.regionEn}
           </p>
-          <p>
-            {isIt ? "Durata" : "Duration"}:{" "}
-            {isIt ? data.durationIt : data.durationEn}
-          </p>
+          <p>{isIt ? data.durationIt : data.durationEn}</p>
         </div>
 
         {/* Breve itinerario */}

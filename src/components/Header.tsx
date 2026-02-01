@@ -80,11 +80,13 @@ export const Header = () => {
             setLanguage((prev) => (prev === "it" ? "en" : "it"))
           }
         />
-        <Label htmlFor="airplane-mode" className="text-white">{language === "it" ? "English" : "Italian"}</Label>
+        <Label htmlFor="airplane-mode" className="text-white">
+          {language === "it" ? "English" : "Italian"}
+        </Label>
       </div>
 
       {/* Desktop menu */}
-      <ul className="sm:flex gap-4 text-white hidden">
+      <ul className="sm:flex gap-4 *:text-white *:hover:underline *:hover:underline-offset-8 *:font-semibold *:cursor-pointer hidden">
         <li>
           <Link href="/">{language === "it" ? "HOME" : "HOME"}</Link>
         </li>

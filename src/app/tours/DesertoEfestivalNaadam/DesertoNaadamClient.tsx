@@ -6,9 +6,9 @@ import { Header } from "@/components/Header";
 import { urlFor } from "@/sanity/lib/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 
-type Props = { data: any }; // эсвэл өөр type тодорхойл
+type Props = { data: any };
 
-export default function CentroNaadamPageClient({ data }: Props) {
+export default function DesertoNaadamClient({ data }: Props) {
   const { language } = useLanguage();
 
   return (
@@ -23,7 +23,6 @@ export default function CentroNaadamPageClient({ data }: Props) {
         </h1>
 
         <h2 className="font-semibold">
-          {language === "it" ? "Durata" : "Duration"}:{" "}
           {language === "it" ? data.durationIt : data.durationEn}
         </h2>
 

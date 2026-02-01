@@ -17,7 +17,6 @@ export default function BirdClient({ data }: { data: any }) {
       </h1>
 
       <h2 className="font-semibold">
-        {isIt ? "Durata:" : "Duration:"}{" "}
         {isIt ? data.durationIt : data.durationEn}
       </h2>
 
