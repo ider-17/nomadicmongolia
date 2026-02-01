@@ -325,23 +325,28 @@ export async function getTrekkingTour() {
   return await client.fetch(query, {}, { cache: "no-store" });
 }
 
-
 export async function getTours() {
-  const query = `*[_type == "tour"] | order(_createdAt asc){
+  const res = await client.fetch(`*[_type == "tour"]{
     _id,
-    title,
-    slug,
-    photo,
+    titleIt,
+    titleEn,
     duration,
-    locations,
-    desTitle1,
-    describtion1,
-    desTitle2,
-    describtion2,
-    btnText
-  }`;
-
-  return await client.fetch(query, {}, { cache: "no-store" });
+    photo,
+    locationsIt,
+    locationsEn,
+    slug,
+    desTitle1It,
+    desTitle1En,
+    describtion1It,
+    describtion1En,
+    desTitle2It,
+    desTitle2En,
+    describtion2It,
+    describtion2En,
+    btnTextIt,
+    btnTextEn
+  }`);
+  return res;
 }
 
 export async function getAboutPage() {
