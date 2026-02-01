@@ -98,7 +98,7 @@ export default function OverlandMongoliaClient({ data }: Props) {
                 <p>{item}</p>
               </div>
             ))}
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />

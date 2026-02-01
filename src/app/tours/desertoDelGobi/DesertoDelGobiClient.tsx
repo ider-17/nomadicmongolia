@@ -22,6 +22,8 @@ type ItineraryItem = {
 };
 
 type DesertoDelGobiPageData = {
+  _id: string;
+  slug: string;
   titleIt: string;
   titleEn: string;
   regionIt: string;
@@ -99,7 +101,7 @@ export default function DesertoDelGobiPageClient({ data }: Props) {
             <p>{language === "it" ? item.descriptionIt : item.descriptionEn}</p>
           </div>
         ))}
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />

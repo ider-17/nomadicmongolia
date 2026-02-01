@@ -64,7 +64,7 @@ export default function TaigaTourPageClient({ data }: any) {
           </div>
         ))}
 
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />

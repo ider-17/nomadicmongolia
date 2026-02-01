@@ -17,6 +17,7 @@ import {
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 // FormData интерфэйс тодорхойлох
 interface FormData {
@@ -25,9 +26,20 @@ interface FormData {
   email: string;
   phone: string;
   message: string;
+  //   tourTitle: string;
 }
 
-const BuyTravel = () => {
+interface BuyTravelProps {
+  data?: {
+    _id: string;
+    titleIt: string;
+    titleEn: string;
+    slug: string;
+  };
+}
+
+const BuyTravel: React.FC<BuyTravelProps> = ({ data }) => {
+  const { language } = useLanguage();
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -93,6 +105,7 @@ const BuyTravel = () => {
       phone: formData.phone,
       message: formData.message,
       time: currentTime,
+      tourTitle: data?.titleEn,
     };
 
     try {
@@ -118,8 +131,27 @@ const BuyTravel = () => {
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <button className="w-[80%] flex justify-self-center justify-center text-black bg-white border border-black rounded-full py-2 px-4 hover:bg-gray-200 active:text-white active:bg-black cursor-pointer">
-          Book Travel
+        <button
+          className="w-[80%] flex justify-self-center justify-center py-2 px-4 mt-4
+    bg-gray-400
+    backdrop-blur-md  
+    border border-white/30
+    text-white
+    font-semibold
+    rounded-full
+    shadow-lg
+    hover:bg-white/30
+    hover:text-gray-800
+    hover:border-green-400
+    active:bg-white/30
+    active:text-gray-800
+    transition-all duration-300
+    cursor-pointer
+  "
+        >
+          {language === "it"
+            ? `Book ${data?.titleIt}`
+            : `Book ${data?.titleEn}`}
         </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-106.25">
@@ -192,7 +224,11 @@ const BuyTravel = () => {
                 Cancel
               </Button>
             </DialogClose>
-            <Button type="submit" disabled={isSending}>
+            <Button
+              type="submit"
+              disabled={isSending}
+              className="bg-[#2fa147] hover:bg-white border border-white hover:border-[#2fa147] hover:text-[#2fa147] active:bg-white active:border-[#2fa147] active:text-[#2fa147]"
+            >
               {isSending ? "Sending..." : "Book Travel"}
             </Button>
           </DialogFooter>

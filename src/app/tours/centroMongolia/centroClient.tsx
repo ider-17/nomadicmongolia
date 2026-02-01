@@ -23,6 +23,8 @@ type ItineraryItem = {
 };
 
 export type CentroMongoliaPageData = {
+  _id: string;
+  slug: string;
   titleIt: string;
   titleEn: string;
   regionIt: string;
@@ -152,7 +154,7 @@ export default function CentroMongoliaPageClient({ data }: Props) {
             </div>
           ))}
         </div>
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />

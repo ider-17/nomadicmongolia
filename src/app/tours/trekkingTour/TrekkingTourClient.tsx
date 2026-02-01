@@ -158,7 +158,7 @@ export default function TrekkingTourPageClient({ data }: any) {
             </div>
           ))}
         </div>
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />

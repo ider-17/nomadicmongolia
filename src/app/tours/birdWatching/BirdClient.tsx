@@ -154,7 +154,7 @@ export default function BirdClient({ data }: { data: any }) {
               </div>
             ))}
       </div>
-      <BuyTravel />
+      <BuyTravel data={data} />
     </section>
   );
 }

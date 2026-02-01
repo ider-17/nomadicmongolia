@@ -109,7 +109,7 @@ export default function DesertoNaadamClient({ data }: Props) {
             <p>{desc}</p>
           </div>
         ))}
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />

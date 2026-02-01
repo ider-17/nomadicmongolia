@@ -102,7 +102,7 @@ export default function SteppeGobiClient({ data }: any) {
             </div>
           ))}
         </div>
-        <BuyTravel />
+        <BuyTravel data={data} />
       </section>
 
       <Footer />
