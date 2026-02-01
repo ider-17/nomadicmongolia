@@ -215,14 +215,29 @@ export async function getDesertoNaadamPage() {
 
 export async function getOverlandMongolia() {
   const query = `*[_type == "overlandMongolia"][0]{
-    title,
-    region,
-    duration,
-    shortItinerary,
+    titleIt,
+    titleEn,
+    regionIt,
+    regionEn,
+    durationIt,
+    durationEn,
+    shortItinerary[]{
+      day,
+      titleIt,
+      titleEn
+    },
     images,
-    itineraryData,
-    laQuotaComprende,
-    laQuotaNonComprende
+    itineraryData[]{
+      day,
+      titleIt,
+      titleEn,
+      descriptionIt,
+      descriptionEn
+    },
+    laQuotaComprendeIt,
+    laQuotaComprendeEn,
+    laQuotaNonComprendeIt,
+    laQuotaNonComprendeEn
   }`;
 
   return await client.fetch(query, {}, { cache: "no-store" });
