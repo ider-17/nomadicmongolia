@@ -3,12 +3,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 interface Slide {
   _id: string;
-  title: string;
-  description: string;
-  btnText: string;
+  titleIt: string;
+  titleEn: string;
+  descriptionIt: string;
+  descriptionEn: string;
+  btnTextIt: string;
+  btnTextEn: string;
   bgImageUrl: string;
   linkUrl: string;
 }
@@ -18,6 +22,7 @@ interface CarouselProps {
 }
 
 export default function Carousel({ slides }: CarouselProps) {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // 👉 drag states
@@ -95,6 +100,7 @@ export default function Carousel({ slides }: CarouselProps) {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  console.log(slides, "slides");
   // ---------- JSX ----------
   return (
     <section className="bg-white w-full sm:h-195 h-180 flex justify-center sm:px-37.5 sm:pt-22.5 pt-20 px-[5%]">
@@ -115,22 +121,26 @@ export default function Carousel({ slides }: CarouselProps) {
             transform: `translateX(calc(-${currentIndex * 100}% + ${dragOffset}px))`,
           }}
         >
-          {slides.map((slide) => (
+          {slides.map((slide, i) => (
             <div
-              key={slide._id}
+              key={i}
               className="min-w-full flex items-end justify-center text-white bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.bgImageUrl})` }}
             >
               <div className="max-w-5xl mx-auto px-6 py-4 text-center mb-15">
                 <h2 className="text-4xl font-bold mb-4 drop-shadow-md">
-                  {slide.title}
+                  {language === "it" ? slide.titleIt : slide.titleEn}
                 </h2>
                 <p className="text-lg mb-6 drop-shadow-md">
-                  {slide.description}
+                  {language === "it"
+                    ? slide.descriptionIt
+                    : slide.descriptionEn}
                 </p>
                 <Link href={slide.linkUrl}>
                   <button className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300">
-                    {slide.btnText}
+                    {language === "it"
+                      ? slide.descriptionIt
+                      : slide.descriptionEn}
                   </button>
                 </Link>
               </div>

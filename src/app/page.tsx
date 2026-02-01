@@ -21,7 +21,7 @@ export default async function Home() {
 
   const data = await getTourData();
 
-  if (!data || !data.sections) return null;
+  if (!data || !data.sections) return <p>Loading ...</p>;
 
   return (
     <div className="bg-white w-full overflow-hidden">

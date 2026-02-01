@@ -14,12 +14,14 @@ export async function getAboutSection() {
 }
 
 export async function getSlides() {
-  const query = `*[_type == "carouselSlide"] | order(_createdAt asc){
-    _id,
-    title,
-    description,
-    btnText,
-    "bgImageUrl": bgImage.asset->url,
+  const query = `*[_type == "carouselSlide"] | order(_createdAt asc) {
+    titleIt,
+    titleEn,
+    descriptionIt,
+    descriptionEn,
+    bgImage,
+    btnTextIt,
+    btnTextEn,
     linkUrl
   }`;
 
