@@ -10,7 +10,7 @@ export default function AboutClient({ data }: { data: any }) {
   const { language } = useLanguage();
 
   return (
-    <section className="bg-white w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-14 mb-2">
+    <section className="bg-white w-full sm:px-37.5 px-[5%] sm:pt-22.5 pt-20 mb-2">
       {/* Tabs */}
       <ul className="flex gap-5 font-semibold">
         <li
